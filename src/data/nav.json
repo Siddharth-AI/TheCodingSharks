@@ -1,0 +1,86 @@
+{
+  "header": {
+    "links": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Learning",
+        "href": "/learning"
+      },
+      {
+        "label": "Programs",
+        "href": "/courses"
+      },
+      {
+        "label": "Outcomes",
+        "href": "/placements"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
+    ],
+    "primaryCta": {
+      "label": "Apply Now",
+      "href": "/book-demo"
+    }
+  },
+  "footer": {
+    "company": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Placements",
+        "href": "/placements"
+      },
+      {
+        "label": "Instructors",
+        "href": "/instructors"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "programs": [
+      {
+        "label": "Web Development",
+        "href": "/courses/web-development"
+      },
+      {
+        "label": "App Development",
+        "href": "/courses/app-development"
+      },
+      {
+        "label": "DSA",
+        "href": "/courses/dsa"
+      },
+      {
+        "label": "Machine Learning",
+        "href": "/courses/machine-learning"
+      },
+      {
+        "label": "DevOps",
+        "href": "/courses/devops"
+      },
+      {
+        "label": "Cloud",
+        "href": "/courses/cloud"
+      }
+    ],
+    "legal": [
+      {
+        "label": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms",
+        "href": "/terms"
+      }
+    ]
+  }
+}

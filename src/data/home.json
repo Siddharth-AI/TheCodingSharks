@@ -1,0 +1,201 @@
+{
+  "hero": {
+    "headline1": "Build Real",
+    "headline2": "Software Products",
+    "headline3": "— Not Just Learn Coding",
+    "subheadline": "Learn Full Stack Development, AI Agents, Automation and modern engineering workflows through real-world projects at CodingSharks.",
+    "supportingLine": "From coding fundamentals to AI-powered applications and scalable systems.",
+    "eyebrow": "LEARN. BUILD. GET PLACED.",
+    "communityBlurb": "Students learning in our mastery programs",
+    "communityCount": "1 Million+",
+    "avatars": [
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=60",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=80&q=60",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=80&q=60"
+    ],
+    "primaryCta": {
+      "label": "Apply for Free Career Session",
+      "href": "/book-demo"
+    },
+    "secondaryCta": {
+      "label": "Download Course Curriculum",
+      "href": "/curriculum"
+    },
+    "credibility": [
+      {
+        "label": "Built by alumni from:",
+        "items": [
+          "IIT",
+          "NIT",
+          "IIIT"
+        ]
+      },
+      {
+        "label": "Supported by founders from:",
+        "items": [
+          "Paytm",
+          "CRED",
+          "Meesho",
+          "Swiggy"
+        ]
+      },
+      {
+        "label": "Backed by:",
+        "items": [
+          "Elevation"
+        ]
+      }
+    ]
+  },
+  "liveClass": {
+    "title": "Become the Top 1% in Tech",
+    "videoPoster": "https://images.unsplash.com/photo-1600880292089-90e7d22eebae?auto=format&fit=crop&w=1600&q=80",
+    "stats": [
+      {
+        "value": "1200+",
+        "label": "Placement Partners"
+      },
+      {
+        "value": "15K+",
+        "label": "Careers Transformed"
+      },
+      {
+        "value": "100+",
+        "label": "Capstone Projects"
+      }
+    ],
+    "form": {
+      "title": "Book a Live Class, For Free!",
+      "programs": [
+        "Full Stack",
+        "Frontend",
+        "Backend",
+        "AI/Automation"
+      ]
+    },
+    "cta": {
+      "label": "Book Free Live Class",
+      "note": "Limited Seats Left"
+    }
+  },
+  "alumniWork": {
+    "headline": "Our Alumni Work At",
+    "description": "CodingSharks students are building careers across startups, tech companies and growing product teams where they apply real development skills.",
+    "logos": [
+      "Product Startups",
+      "Fintech",
+      "SaaS",
+      "E‑commerce",
+      "AI Teams",
+      "DevTools"
+    ],
+    "grid": [
+      {
+        "title": "Placement stories",
+        "label": "They came. They cooked. They got placed.",
+        "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "title": "Project demo day",
+        "label": "Teams shipping real products",
+        "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "title": "Mentor sessions",
+        "label": "Weekly reviews and feedback",
+        "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "title": "Interview prep",
+        "label": "Mock interviews + confidence",
+        "imageUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "title": "Career outcomes",
+        "label": "From learning to offers",
+        "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "title": "Community",
+        "label": "Peers, sprints, and shipping",
+        "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+      }
+    ]
+  },
+  "supporters": {
+    "title": "Supporters and Investors",
+    "subtitle": "Mentors, builders and founders who support our mission.",
+    "items": [
+      {
+        "name": "Kunal Shah",
+        "roles": [
+          "Founder",
+          "Angel Investor"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=480&h=480&q=80"
+      },
+      {
+        "name": "Vidit Aatrey",
+        "roles": [
+          "Founder",
+          "Operator"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&h=480&q=80"
+      },
+      {
+        "name": "Vijay Shekhar",
+        "roles": [
+          "Founder",
+          "Investor"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=480&h=480&q=80"
+      },
+      {
+        "name": "Mekin M",
+        "roles": [
+          "Founder",
+          "Advisor"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=480&h=480&q=80"
+      },
+      {
+        "name": "Abhiraj Bhal",
+        "roles": [
+          "Founder",
+          "Mentor"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=480&h=480&q=80"
+      },
+      {
+        "name": "Varun Khaitan",
+        "roles": [
+          "Founder",
+          "Advisor"
+        ],
+        "avatarUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=480&h=480&q=80"
+      }
+    ],
+    "logoStrip": [
+      "CRED",
+      "meesho",
+      "Paytm",
+      "Urban Company"
+    ]
+  },
+  "coursesMarquee": {
+    "items": [
+      "Full Stack Web Development",
+      "Frontend Engineering (React/Next.js)",
+      "Backend Engineering (Node.js)",
+      "Data Structures & Algorithms",
+      "System Design",
+      "Mobile App Development",
+      "AI / ML Foundations",
+      "AI Agents & Automation",
+      "DevOps & CI/CD",
+      "Cloud (AWS/GCP)",
+      "Databases & SQL",
+      "Interview Prep & Mock Rounds"
+    ]
+  }
+}

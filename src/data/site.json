@@ -1,0 +1,22 @@
+{
+  "brand": {
+    "name": "Coding Sharks",
+    "taglineShort": "Placement Focused",
+    "description": "Learn Web, App, DSA, ML, DevOps and Cloud with global instructors, hands-on projects, and interview-ready mentorship."
+  },
+  "contact": {
+    "email": "hello@codingsharks.com",
+    "phone": "+91 00000 00000"
+  },
+  "address": {
+    "line1": "Your Institute Address",
+    "city": "Your City",
+    "region": "Your State",
+    "country": "India"
+  },
+  "socials": {
+    "instagram": "",
+    "linkedin": "",
+    "youtube": ""
+  }
+}
