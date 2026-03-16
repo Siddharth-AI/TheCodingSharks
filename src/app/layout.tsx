@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Manrope } from "next/font/google"
+import { Manrope, Space_Grotesk } from "next/font/google"
 
 import "react-toastify/dist/ReactToastify.css"
 
@@ -9,11 +9,19 @@ import { SiteFooter } from "@/components/common/site-footer"
 import { SiteHeader } from "@/components/common/site-header"
 import { AppToaster } from "@/components/common/toaster"
 
-// Primary body/UI font — Manrope (clean, modern sans-serif)
+// Body / UI font — Manrope (clean, modern sans-serif)
 const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+})
+
+// Heading font — Space Grotesk (geometric, techy, impactful)
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 })
 
@@ -34,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} font-sans min-h-dvh bg-background text-foreground antialiased`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans min-h-dvh bg-background text-foreground antialiased`}
       >
         <SiteHeader />
         <main className="min-h-[calc(100dvh-4rem)]">{children}</main>

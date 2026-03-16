@@ -2,8 +2,8 @@
   "hero": {
     "headline1": "Build Real",
     "headline2": "Software Products",
-    "headline3": "— Not Just Learn Coding",
-    "subheadline": "Learn Full Stack Development, AI Agents, Automation and modern engineering workflows through real-world projects at CodingSharks.",
+    "headline3": "— Get Hired, Not Just Certified",
+    "subheadline": "Stop watching tutorials. Build products companies actually hire for — with 1-on-1 mentorship from senior engineers at top startups. Master Full Stack, AI Agents & System Design. Get placed in 6 months.",
     "supportingLine": "From coding fundamentals to AI-powered applications and scalable systems.",
     "eyebrow": "LEARN. BUILD. GET PLACED.",
     "communityBlurb": "Students learning in our mastery programs",
@@ -14,11 +14,11 @@
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=80&q=60"
     ],
     "primaryCta": {
-      "label": "Apply for Free Career Session",
+      "label": "Book Free Career Session",
       "href": "/book-demo"
     },
     "secondaryCta": {
-      "label": "Download Course Curriculum",
+      "label": "View Full Curriculum",
       "href": "/curriculum"
     },
     "credibility": [

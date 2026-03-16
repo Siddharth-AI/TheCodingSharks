@@ -1,8 +1,8 @@
-import { AlumniWorkSection } from "@/components/pages/home/alumni-work-section"
-import { CoursesMarqueeSection } from "@/components/pages/home/courses-marquee-section"
-import { HeroSection } from "@/components/pages/home/hero-section"
-import { BookLiveClassSection } from "@/components/pages/home/book-live-class-section"
-import { SupportersSection } from "@/components/pages/home/supporters-section"
+import { HeroSection } from "@/components/pages/home/hero-section";
+import { BookLiveClassSection } from "@/components/pages/home/book-live-class-section";
+import { WorkAtSection } from "@/components/pages/home/work-at-section";
+import { WhyCodingSharksSection } from "@/components/pages/home/why-codingsharks-section";
+import { CoursesSection } from "@/components/pages/home/courses-section";
 
 export default function HomePage() {
   return (
@@ -26,9 +26,9 @@ export default function HomePage() {
       </div>
       <HeroSection />
       <BookLiveClassSection />
-      <CoursesMarqueeSection />
-      <AlumniWorkSection />
-      <SupportersSection />
+      <WorkAtSection />
+      <WhyCodingSharksSection />
+      <CoursesSection />
     </>
-  )
+  );
 }
