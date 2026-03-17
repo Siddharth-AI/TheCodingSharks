@@ -8,6 +8,7 @@ import "./globals.css"
 import { SiteFooter } from "@/components/common/site-footer"
 import { SiteHeader } from "@/components/common/site-header"
 import { AppToaster } from "@/components/common/toaster"
+import { StickyHelpBar } from "@/components/common/sticky-help-bar"
 
 // Body / UI font — Manrope (clean, modern sans-serif)
 const manrope = Manrope({
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main className="min-h-[calc(100dvh-4rem)]">{children}</main>
         <SiteFooter />
         <AppToaster />
+        <StickyHelpBar />
       </body>
     </html>
   )

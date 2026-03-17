@@ -122,6 +122,43 @@
       }
     ]
   },
+  "mentors": [
+    {
+      "name": "Kunal Shah",
+      "role": "Founder, CRED",
+      "company": "CRED",
+      "description": "Angel investor, entrepreneur and founder of fintech company CRED and Freecharge. One of the most well-known product leaders in India, backing the next generation of builders.",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "name": "Vidit Aatrey",
+      "role": "Co-Founder & CEO",
+      "company": "Meesho",
+      "description": "Built Meesho from zero to India's most downloaded shopping app. IIT-Delhi graduate who believes in enabling entrepreneurs from small-town India through technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "name": "Vijay Shekhar Sharma",
+      "role": "Founder & CEO",
+      "company": "Paytm",
+      "description": "Visionary entrepreneur who built India's largest digital payments platform. First-generation entrepreneur from Aligarh who disrupted how India transacts.",
+      "imageUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "name": "Mekin Maheshwari",
+      "role": "Founder",
+      "company": "Udhyam Learning",
+      "description": "Former Chief People Officer at Flipkart. Now building India's largest entrepreneurship platform for young students through Udhyam Learning Foundation.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "name": "Abhiraj Bhal",
+      "role": "Co-Founder & CEO",
+      "company": "Urban Company",
+      "description": "Building India's largest home services marketplace. IIT-IIM graduate passionate about creating quality jobs and dignified livelihoods at scale through tech.",
+      "imageUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80"
+    }
+  ],
   "supporters": {
     "title": "Supporters and Investors",
     "subtitle": "Mentors, builders and founders who support our mission.",
@@ -180,6 +217,358 @@
       "meesho",
       "Paytm",
       "Urban Company"
+    ]
+  },
+  "placementStories": [
+    {
+      "name": "Rahul Gupta",
+      "cohort": "Cohort 9",
+      "city": "Pune",
+      "fromRole": "Marketing Manager",
+      "toRole": "SWE",
+      "company": "Google",
+      "ctc": "₹32L CTC",
+      "ctcLocation": "Google Bangalore",
+      "quote": "₹4L to ₹32L in 6 months. No CS degree. Just the right system.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "name": "Sneha Iyer",
+      "cohort": "Cohort 7",
+      "city": "Chennai",
+      "fromRole": "BPO Executive",
+      "toRole": "Frontend Dev",
+      "company": "Zepto",
+      "ctc": "₹18L CTC",
+      "ctcLocation": "Zepto Mumbai",
+      "quote": "I never thought I'd be writing React code at a unicorn. CodingSharks made it real.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "name": "Arjun Mehta",
+      "cohort": "Cohort 11",
+      "city": "Delhi",
+      "fromRole": "Sales Executive",
+      "toRole": "Backend Engineer",
+      "company": "Razorpay",
+      "ctc": "₹24L CTC",
+      "ctcLocation": "Razorpay Bangalore",
+      "quote": "6 months of focused grind. Now I'm building payment infra used by millions.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "name": "Priya Nair",
+      "cohort": "Cohort 6",
+      "city": "Hyderabad",
+      "fromRole": "Data Entry Operator",
+      "toRole": "Full Stack Dev",
+      "company": "Swiggy",
+      "ctc": "₹20L CTC",
+      "ctcLocation": "Swiggy Bangalore",
+      "quote": "Started from zero. Now shipping features for 10M+ users. This place changes lives.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "name": "Karan Singh",
+      "cohort": "Cohort 10",
+      "city": "Jaipur",
+      "fromRole": "Accountant",
+      "toRole": "SWE",
+      "company": "CRED",
+      "ctc": "₹28L CTC",
+      "ctcLocation": "CRED Bangalore",
+      "quote": "Non-CS background, no problem. Portfolio + skills is what gets you hired.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "name": "Divya Sharma",
+      "cohort": "Cohort 8",
+      "city": "Lucknow",
+      "fromRole": "Teacher",
+      "toRole": "React Developer",
+      "company": "Meesho",
+      "ctc": "₹16L CTC",
+      "ctcLocation": "Meesho Remote",
+      "quote": "I went from teaching kids to building products for 150M users. Unbelievable journey.",
+      "videoId": "dQw4w9WgXcQ",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "howToApply": {
+    "eyebrow": "HOW TO APPLY",
+    "headline1": "Your path to a",
+    "headline2": "dream career",
+    "subline": "Simple 5-step process. Free application. Decision in 48 hours.",
+    "steps": [
+      {
+        "title": "Apply in 15 Minutes",
+        "description": "Fill out a simple form — no resume polish needed. We look for curiosity, commitment, and coachability. Not grades, not credentials.",
+        "tags": ["Free", "15 minutes", "No credit card"]
+      },
+      {
+        "title": "Screening Call with a Shark",
+        "description": "A 45-min call with one of our senior engineers. We work through a small problem together — nothing scary, just how you think.",
+        "tags": ["45 min", "With a Shark engineer"]
+      },
+      {
+        "title": "Offer in 48 Hours",
+        "description": "Choose ISA or upfront payment, pick your cohort date, and lock your seat with a fully refundable ₹5,000 deposit.",
+        "tags": ["48hr decision", "Refundable deposit"]
+      },
+      {
+        "title": "2-Week Pre-Cohort Prep",
+        "description": "Meet your batch, set up your dev environment, complete async prep modules. Arrive on Day 1 with momentum.",
+        "tags": ["Async", "Dev setup", "Meet your squad"]
+      },
+      {
+        "title": "Day 1 — You're a CodingShark",
+        "description": "The next 6 months will be the most transformative of your career. Build real products, get mentored, and get placed.",
+        "tags": ["🦈 Ship something every week"]
+      }
+    ]
+  },
+  "courseShowcase": [
+    {
+      "eyebrow": "FLAGSHIP PROGRAM",
+      "headline": "Full Stack Engineering",
+      "tagline": "From zero to production engineer in 6 months",
+      "duration": "6 Months",
+      "mode": "Live + Async",
+      "badge": "Most Popular",
+      "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80",
+      "accentColor": "#ff6b2c",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "React & Node.js",
+          "description": "Build full-stack apps with modern React, Next.js, Node, and REST APIs"
+        },
+        {
+          "icon": "🛢️",
+          "title": "Databases & Cloud",
+          "description": "PostgreSQL, MongoDB, Redis — deployed on AWS with CI/CD pipelines"
+        },
+        {
+          "icon": "🏗️",
+          "title": "System Design",
+          "description": "Design scalable systems used at companies like Swiggy, Razorpay & Zepto"
+        },
+        {
+          "icon": "🎯",
+          "title": "Placement Support",
+          "description": "Mock interviews, resume reviews, and direct referrals to 1200+ hiring partners"
+        }
+      ],
+      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+    },
+    {
+      "eyebrow": "ADVANCED PROGRAM",
+      "headline": "AI & Automation Engineering",
+      "tagline": "Build intelligent products with LLMs and AI agents",
+      "duration": "4 Months",
+      "mode": "Live + Projects",
+      "badge": "High Demand",
+      "imageUrl": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1600&q=80",
+      "accentColor": "#7c3aed",
+      "features": [
+        {
+          "icon": "🤖",
+          "title": "LLM Integration",
+          "description": "Build production apps with OpenAI, Gemini, Claude and custom fine-tuning"
+        },
+        {
+          "icon": "🕸️",
+          "title": "AI Agents & Workflows",
+          "description": "Automate complex workflows with LangChain, CrewAI, and tool-calling agents"
+        },
+        {
+          "icon": "📊",
+          "title": "RAG & Vector DBs",
+          "description": "Build semantic search engines and retrieval systems with Pinecone & Weaviate"
+        },
+        {
+          "icon": "🚀",
+          "title": "Ship AI Products",
+          "description": "Launch real AI-powered SaaS tools with paying users by end of program"
+        }
+      ],
+      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+    },
+    {
+      "eyebrow": "SPECIALIST TRACK",
+      "headline": "Frontend Mastery",
+      "tagline": "Become the frontend engineer every team wants to hire",
+      "duration": "3 Months",
+      "mode": "Live + Workshops",
+      "badge": "Fast Track",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80",
+      "accentColor": "#0ea5e9",
+      "features": [
+        {
+          "icon": "⚛️",
+          "title": "React Mastery",
+          "description": "Advanced patterns — custom hooks, context, Zustand, React Query and performance"
+        },
+        {
+          "icon": "✨",
+          "title": "UI/UX Engineering",
+          "description": "Pixel-perfect interfaces with Tailwind, Framer Motion, and design systems"
+        },
+        {
+          "icon": "🔒",
+          "title": "TypeScript & Testing",
+          "description": "Type-safe codebases with Jest, RTL, Playwright, and E2E coverage"
+        },
+        {
+          "icon": "📱",
+          "title": "Portfolio of 5 Apps",
+          "description": "Ship 5 production-grade apps that stand out in any technical interview"
+        }
+      ],
+      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Aditya Kumar",
+      "role": "Full Stack Developer",
+      "rating": 5,
+      "text": "CodingSharks completely changed my career trajectory. The mentorship quality and real project work set it apart from every other program I tried.",
+      "initial": "A",
+      "color": "#7c3aed"
+    },
+    {
+      "name": "Mukti Prasad Dash",
+      "role": "Full Stack Developer",
+      "rating": 4,
+      "text": "An excellent institute for learning coding. The teachers explain concepts in a very practical way and the projects are industry-grade.",
+      "initial": "M",
+      "color": "#0891b2"
+    },
+    {
+      "name": "Fahad Husain",
+      "role": "Systems Engineer",
+      "rating": 5,
+      "text": "Best coding coaching class in Bhopal. The teachers are super amazing, professional and friendly. The curriculum is very well structured.",
+      "initial": "F",
+      "color": "#16a34a"
+    },
+    {
+      "name": "Akash Warade",
+      "role": "MERN Stack Student",
+      "rating": 4,
+      "text": "I am a student of MERN-15 batch and I am giving this review after spending 3 months here currently learning full stack development.",
+      "initial": "A",
+      "color": "#dc2626"
+    },
+    {
+      "name": "Priyanka Sharma",
+      "role": "React Developer @ Groww",
+      "rating": 5,
+      "text": "From zero coding knowledge to landing a job at Groww in 7 months. The structured approach and weekly mentor reviews made all the difference.",
+      "initial": "P",
+      "color": "#db2777"
+    },
+    {
+      "name": "Nikhil Joshi",
+      "role": "SDE @ PhonePe",
+      "rating": 5,
+      "text": "The system design and DSA curriculum here is top notch. I cleared 4 rounds at PhonePe and the mock interview sessions were a game changer.",
+      "initial": "N",
+      "color": "#d97706"
+    },
+    {
+      "name": "Ritika Verma",
+      "role": "Frontend Engineer",
+      "rating": 4,
+      "text": "I loved how every project felt real. We built actual products with proper code reviews. That experience directly helped in interviews.",
+      "initial": "R",
+      "color": "#7c3aed"
+    },
+    {
+      "name": "Saurabh Mishra",
+      "role": "Backend Developer @ Meesho",
+      "rating": 5,
+      "text": "Switched from a non-tech job at 27. The faculty here doesn't judge your background — they focus entirely on where you want to go.",
+      "initial": "S",
+      "color": "#0891b2"
+    }
+  ],
+  "comparison": {
+    "eyebrow": "COMPARISON",
+    "headline1": "What Sets CodingSharks",
+    "headline2": "Apart From Others",
+    "us": {
+      "name": "CodingSharks",
+      "points": [
+        "1-on-1 mentorship with senior engineers",
+        "Real product projects — not toy exercises",
+        "Placement support with 1200+ hiring partners",
+        "Live cohort with weekly code reviews",
+        "ISA option — pay only after you get placed"
+      ]
+    },
+    "them": {
+      "name": "Others",
+      "points": [
+        "Pre-recorded lectures with no mentor access",
+        "Theory-centric, outdated curriculum",
+        "No structured placement pipeline",
+        "Self-paced with zero accountability",
+        "High upfront fees regardless of outcome"
+      ]
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQS",
+    "headline": "Frequently Asked Questions",
+    "subline": "From Our Students",
+    "items": [
+      {
+        "question": "Is CodingSharks suitable for complete beginners?",
+        "answer": "Yes — many of our top placements had zero prior coding experience. Our pre-cohort prep module gets you up to speed before Day 1, and your mentor guides you through every step."
+      },
+      {
+        "question": "How does the ISA (Income Share Agreement) work?",
+        "answer": "You pay nothing upfront. Once you land a job with a salary above ₹5L/year, you share a fixed percentage for 24 months — capped at a maximum amount. If you don't get placed, you pay nothing."
+      },
+      {
+        "question": "What programming languages and technologies are taught?",
+        "answer": "Full Stack track covers JavaScript, TypeScript, React, Next.js, Node.js, PostgreSQL, MongoDB, Redis, AWS, and Docker. AI track adds Python, LangChain, OpenAI APIs, and vector databases."
+      },
+      {
+        "question": "Are the classes live or pre-recorded?",
+        "answer": "All core sessions are live with your cohort. Every session is recorded and available within 24 hours so you never fall behind. Workshops, code reviews, and mentor sessions are always live."
+      },
+      {
+        "question": "Do students build real projects?",
+        "answer": "Every week you ship something. By the end of the program you'll have 3–5 production-grade projects on GitHub with real users — not tutorial clones — which is exactly what interviewers want to see."
+      },
+      {
+        "question": "How long does it take to get placed after completing the program?",
+        "answer": "Most students receive their first offer within 4–8 weeks of completing the program. Our placement team actively connects you with hiring partners and prepares you through mock interviews and referrals."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline1": "Transform Your Career Into",
+    "headline2": "Something Extraordinary",
+    "subline": "Join 15,000+ developers who chose to build, not just watch tutorials.",
+    "cta": { "label": "Apply Now — It's Free", "href": "/apply" },
+    "images": [
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=70",
+      "https://images.unsplash.com/photo-1600880292089-90e7d22eebae?auto=format&fit=crop&w=400&q=70"
     ]
   },
   "coursesMarquee": {

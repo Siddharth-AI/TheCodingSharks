@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import {
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   Download,
   Code2,
   Brain,
@@ -142,11 +144,92 @@ const MetaIconMap: Record<MetaIcon, typeof Briefcase> = {
   check: CheckSquare,
 };
 
+type Course = (typeof COURSES)[number];
+
+function CourseCard({
+  course,
+  className = "",
+}: {
+  course: Course;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`border border-white/8 bg-[#111] overflow-hidden flex flex-col hover:border-primary/30 transition-colors ${className}`}>
+      {/* Gradient image area */}
+      <div
+        className={`h-44 sm:h-48 bg-linear-to-br ${course.gradient} flex items-center justify-center`}>
+        <course.Icon className="h-14 w-14 text-white/90" strokeWidth={1.2} />
+      </div>
+
+      {/* Card content */}
+      <div className="flex flex-col flex-1 p-5 gap-3 border-t border-primary/20">
+        {/* Badge */}
+        <p className="text-xs font-bold tracking-[0.15em] text-primary/60 uppercase flex items-center gap-1.5">
+          <span className="h-3 w-3 border border-primary/30 inline-flex items-center justify-center shrink-0">
+            <span className="h-1 w-1 bg-primary/50" />
+          </span>
+          {course.badge}
+        </p>
+
+        {/* Title */}
+        <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
+          {course.title}
+        </h3>
+
+        {/* Meta */}
+        <ul className="space-y-2 flex-1">
+          {course.meta.map((m, j) => {
+            const IconComp = MetaIconMap[m.icon];
+            return (
+              <li
+                key={j}
+                className="text-sm text-white/50 flex items-center gap-2.5">
+                <IconComp
+                  className="h-3.5 w-3.5 text-white/30 shrink-0"
+                  strokeWidth={1.5}
+                />
+                {m.text}
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* NEW badge */}
+        {course.isNew && (
+          <div className="w-fit bg-primary/15 border border-primary/25 px-2.5 py-1">
+            <span className="text-xs font-bold text-primary uppercase tracking-wider">
+              New
+            </span>
+          </div>
+        )}
+
+        {/* Actions */}
+        <div className="flex flex-col gap-2 mt-1">
+          <a
+            href={course.href}
+            className="h-11 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 transition-all flex items-center justify-center tracking-[0.15em] uppercase">
+            Go To Program
+          </a>
+          <a
+            href={`${course.href}/brochure`}
+            className="h-11 bg-primary hover:bg-primary/85 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 tracking-[0.15em] uppercase">
+            <Download className="h-4 w-4" />
+            Brochure
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function CoursesSection() {
   const [activeTab, setActiveTab] = useState<"online" | "campus">("online");
+  const [showAll, setShowAll] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const filtered = COURSES.filter((c) => c.type === activeTab);
+  const visibleMobile = showAll ? filtered : filtered.slice(0, 2);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -154,6 +237,12 @@ export function CoursesSection() {
       left: dir === "left" ? -660 : 660,
       behavior: "smooth",
     });
+  };
+
+  // reset showAll when tab changes
+  const handleTab = (tab: "online" | "campus") => {
+    setActiveTab(tab);
+    setShowAll(false);
   };
 
   return (
@@ -176,7 +265,7 @@ export function CoursesSection() {
             {(["online", "campus"] as const).map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => handleTab(tab)}
                 className={`h-9 px-5 rounded-full text-sm font-medium transition-all ${
                   activeTab === tab
                     ? "bg-primary text-white"
@@ -187,12 +276,38 @@ export function CoursesSection() {
             ))}
           </div>
         </div>
+
+        {/* ── MOBILE grid (hidden on md+) ── */}
+        <div className="md:hidden">
+          <div className="grid grid-cols-1 gap-3">
+            {visibleMobile.map((course, i) => (
+              <CourseCard key={i} course={course} className="w-full" />
+            ))}
+          </div>
+
+          {filtered.length > 2 && (
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setShowAll((p) => !p)}
+                className="flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white/60 hover:border-primary hover:text-primary transition-all">
+                {showAll ? (
+                  <>
+                    <ChevronUp className="size-4" /> View Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="size-4" /> View More
+                  </>
+                )}
+              </button>
+            </div>
+          )}
+        </div>
       </Container>
 
-      {/* ── Full-width Carousel ── */}
-      <div className="relative mt-2">
-
-        {/* Left arrow — sibling of scroll track so top-0/bottom-0 is relative to this div, not the overflow container */}
+      {/* ── DESKTOP carousel (hidden on mobile) ── */}
+      <div className="relative mt-2 hidden md:block">
+        {/* Left arrow */}
         <button
           onClick={() => scroll("left")}
           aria-label="Previous"
@@ -202,7 +317,7 @@ export function CoursesSection() {
           </span>
         </button>
 
-        {/* Right arrow — same pattern */}
+        {/* Right arrow */}
         <button
           onClick={() => scroll("right")}
           aria-label="Next"
@@ -216,78 +331,12 @@ export function CoursesSection() {
         <div
           ref={scrollRef}
           className="no-scrollbar flex gap-2 overflow-x-auto px-20 sm:px-32">
-
           {filtered.map((course, i) => (
-            <div
+            <CourseCard
               key={i}
-              className="flex-none w-72 sm:w-80 border border-white/8 bg-[#111] overflow-hidden flex flex-col hover:border-primary/30 transition-colors">
-              {/* Gradient image area — fixed shorter height */}
-              <div
-                className={`h-44 sm:h-48 bg-linear-to-br ${course.gradient} flex items-center justify-center`}>
-                <course.Icon
-                  className="h-14 w-14 text-white/90"
-                  strokeWidth={1.2}
-                />
-              </div>
-
-              {/* Card content */}
-              <div className="flex flex-col flex-1 p-5 gap-3 border-t border-primary/20">
-                {/* Badge */}
-                <p className="text-xs font-bold tracking-[0.15em] text-primary/60 uppercase flex items-center gap-1.5">
-                  <span className="h-3 w-3 border border-primary/30 inline-flex items-center justify-center shrink-0">
-                    <span className="h-1 w-1 bg-primary/50" />
-                  </span>
-                  {course.badge}
-                </p>
-
-                {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
-                  {course.title}
-                </h3>
-
-                {/* Meta with icons */}
-                <ul className="space-y-2 flex-1">
-                  {course.meta.map((m, j) => {
-                    const IconComp = MetaIconMap[m.icon];
-                    return (
-                      <li
-                        key={j}
-                        className="text-sm text-white/50 flex items-center gap-2.5">
-                        <IconComp
-                          className="h-3.5 w-3.5 text-white/30 shrink-0"
-                          strokeWidth={1.5}
-                        />
-                        {m.text}
-                      </li>
-                    );
-                  })}
-                </ul>
-
-                {/* NEW badge only */}
-                {course.isNew && (
-                  <div className="w-fit bg-primary/15 border border-primary/25 px-2.5 py-1">
-                    <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                      New
-                    </span>
-                  </div>
-                )}
-
-                {/* Action buttons — sharp */}
-                <div className="flex flex-col gap-2 mt-1">
-                  <a
-                    href={course.href}
-                    className="h-11 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 transition-all flex items-center justify-center tracking-[0.15em] uppercase">
-                    Go To Program
-                  </a>
-                  <a
-                    href={`${course.href}/brochure`}
-                    className="h-11 bg-primary hover:bg-primary/85 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 tracking-[0.15em] uppercase">
-                    <Download className="h-4 w-4" />
-                    Brochure
-                  </a>
-                </div>
-              </div>
-            </div>
+              course={course}
+              className="flex-none w-72 sm:w-80"
+            />
           ))}
         </div>
       </div>
