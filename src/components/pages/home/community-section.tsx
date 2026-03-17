@@ -110,8 +110,13 @@ export function CommunitySection() {
           – animationDuration overrides the global 32s default
           – animationPlayState pauses cleanly without breaking the translate position
         */}
+        {/* faster on mobile via injected media query */}
+        <style>{`
+          @media (max-width: 640px) { .community-strip { animation-duration: 9s !important; } }
+          @media (min-width: 641px) and (max-width: 1024px) { .community-strip { animation-duration: 14s !important; } }
+        `}</style>
         <div
-          className="flex h-full gap-3 animate-marquee-left"
+          className="community-strip flex h-full gap-3 animate-marquee-left"
           style={{
             animationDuration: "22s",
             animationPlayState: paused ? "paused" : "running",

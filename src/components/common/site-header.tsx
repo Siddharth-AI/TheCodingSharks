@@ -13,6 +13,7 @@ import codingLogo from "@/assets/images/Coding.png";
 import { ButtonLink } from "@/components/common/button-link";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import { openLeadModal } from "@/components/common/lead-modal";
 import {
   Sheet,
   SheetContent,
@@ -69,11 +70,11 @@ export function SiteHeader() {
 
           {/* Desktop CTA Button */}
           <div className="relative z-10 hidden items-center md:flex shrink-0 ml-2 lg:ml-4">
-            <ButtonLink
-              href={nav.header.primaryCta.href}
+            <button
+              onClick={() => openLeadModal("navbar")}
               className="h-8 sm:h-9 md:h-10 rounded-full bg-primary/90 px-4 lg:px-6 text-xs lg:text-sm font-semibold text-white transition-all hover:bg-primary">
-              {nav.header.primaryCta.label}
-            </ButtonLink>
+              Free Demo Session
+            </button>
           </div>
 
           {/* Mobile Hamburger Menu */}
@@ -135,11 +136,11 @@ export function SiteHeader() {
                 </div>
 
                 <div className="px-0">
-                  <ButtonLink
-                    href={nav.header.primaryCta.href}
-                    className="h-11 w-full rounded-full justify-center bg-primary px-6 text-sm font-bold text-white shadow-[0_0_20px_-5px_#ff6b2c] hover:bg-[#ff7b42] transition-colors">
-                    {nav.header.primaryCta.label}
-                  </ButtonLink>
+                  <button
+                    onClick={() => openLeadModal("navbar-mobile")}
+                    className="h-11 w-full rounded-full justify-center bg-primary px-6 text-sm font-bold text-white shadow-[0_0_20px_-5px_#ff6b2c] hover:bg-[#ff7b42] transition-colors flex items-center">
+                    Free Demo Session
+                  </button>
                 </div>
               </div>
             </SheetContent>

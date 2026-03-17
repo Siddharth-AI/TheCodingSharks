@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/layout/container";
 import home from "@/data/home.json";
+import { ApplyNowButton } from "@/components/common/apply-now-button";
 
 /* ─── Pac-man SVG marker — inline so we can recolor it ─── */
 function StepMarker({ number, visible, delay }: { number: number; visible: boolean; delay: number }) {
@@ -191,11 +192,11 @@ export function HowToApplySection() {
             transform: visible ? "translateY(0)" : "translateY(16px)",
             transition: "opacity 0.5s ease 1.5s, transform 0.5s ease 1.5s",
           }}>
-          <a
-            href="/book-demo"
+          <ApplyNowButton
+            source="how-to-apply"
             className="inline-flex items-center gap-2 bg-primary px-8 py-4 text-sm font-bold text-white uppercase tracking-widest hover:bg-primary/85 transition-colors">
             Apply Now — Free
-          </a>
+          </ApplyNowButton>
         </div>
       </Container>
     </section>

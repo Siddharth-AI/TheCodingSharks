@@ -1,6 +1,7 @@
 "use client";
 
 import home from "@/data/home.json";
+import { ApplyNowButton } from "@/components/common/apply-now-button";
 
 /* Fixed positions for the scattered floating images */
 const POSITIONS = [
@@ -18,31 +19,33 @@ export function FinalCtaSection() {
   const { finalCta } = home;
 
   return (
-    <section className="relative bg-[#0a0a0a] overflow-hidden border-t border-white/5" style={{ minHeight: "600px" }}>
+    <section className="relative bg-[#0a0a0a] overflow-hidden border-t border-white/5" style={{ minHeight: "480px" }}>
 
-      {/* Scattered background images */}
-      {finalCta.images.map((src, i) => {
-        const pos = POSITIONS[i % POSITIONS.length];
-        return (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={i}
-            src={src}
-            alt=""
-            draggable={false}
-            className="absolute select-none pointer-events-none rounded-xl object-cover"
-            style={{
-              top: pos.top,
-              left: pos.left,
-              width: "160px",
-              height: "200px",
-              transform: `rotate(${pos.rotate}) scale(${pos.scale})`,
-              filter: `grayscale(30%) blur(${pos.blur}px)`,
-              opacity: 0.35,
-            }}
-          />
-        );
-      })}
+      {/* Scattered background images — only on sm+ screens */}
+      <div className="hidden sm:block">
+        {finalCta.images.map((src, i) => {
+          const pos = POSITIONS[i % POSITIONS.length];
+          return (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={i}
+              src={src}
+              alt=""
+              draggable={false}
+              className="absolute select-none pointer-events-none rounded-xl object-cover"
+              style={{
+                top: pos.top,
+                left: pos.left,
+                width: "160px",
+                height: "200px",
+                transform: `rotate(${pos.rotate}) scale(${pos.scale})`,
+                filter: `grayscale(30%) blur(${pos.blur}px)`,
+                opacity: 0.35,
+              }}
+            />
+          );
+        })}
+      </div>
 
       {/* Dark radial overlay to darken edges and let center text pop */}
       <div
@@ -54,23 +57,23 @@ export function FinalCtaSection() {
       />
 
       {/* Center content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-28 sm:py-36">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-heading tracking-tight leading-tight max-w-3xl">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 sm:px-6 py-20 sm:py-28 md:py-36">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white font-heading tracking-tight leading-tight max-w-3xl">
           {finalCta.headline1}{" "}
           <span className="text-primary italic">{finalCta.headline2}</span>
         </h2>
         <p className="mt-5 text-sm sm:text-base text-white/50 max-w-md">
           {finalCta.subline}
         </p>
-        <a
-          href={finalCta.cta.href}
+        <ApplyNowButton
+          source="final-cta"
           className="mt-10 inline-flex items-center gap-2 bg-primary px-10 py-4 text-sm font-bold text-white uppercase tracking-widest hover:bg-primary/85 transition-colors"
         >
           {finalCta.cta.label}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </a>
+        </ApplyNowButton>
       </div>
     </section>
   );

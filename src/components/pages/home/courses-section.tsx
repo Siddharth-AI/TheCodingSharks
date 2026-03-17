@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useRef } from "react";
+import { BrochureButton } from "@/components/common/apply-now-button";
 import {
   ChevronLeft,
   ChevronRight,
@@ -206,17 +208,17 @@ function CourseCard({
 
         {/* Actions */}
         <div className="flex flex-col gap-2 mt-1">
-          <a
+          <Link
             href={course.href}
             className="h-11 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 transition-all flex items-center justify-center tracking-[0.15em] uppercase">
             Go To Program
-          </a>
-          <a
-            href={`${course.href}/brochure`}
+          </Link>
+          <BrochureButton
+            source={`brochure-${course.href}`}
             className="h-11 bg-primary hover:bg-primary/85 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 tracking-[0.15em] uppercase">
             <Download className="h-4 w-4" />
             Brochure
-          </a>
+          </BrochureButton>
         </div>
       </div>
     </div>
@@ -261,17 +263,18 @@ export function CoursesSection() {
           </p>
 
           {/* Tabs */}
-          <div className="flex items-center gap-1 mt-8 p-1 rounded-full border border-white/10 bg-white/5">
+          <div className="flex items-center gap-1 mt-8 p-1 rounded-full border border-white/10 bg-white/5 w-full sm:w-auto">
             {(["online", "campus"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleTab(tab)}
-                className={`h-9 px-5 rounded-full text-sm font-medium transition-all ${
+                className={`flex-1 sm:flex-none h-9 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                   activeTab === tab
                     ? "bg-primary text-white"
                     : "text-white/50 hover:text-white/80"
                 }`}>
-                {tab === "online" ? "Online Programs" : "On-Campus Programs"}
+                <span className="sm:hidden">{tab === "online" ? "Online" : "On-Campus"}</span>
+                <span className="hidden sm:inline">{tab === "online" ? "Online Programs" : "On-Campus Programs"}</span>
               </button>
             ))}
           </div>

@@ -9,6 +9,7 @@ import { SiteFooter } from "@/components/common/site-footer"
 import { SiteHeader } from "@/components/common/site-header"
 import { AppToaster } from "@/components/common/toaster"
 import { StickyHelpBar } from "@/components/common/sticky-help-bar"
+import { LeadModal } from "@/components/common/lead-modal"
 
 // Body / UI font — Manrope (clean, modern sans-serif)
 const manrope = Manrope({
@@ -50,6 +51,7 @@ export default function RootLayout({
         <SiteFooter />
         <AppToaster />
         <StickyHelpBar />
+        <LeadModal />
       </body>
     </html>
   )

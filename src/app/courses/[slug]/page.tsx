@@ -1,23 +1,24 @@
-import { Container } from "@/components/layout/container"
-import { Section } from "@/components/layout/section"
+import { CourseDetailPage } from "@/components/pages/courses/course-detail-page";
+import courses from "@/data/courses.json";
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  return courses.map((c) => ({ slug: c.slug }));
 }
 
-export default async function CourseDetailPage({ params }: Props) {
-  const { slug } = await params
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const course = courses.find((c) => c.slug === slug);
+  return {
+    title: course?.title ?? "Program",
+    description: course?.tagline ?? "",
+  };
+}
 
-  return (
-    <Section>
-      <Container>
-        <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-          {slug.replace(/-/g, " ")}
-        </h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Course detail page coming next.
-        </p>
-      </Container>
-    </Section>
-  )
+export default async function CourseDetailRoute({ params }: Props) {
+  const { slug } = await params;
+  return <CourseDetailPage slug={slug} />;
 }

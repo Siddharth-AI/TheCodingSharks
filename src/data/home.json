@@ -20,32 +20,7 @@
     "secondaryCta": {
       "label": "View Full Curriculum",
       "href": "/curriculum"
-    },
-    "credibility": [
-      {
-        "label": "Built by alumni from:",
-        "items": [
-          "IIT",
-          "NIT",
-          "IIIT"
-        ]
-      },
-      {
-        "label": "Supported by founders from:",
-        "items": [
-          "Paytm",
-          "CRED",
-          "Meesho",
-          "Swiggy"
-        ]
-      },
-      {
-        "label": "Backed by:",
-        "items": [
-          "Elevation"
-        ]
-      }
-    ]
+    }
   },
   "liveClass": {
     "title": "Become the Top 1% in Tech",
@@ -159,66 +134,6 @@
       "imageUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80"
     }
   ],
-  "supporters": {
-    "title": "Supporters and Investors",
-    "subtitle": "Mentors, builders and founders who support our mission.",
-    "items": [
-      {
-        "name": "Kunal Shah",
-        "roles": [
-          "Founder",
-          "Angel Investor"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=480&h=480&q=80"
-      },
-      {
-        "name": "Vidit Aatrey",
-        "roles": [
-          "Founder",
-          "Operator"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&h=480&q=80"
-      },
-      {
-        "name": "Vijay Shekhar",
-        "roles": [
-          "Founder",
-          "Investor"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=480&h=480&q=80"
-      },
-      {
-        "name": "Mekin M",
-        "roles": [
-          "Founder",
-          "Advisor"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=480&h=480&q=80"
-      },
-      {
-        "name": "Abhiraj Bhal",
-        "roles": [
-          "Founder",
-          "Mentor"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=480&h=480&q=80"
-      },
-      {
-        "name": "Varun Khaitan",
-        "roles": [
-          "Founder",
-          "Advisor"
-        ],
-        "avatarUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=480&h=480&q=80"
-      }
-    ],
-    "logoStrip": [
-      "CRED",
-      "meesho",
-      "Paytm",
-      "Urban Company"
-    ]
-  },
   "placementStories": [
     {
       "name": "Rahul Gupta",
@@ -308,27 +223,43 @@
       {
         "title": "Apply in 15 Minutes",
         "description": "Fill out a simple form — no resume polish needed. We look for curiosity, commitment, and coachability. Not grades, not credentials.",
-        "tags": ["Free", "15 minutes", "No credit card"]
+        "tags": [
+          "Free",
+          "15 minutes",
+          "No credit card"
+        ]
       },
       {
         "title": "Screening Call with a Shark",
         "description": "A 45-min call with one of our senior engineers. We work through a small problem together — nothing scary, just how you think.",
-        "tags": ["45 min", "With a Shark engineer"]
+        "tags": [
+          "45 min",
+          "With a Shark engineer"
+        ]
       },
       {
         "title": "Offer in 48 Hours",
         "description": "Choose ISA or upfront payment, pick your cohort date, and lock your seat with a fully refundable ₹5,000 deposit.",
-        "tags": ["48hr decision", "Refundable deposit"]
+        "tags": [
+          "48hr decision",
+          "Refundable deposit"
+        ]
       },
       {
         "title": "2-Week Pre-Cohort Prep",
         "description": "Meet your batch, set up your dev environment, complete async prep modules. Arrive on Day 1 with momentum.",
-        "tags": ["Async", "Dev setup", "Meet your squad"]
+        "tags": [
+          "Async",
+          "Dev setup",
+          "Meet your squad"
+        ]
       },
       {
         "title": "Day 1 — You're a CodingShark",
         "description": "The next 6 months will be the most transformative of your career. Build real products, get mentored, and get placed.",
-        "tags": ["🦈 Ship something every week"]
+        "tags": [
+          "🦈 Ship something every week"
+        ]
       }
     ]
   },
@@ -364,7 +295,10 @@
           "description": "Mock interviews, resume reviews, and direct referrals to 1200+ hiring partners"
         }
       ],
-      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+      "cta": {
+        "label": "Apply Now — Free",
+        "href": "/apply"
+      }
     },
     {
       "eyebrow": "ADVANCED PROGRAM",
@@ -397,7 +331,10 @@
           "description": "Launch real AI-powered SaaS tools with paying users by end of program"
         }
       ],
-      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+      "cta": {
+        "label": "Apply Now — Free",
+        "href": "/apply"
+      }
     },
     {
       "eyebrow": "SPECIALIST TRACK",
@@ -430,7 +367,10 @@
           "description": "Ship 5 production-grade apps that stand out in any technical interview"
         }
       ],
-      "cta": { "label": "Apply Now — Free", "href": "/apply" }
+      "cta": {
+        "label": "Apply Now — Free",
+        "href": "/apply"
+      }
     }
   ],
   "reviews": [
@@ -559,7 +499,10 @@
     "headline1": "Transform Your Career Into",
     "headline2": "Something Extraordinary",
     "subline": "Join 15,000+ developers who chose to build, not just watch tutorials.",
-    "cta": { "label": "Apply Now — It's Free", "href": "/apply" },
+    "cta": {
+      "label": "Apply Now — It's Free",
+      "href": "/apply"
+    },
     "images": [
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=70",
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=70",
@@ -569,22 +512,6 @@
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=70",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=70",
       "https://images.unsplash.com/photo-1600880292089-90e7d22eebae?auto=format&fit=crop&w=400&q=70"
-    ]
-  },
-  "coursesMarquee": {
-    "items": [
-      "Full Stack Web Development",
-      "Frontend Engineering (React/Next.js)",
-      "Backend Engineering (Node.js)",
-      "Data Structures & Algorithms",
-      "System Design",
-      "Mobile App Development",
-      "AI / ML Foundations",
-      "AI Agents & Automation",
-      "DevOps & CI/CD",
-      "Cloud (AWS/GCP)",
-      "Databases & SQL",
-      "Interview Prep & Mock Rounds"
     ]
   }
 }

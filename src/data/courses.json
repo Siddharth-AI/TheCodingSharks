@@ -1,0 +1,501 @@
+[
+  {
+    "slug": "full-stack",
+    "badge": "MOST POPULAR",
+    "title": "Full Stack Web Development",
+    "tagline": "Build, deploy and ship full-stack products from scratch",
+    "gradient": "from-violet-500 to-purple-800",
+    "accentColor": "#7c3aed",
+    "type": "online",
+    "isNew": false,
+    "duration": "6 Months",
+    "mode": "Live + Async",
+    "level": "Beginner to Advanced",
+    "students": "3,200+",
+    "projectCount": "10+",
+    "placementRate": "94%",
+    "price": "₹1,20,000",
+    "originalPrice": "₹1,80,000",
+    "description": "The most complete full-stack program in India — from HTML to deploying scalable microservices on AWS. You will build 10+ real products, get weekly code reviews from senior engineers, and get placed at top startups.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
+      { "icon": "clock", "text": "Duration: 6 months" },
+      { "icon": "check", "text": "10+ real-world products" }
+    ],
+    "whatYouLearn": [
+      "Build and deploy full-stack apps with React, Next.js, Node.js and PostgreSQL",
+      "Design RESTful APIs and GraphQL endpoints used in production",
+      "Implement authentication, payments, real-time features and file uploads",
+      "Write clean, tested, type-safe code with TypeScript and Jest",
+      "Deploy on AWS with Docker, CI/CD pipelines and monitoring",
+      "Crack technical interviews with system design + DSA preparation"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — Web Foundations",
+        "topics": ["HTML5 & Semantic Markup", "CSS3, Flexbox & Grid", "JavaScript ES6+", "Git & GitHub workflow", "VS Code & Dev Tools"]
+      },
+      {
+        "module": "Module 2 — Frontend with React",
+        "topics": ["React fundamentals & hooks", "State management with Zustand", "React Query & data fetching", "Next.js App Router", "Tailwind CSS & component libraries"]
+      },
+      {
+        "module": "Module 3 — Backend with Node.js",
+        "topics": ["Node.js & Express fundamentals", "REST API design patterns", "Authentication with JWT & OAuth", "File uploads & email services", "WebSockets & real-time features"]
+      },
+      {
+        "module": "Module 4 — Databases & Cloud",
+        "topics": ["PostgreSQL & SQL mastery", "MongoDB & NoSQL patterns", "Redis caching strategies", "AWS EC2, S3, RDS", "Docker & containerisation"]
+      },
+      {
+        "module": "Module 5 — System Design & Placement",
+        "topics": ["High-level system design", "Database schema design", "Caching, queues & CDN", "Mock interviews & DSA sprints", "Resume & portfolio review"]
+      }
+    ],
+    "projects": [
+      { "name": "E-commerce Platform", "desc": "Full-stack store with payments, auth and admin dashboard" },
+      { "name": "Real-time Chat App", "desc": "WebSocket-powered chat with rooms and notifications" },
+      { "name": "SaaS Dashboard", "desc": "Multi-tenant app with role-based access and analytics" },
+      { "name": "Job Board", "desc": "Full-featured job listing platform with search and filters" }
+    ],
+    "whoIsItFor": [
+      { "title": "Career Switchers", "desc": "Non-tech professionals who want to move into software engineering" },
+      { "title": "Fresh Graduates", "desc": "CS or non-CS graduates who want strong placement-ready skills" },
+      { "title": "Self-taught Coders", "desc": "Developers with some basics who want structured depth" }
+    ],
+    "tools": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Redis", "AWS", "Docker", "Tailwind CSS"]
+  },
+  {
+    "slug": "ai-agents",
+    "badge": "IN HIGH DEMAND",
+    "title": "AI Agents & Automation",
+    "tagline": "Build intelligent products with LLMs, agents and automation workflows",
+    "gradient": "from-rose-500 to-pink-700",
+    "accentColor": "#e11d48",
+    "type": "online",
+    "isNew": true,
+    "duration": "4 Months",
+    "mode": "Live + Projects",
+    "level": "Intermediate",
+    "students": "980+",
+    "projectCount": "5+",
+    "placementRate": "91%",
+    "price": "₹90,000",
+    "originalPrice": "₹1,40,000",
+    "description": "Master LLMs, AI agents and automation to build products that 99% of developers can't. This program covers everything from OpenAI APIs to deploying production-grade AI tools with real users.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
+      { "icon": "clock", "text": "Duration: 4 months" },
+      { "icon": "check", "text": "Build 5+ AI agents from scratch" }
+    ],
+    "whatYouLearn": [
+      "Integrate LLMs like GPT-4, Claude and Gemini into production apps",
+      "Build autonomous AI agents with tool-calling and memory",
+      "Create RAG pipelines with vector databases for semantic search",
+      "Automate complex workflows with LangChain and CrewAI",
+      "Ship AI-powered SaaS with subscriptions and user management",
+      "Deploy and monitor AI systems with cost and latency optimisation"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — Python & AI Foundations",
+        "topics": ["Python for AI developers", "OpenAI & Anthropic APIs", "Prompt engineering patterns", "Token management & cost optimisation", "Streaming & async AI calls"]
+      },
+      {
+        "module": "Module 2 — LangChain & Agents",
+        "topics": ["LangChain chains and runnables", "Tool-calling and function execution", "Agent memory and state management", "CrewAI multi-agent systems", "ReAct and plan-execute patterns"]
+      },
+      {
+        "module": "Module 3 — RAG & Vector DBs",
+        "topics": ["Embeddings and similarity search", "Pinecone and Weaviate setup", "Document ingestion pipelines", "Hybrid search strategies", "RAG evaluation and quality"]
+      },
+      {
+        "module": "Module 4 — Shipping AI Products",
+        "topics": ["Next.js + AI SDK integration", "Subscription and billing with Stripe", "AI product deployment on Vercel/AWS", "Monitoring with LangSmith", "Building waitlists and user onboarding"]
+      }
+    ],
+    "projects": [
+      { "name": "AI Coding Assistant", "desc": "GitHub Copilot-like tool with context-aware suggestions" },
+      { "name": "Document Q&A Bot", "desc": "RAG-powered chatbot that answers from uploaded PDFs" },
+      { "name": "Autonomous Research Agent", "desc": "Agent that searches, reads and summarises web content" },
+      { "name": "AI Content SaaS", "desc": "Subscription product that generates marketing copy" }
+    ],
+    "whoIsItFor": [
+      { "title": "Software Developers", "desc": "Engineers who want to add high-demand AI skills to their stack" },
+      { "title": "Product Builders", "desc": "Founders and PMs who want to ship AI-powered features" },
+      { "title": "Career Upgraders", "desc": "Professionals targeting AI Engineer and ML Ops roles" }
+    ],
+    "tools": ["Python", "OpenAI API", "LangChain", "CrewAI", "Pinecone", "Next.js", "FastAPI", "Vercel", "Stripe", "LangSmith"]
+  },
+  {
+    "slug": "frontend",
+    "badge": "NSDC CERTIFIED",
+    "title": "Frontend Engineering — React & Next.js",
+    "tagline": "Become the frontend engineer every product team wants to hire",
+    "gradient": "from-fuchsia-500 to-pink-700",
+    "accentColor": "#a21caf",
+    "type": "online",
+    "isNew": false,
+    "duration": "4 Months",
+    "mode": "Live + Workshops",
+    "level": "Beginner to Intermediate",
+    "students": "2,100+",
+    "projectCount": "5+",
+    "placementRate": "92%",
+    "price": "₹75,000",
+    "originalPrice": "₹1,20,000",
+    "description": "Go deep on React, Next.js, TypeScript, animations and design systems. Ship 5 pixel-perfect production apps that make interviewers stop and take notice.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
+      { "icon": "clock", "text": "Duration: 4 months" },
+      { "icon": "check", "text": "Real-world UI products" }
+    ],
+    "whatYouLearn": [
+      "Master React from fundamentals to advanced patterns like compound components",
+      "Build full applications with Next.js App Router, RSC and server actions",
+      "Write type-safe code with TypeScript and handle complex form logic",
+      "Create stunning animations with Framer Motion and CSS",
+      "Test your components with Jest, React Testing Library and Playwright",
+      "Build and consume design systems with Storybook and Radix UI"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — JavaScript Mastery",
+        "topics": ["ES6+ deep dive", "Async/await & Promises", "DOM manipulation", "Functional programming patterns", "TypeScript fundamentals"]
+      },
+      {
+        "module": "Module 2 — React In-Depth",
+        "topics": ["Hooks deep dive", "Custom hooks & composition", "Context API & Zustand", "React Query & SWR", "Performance & memoisation"]
+      },
+      {
+        "module": "Module 3 — Next.js & Full App",
+        "topics": ["App Router & layouts", "Server components & actions", "API routes & middleware", "SEO & metadata", "Authentication with NextAuth"]
+      },
+      {
+        "module": "Module 4 — UI Engineering",
+        "topics": ["Tailwind CSS mastery", "Framer Motion animations", "Design system with Radix UI", "Accessibility (a11y)", "Storybook documentation"]
+      }
+    ],
+    "projects": [
+      { "name": "SaaS Landing Page", "desc": "Animated marketing site with Framer Motion" },
+      { "name": "Dashboard App", "desc": "Data visualisation dashboard with charts and filters" },
+      { "name": "E-commerce Storefront", "desc": "Product listing, cart and checkout UI" },
+      { "name": "Design System", "desc": "Component library documented in Storybook" }
+    ],
+    "whoIsItFor": [
+      { "title": "Web Beginners", "desc": "People who know basic HTML/CSS and want to go professional" },
+      { "title": "Backend Devs", "desc": "Engineers who want to become full-stack by mastering frontend" },
+      { "title": "UI Designers", "desc": "Designers who want to code their own designs" }
+    ],
+    "tools": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "React Query", "Jest", "Playwright", "Storybook"]
+  },
+  {
+    "slug": "backend",
+    "badge": "NSDC CERTIFIED",
+    "title": "Backend Engineering — Node.js & APIs",
+    "tagline": "Build the APIs and systems that power modern products",
+    "gradient": "from-orange-500 to-red-700",
+    "accentColor": "#ea580c",
+    "type": "online",
+    "isNew": false,
+    "duration": "4 Months",
+    "mode": "Live + Async",
+    "level": "Beginner to Intermediate",
+    "students": "1,650+",
+    "projectCount": "6+",
+    "placementRate": "90%",
+    "price": "₹75,000",
+    "originalPrice": "₹1,20,000",
+    "description": "Master Node.js, databases, security and system scalability. Build APIs used by thousands of users — with proper auth, caching, queues and observability.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
+      { "icon": "clock", "text": "Duration: 4 months" },
+      { "icon": "check", "text": "APIs + Database projects" }
+    ],
+    "whatYouLearn": [
+      "Build scalable REST APIs with Node.js, Express and Fastify",
+      "Design and optimise SQL schemas with PostgreSQL",
+      "Implement JWT, OAuth2 and session-based authentication",
+      "Cache data with Redis and handle background jobs with queues",
+      "Write unit and integration tests with Jest and Supertest",
+      "Deploy APIs on AWS with load balancers, autoscaling and monitoring"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — Node.js Core",
+        "topics": ["Node.js event loop", "Modules & file system", "HTTP server & streams", "Express fundamentals", "Middleware patterns"]
+      },
+      {
+        "module": "Module 2 — Databases",
+        "topics": ["PostgreSQL & SQL", "Prisma ORM", "MongoDB & Mongoose", "Database indexing", "Migrations & seeding"]
+      },
+      {
+        "module": "Module 3 — Auth & Security",
+        "topics": ["JWT & refresh tokens", "OAuth2 with Google/GitHub", "Rate limiting & CORS", "Input validation & sanitisation", "OWASP security practices"]
+      },
+      {
+        "module": "Module 4 — Scale & Deploy",
+        "topics": ["Redis caching", "Bull queues & workers", "AWS EC2 & RDS", "Nginx reverse proxy", "Logging with Winston & Datadog"]
+      }
+    ],
+    "projects": [
+      { "name": "Twitter-like API", "desc": "Social feed with follows, likes and real-time notifications" },
+      { "name": "Payment Gateway", "desc": "Stripe integration with webhooks and subscription billing" },
+      { "name": "File Storage Service", "desc": "S3-backed upload API with access control" },
+      { "name": "Auth Microservice", "desc": "Standalone auth service with JWT and OAuth2" }
+    ],
+    "whoIsItFor": [
+      { "title": "Frontend Developers", "desc": "Devs who want to go full-stack by learning the backend" },
+      { "title": "Career Switchers", "desc": "Non-tech professionals targeting backend engineer roles" },
+      { "title": "College Students", "desc": "CS students who want real industry experience beyond theory" }
+    ],
+    "tools": ["Node.js", "Express", "PostgreSQL", "Prisma", "MongoDB", "Redis", "JWT", "AWS", "Docker", "Jest"]
+  },
+  {
+    "slug": "system-design",
+    "badge": "PLACEMENT BOOSTER",
+    "title": "System Design & DSA Masterclass",
+    "tagline": "Crack senior engineer interviews at top product companies",
+    "gradient": "from-indigo-500 to-blue-800",
+    "accentColor": "#4f46e5",
+    "type": "online",
+    "isNew": false,
+    "duration": "3 Months",
+    "mode": "Live + Mock Interviews",
+    "level": "Intermediate to Advanced",
+    "students": "1,400+",
+    "projectCount": "50+",
+    "placementRate": "96%",
+    "price": "₹60,000",
+    "originalPrice": "₹90,000",
+    "description": "The most focused interview prep program for engineers targeting senior roles at Swiggy, Razorpay, PhonePe and similar companies. Covers HLD, LLD, and 300+ DSA problems.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: 1 year" },
+      { "icon": "clock", "text": "Duration: 3 months" },
+      { "icon": "check", "text": "50+ coding problem sets" }
+    ],
+    "whatYouLearn": [
+      "Design systems like URL shorteners, Instagram, WhatsApp and Uber",
+      "Master data structures: arrays, trees, graphs, heaps and tries",
+      "Solve 300+ LeetCode-style problems with time/space complexity analysis",
+      "Understand CAP theorem, consistency models and distributed systems",
+      "Design low-level class hierarchies with SOLID principles",
+      "Perform confidently in whiteboard and live coding interviews"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — DSA Foundations",
+        "topics": ["Arrays, strings & two pointers", "Hash maps & sets", "Stacks, queues & deques", "Recursion & backtracking", "Sorting & binary search"]
+      },
+      {
+        "module": "Module 2 — Advanced DSA",
+        "topics": ["Trees & BST operations", "Graphs: BFS, DFS, Dijkstra", "Dynamic programming patterns", "Tries & segment trees", "Heaps & priority queues"]
+      },
+      {
+        "module": "Module 3 — High Level Design",
+        "topics": ["Load balancers & CDNs", "SQL vs NoSQL tradeoffs", "Caching strategies", "Message queues & Kafka", "Rate limiting & API gateways"]
+      },
+      {
+        "module": "Module 4 — Low Level Design",
+        "topics": ["SOLID principles", "Design patterns (Factory, Observer, Strategy)", "Class diagram design", "LLD: Parking lot, Chess, Elevator", "Concurrency & thread safety"]
+      }
+    ],
+    "projects": [
+      { "name": "Design URL Shortener", "desc": "Bitly-like system with 100M+ redirects/day" },
+      { "name": "Design Instagram Feed", "desc": "Social feed with fanout, ranking and CDN" },
+      { "name": "Design Chat System", "desc": "WhatsApp-scale messaging with presence and delivery" },
+      { "name": "Design Ride-sharing", "desc": "Uber-like matching, maps and surge pricing" }
+    ],
+    "whoIsItFor": [
+      { "title": "Working Engineers", "desc": "1–4 year experience devs targeting senior roles at product companies" },
+      { "title": "Competitive Coders", "desc": "Those who want to crack FAANG and unicorn-level interviews" },
+      { "title": "Bootcamp Grads", "desc": "Developers with projects but weak on CS fundamentals" }
+    ],
+    "tools": ["Java / Python / JavaScript", "LeetCode", "Excalidraw", "PostgreSQL", "Redis", "Kafka", "AWS", "Docker"]
+  },
+  {
+    "slug": "devops",
+    "badge": "CLOUD SPECIALISATION",
+    "title": "DevOps, Cloud & CI/CD",
+    "tagline": "Automate everything. Deploy with confidence. Scale on demand.",
+    "gradient": "from-cyan-500 to-blue-700",
+    "accentColor": "#0891b2",
+    "type": "online",
+    "isNew": true,
+    "duration": "3 Months",
+    "mode": "Live + Labs",
+    "level": "Intermediate",
+    "students": "620+",
+    "projectCount": "8+",
+    "placementRate": "89%",
+    "price": "₹60,000",
+    "originalPrice": "₹90,000",
+    "description": "From zero to DevOps engineer — learn Docker, Kubernetes, AWS, Terraform and GitHub Actions to build and run production infrastructure like the best engineering teams do.",
+    "meta": [
+      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
+      { "icon": "clock", "text": "Duration: 3 months" },
+      { "icon": "check", "text": "AWS + Docker hands-on labs" }
+    ],
+    "whatYouLearn": [
+      "Containerise applications with Docker and Docker Compose",
+      "Orchestrate services with Kubernetes — deployments, services, ingress",
+      "Provision cloud infrastructure on AWS with Terraform",
+      "Build CI/CD pipelines with GitHub Actions and ArgoCD",
+      "Monitor systems with Prometheus, Grafana and CloudWatch",
+      "Implement GitOps practices and zero-downtime deployments"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — Linux & Networking",
+        "topics": ["Linux CLI mastery", "Bash scripting", "Networking basics (TCP/IP, DNS)", "SSH & server management", "Nginx configuration"]
+      },
+      {
+        "module": "Module 2 — Docker & Containers",
+        "topics": ["Dockerfile best practices", "Multi-stage builds", "Docker Compose", "Container networking", "Image registries (ECR, DockerHub)"]
+      },
+      {
+        "module": "Module 3 — AWS & Kubernetes",
+        "topics": ["EC2, VPC, IAM, S3, RDS", "EKS cluster setup", "Kubernetes deployments & services", "Helm charts", "Terraform IaC"]
+      },
+      {
+        "module": "Module 4 — CI/CD & Monitoring",
+        "topics": ["GitHub Actions workflows", "ArgoCD & GitOps", "Prometheus & Grafana dashboards", "Log aggregation with ELK", "Incident response playbooks"]
+      }
+    ],
+    "projects": [
+      { "name": "Auto-deploying API", "desc": "Full CI/CD pipeline from push to production in minutes" },
+      { "name": "Kubernetes Cluster", "desc": "Multi-service app on EKS with autoscaling" },
+      { "name": "Infra as Code", "desc": "Full AWS environment managed with Terraform" },
+      { "name": "Monitoring Stack", "desc": "Prometheus + Grafana + Alertmanager setup" }
+    ],
+    "whoIsItFor": [
+      { "title": "Developers", "desc": "Devs who want to own their deployment pipeline end-to-end" },
+      { "title": "Sys Admins", "desc": "Server admins transitioning to modern cloud and DevOps roles" },
+      { "title": "SRE Aspirants", "desc": "Engineers targeting Site Reliability and Platform Engineering" }
+    ],
+    "tools": ["Docker", "Kubernetes", "AWS", "Terraform", "GitHub Actions", "ArgoCD", "Prometheus", "Grafana", "Nginx", "Bash"]
+  },
+  {
+    "slug": "campus-bootcamp",
+    "badge": "IMMERSIVE · RESIDENTIAL",
+    "title": "On-Campus Full Stack Bootcamp",
+    "tagline": "6 months residential — from zero to job-ready in Bangalore",
+    "gradient": "from-slate-500 to-blue-900",
+    "accentColor": "#334155",
+    "type": "campus",
+    "isNew": false,
+    "duration": "6 Months",
+    "mode": "Residential · Bangalore",
+    "level": "Beginner to Advanced",
+    "students": "450+",
+    "projectCount": "12+",
+    "placementRate": "97%",
+    "price": "₹2,50,000",
+    "originalPrice": "₹3,50,000",
+    "description": "The most immersive coding experience in India — 6 months residential in Bangalore, living and building alongside 50 other engineers. Daily standups, weekly demos and direct placement support.",
+    "meta": [
+      { "icon": "briefcase", "text": "Completed 12th grade" },
+      { "icon": "clock", "text": "Duration: 6 months residential" },
+      { "icon": "check", "text": "Fully in Bangalore" }
+    ],
+    "whatYouLearn": [
+      "Complete full-stack curriculum from HTML to cloud deployment",
+      "Daily pair-programming and live code review from senior mentors",
+      "Work in product squads shipping features every Friday",
+      "Attend weekly guest talks from founders and CTOs",
+      "Interview prep with 20+ mock rounds and whiteboard sessions",
+      "Graduate with a portfolio of 12+ production-quality projects"
+    ],
+    "curriculum": [
+      {
+        "module": "Phase 1 — Foundations (Month 1–2)",
+        "topics": ["Web fundamentals", "JavaScript & TypeScript", "React & Next.js", "Git & team workflow", "Agile & standups"]
+      },
+      {
+        "module": "Phase 2 — Backend & DBs (Month 3–4)",
+        "topics": ["Node.js & APIs", "PostgreSQL & MongoDB", "Auth & security", "Testing", "Product squads begin"]
+      },
+      {
+        "module": "Phase 3 — Advanced & Cloud (Month 5)",
+        "topics": ["AWS & Docker", "System design", "Performance optimisation", "Capstone project kick-off", "Weekly CTO talks"]
+      },
+      {
+        "module": "Phase 4 — Placement Sprint (Month 6)",
+        "topics": ["20+ mock interviews", "Resume & LinkedIn polish", "Referral activation", "Salary negotiation", "Offer day 🎉"]
+      }
+    ],
+    "projects": [
+      { "name": "Product Sprint #1–5", "desc": "Five weekly product challenges in cross-functional squads" },
+      { "name": "Capstone Project", "desc": "End-to-end product shipped and presented to industry panel" },
+      { "name": "Open Source Contribution", "desc": "Merged PRs to real production open-source projects" },
+      { "name": "Hackathon Win", "desc": "Internal 48-hour hackathon with prizes and LinkedIn badges" }
+    ],
+    "whoIsItFor": [
+      { "title": "School Graduates", "desc": "12th passouts who want to fast-track a software career" },
+      { "title": "College Dropouts", "desc": "Those who want practical skills over theory" },
+      { "title": "Gap Year Students", "desc": "Anyone ready to commit 6 months to transform their life" }
+    ],
+    "tools": ["React", "Next.js", "Node.js", "PostgreSQL", "MongoDB", "AWS", "Docker", "TypeScript", "Figma", "Jira"]
+  },
+  {
+    "slug": "campus-ai",
+    "badge": "FAST TRACK",
+    "title": "AI & Automation Sprint — On-Campus",
+    "tagline": "2-month intensive — build AI products with real users in Bangalore",
+    "gradient": "from-emerald-500 to-teal-700",
+    "accentColor": "#059669",
+    "type": "campus",
+    "isNew": true,
+    "duration": "2 Months",
+    "mode": "Residential · Bangalore",
+    "level": "Intermediate",
+    "students": "180+",
+    "projectCount": "3+",
+    "placementRate": "88%",
+    "price": "₹1,20,000",
+    "originalPrice": "₹1,80,000",
+    "description": "The fastest way to become an AI engineer — 2 months residential in Bangalore. Build, ship and launch AI products with paying users by the time you graduate.",
+    "meta": [
+      { "icon": "briefcase", "text": "Basic coding experience" },
+      { "icon": "clock", "text": "Duration: 2 months" },
+      { "icon": "check", "text": "Hands-on AI projects" }
+    ],
+    "whatYouLearn": [
+      "Integrate GPT-4, Claude and Gemini APIs into production apps",
+      "Build autonomous agents with LangChain and tool-calling",
+      "Create RAG systems using Pinecone and OpenAI embeddings",
+      "Ship an AI SaaS product with real paying users",
+      "Automate business workflows with n8n and Zapier",
+      "Deploy and monitor AI applications on Vercel and AWS"
+    ],
+    "curriculum": [
+      {
+        "module": "Week 1–2 — AI Foundations",
+        "topics": ["Python & OpenAI APIs", "Prompt engineering", "LangChain basics", "RAG with Pinecone", "Embeddings & semantic search"]
+      },
+      {
+        "module": "Week 3–4 — Agent Building",
+        "topics": ["Tool-calling agents", "CrewAI multi-agents", "Memory & state", "Web scraping agents", "Code execution agents"]
+      },
+      {
+        "module": "Week 5–6 — Product Sprint",
+        "topics": ["Next.js + AI SDK", "Stripe for billing", "User auth & dashboard", "Product launch strategy", "Demo day preparation"]
+      },
+      {
+        "module": "Week 7–8 — Launch & Placement",
+        "topics": ["Launch on ProductHunt", "Get first 10 users", "AI engineer interviews", "Portfolio polish", "Offer negotiations"]
+      }
+    ],
+    "projects": [
+      { "name": "AI Chrome Extension", "desc": "Browser extension that summarises and explains any webpage" },
+      { "name": "Research Agent", "desc": "Autonomous agent that researches topics and writes reports" },
+      { "name": "AI SaaS Product", "desc": "Subscription product launched with real paying users" }
+    ],
+    "whoIsItFor": [
+      { "title": "Developers", "desc": "Devs with coding basics who want to pivot into AI engineering" },
+      { "title": "Builders", "desc": "Founders who want to add AI capabilities to their products" },
+      { "title": "Recent Graduates", "desc": "CS graduates who want cutting-edge AI skills before job hunting" }
+    ],
+    "tools": ["Python", "OpenAI", "LangChain", "CrewAI", "Pinecone", "Next.js", "Stripe", "Vercel", "n8n", "FastAPI"]
+  }
+]

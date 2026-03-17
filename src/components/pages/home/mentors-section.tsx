@@ -12,12 +12,13 @@ const INACTIVE_W = 130;
 
 export function MentorsSection() {
   const [active, setActive] = useState<number>(0);
+  const [mobileOpen, setMobileOpen] = useState<number | null>(0);
   const mentors = home.mentors;
 
   return (
     <section
       className="bg-[#0a0a0a] py-16 sm:py-20 md:py-24 border-t border-white/5"
-      style={{ minHeight: CARD_HEIGHT + 120 }}>
+      style={{ minHeight: undefined }}>
 
       {/* Header */}
       <Container>
@@ -31,14 +32,70 @@ export function MentorsSection() {
         </div>
       </Container>
 
-      {/* Outer scroll wrapper — needed so cards don't break on small screens */}
-      <div className="w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {/* Inner centering wrapper */}
+      {/* ── MOBILE layout (hidden on md+) ── */}
+      <div className="md:hidden px-4 space-y-3">
+        {mentors.map((mentor, i) => {
+          const isOpen = mobileOpen === i;
+          return (
+            <div
+              key={mentor.name}
+              className="border border-white/10 overflow-hidden"
+              style={{ borderRadius: 6, borderColor: isOpen ? "rgba(var(--color-primary-rgb,255,107,44),0.4)" : undefined }}>
+              {/* Card header — always visible */}
+              <button
+                onClick={() => setMobileOpen(isOpen ? null : i)}
+                className="w-full flex items-center gap-4 p-4 text-left"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={mentor.imageUrl}
+                  alt={mentor.name}
+                  className="shrink-0 rounded-full object-cover object-top"
+                  style={{ width: 56, height: 56, filter: isOpen ? "none" : "grayscale(70%)" }}
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-bold text-base leading-tight">{mentor.name}</p>
+                  <p className="text-white/50 text-sm mt-0.5 truncate">{mentor.role}</p>
+                  <p className="text-primary text-xs font-bold tracking-widest uppercase mt-1">{mentor.company}</p>
+                </div>
+                <svg
+                  className="shrink-0 text-white/30 transition-transform duration-300"
+                  style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                  width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {/* Expandable body */}
+              <div
+                style={{
+                  maxHeight: isOpen ? 320 : 0,
+                  overflow: "hidden",
+                  transition: "max-height 0.35s cubic-bezier(0.25,0.46,0.45,0.94)",
+                }}>
+                <div className="flex gap-4 px-4 pb-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={mentor.imageUrl}
+                    alt={mentor.name}
+                    className="shrink-0 object-cover object-top"
+                    style={{ width: 88, height: 110, borderRadius: 4 }}
+                  />
+                  <p className="text-white/60 text-sm leading-relaxed">{mentor.description}</p>
+                </div>
+                <div className="h-px mx-4 mb-4 bg-white/5" />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ── DESKTOP horizontal accordion (hidden on mobile) ── */}
+      <div className="hidden md:block w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div
           className="flex gap-2 mx-auto px-4"
           style={{
             height: CARD_HEIGHT,
-            /* total width = active + 4 inactive + 4 gaps */
             width: ACTIVE_W + (mentors.length - 1) * INACTIVE_W + (mentors.length - 1) * 8,
           }}>
           {mentors.map((mentor, i) => (

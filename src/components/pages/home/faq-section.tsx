@@ -18,7 +18,7 @@ export function FaqSection() {
             <span className="inline-block text-[10px] font-bold tracking-[0.28em] text-primary uppercase border border-primary/30 px-4 py-1.5 mb-6">
               {faq.eyebrow}
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 font-heading tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-heading tracking-tight leading-tight">
               {faq.headline}
               <br />
               <span className="text-primary italic">{faq.subline}</span>
