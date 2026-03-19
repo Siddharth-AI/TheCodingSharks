@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -188,6 +189,144 @@
 .font-display  { font-family: var(--font-display, var(--font-sans)) !important; }
 .font-body     { font-family: var(--font-body) !important; }
 .font-sans     { font-family: var(--font-sans) !important; }
+
+/* ── Blog article content typography ──────────────────────────────────────── */
+.blog-content {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: var(--font-sans);
+}
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display, var(--font-sans));
+  line-height: 1.25;
+}
+.blog-content h1 { font-size: 2rem; }
+.blog-content h2 { font-size: 1.5rem; }
+.blog-content h3 { font-size: 1.2rem; color: rgba(255,255,255,0.9); }
+.blog-content h4 { font-size: 1rem; color: rgba(255,255,255,0.85); }
+
+.blog-content p {
+  margin-bottom: 1.35rem;
+}
+.blog-content p:last-child { margin-bottom: 0; }
+
+.blog-content ul,
+.blog-content ol {
+  margin: 1.2rem 0 1.5rem 0;
+  padding-left: 1.5rem;
+}
+.blog-content ul { list-style: none; padding-left: 0; }
+.blog-content ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.blog-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ff6b2c;
+}
+.blog-content ol {
+  list-style: none;
+  counter-reset: blog-counter;
+  padding-left: 0;
+}
+.blog-content ol li {
+  counter-increment: blog-counter;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.6rem;
+}
+.blog-content ol li::before {
+  content: counter(blog-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: rgba(255, 107, 44, 0.15);
+  border: 1px solid rgba(255, 107, 44, 0.25);
+  border-radius: 50%;
+  color: #ff6b2c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-top: 0.15em;
+}
+
+.blog-content blockquote {
+  position: relative;
+  margin: 1.8rem 0;
+  padding: 1.1rem 1.4rem;
+  border-left: 3px solid #ff6b2c;
+  background: rgba(255, 107, 44, 0.06);
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.blog-content strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.blog-content em { color: rgba(255,255,255,0.85); }
+
+.blog-content code {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.3rem;
+  padding: 0.15em 0.45em;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: #ff6b2c;
+}
+.blog-content pre {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0.75rem;
+  padding: 1.2rem 1.4rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.blog-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+}
+
+.blog-content a {
+  color: #ff6b2c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,107,44,0.4);
+  transition: text-decoration-color 0.2s;
+}
+.blog-content a:hover { text-decoration-color: #ff6b2c; }
+
+.blog-content hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 2.5rem 0;
+}
 
 
 @layer utilities {

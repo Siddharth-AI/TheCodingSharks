@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Code2, Brain, Monitor, Server, GitBranch, Cloud, Building2, Zap,
   Briefcase, Clock, CheckSquare, ArrowRight,
@@ -90,13 +91,37 @@ export function CoursesListingPage() {
     <div className="bg-[#0a0a0a] min-h-screen">
 
       {/* ── Hero ── */}
-      <div className="relative overflow-hidden border-b border-white/5 pt-24 pb-20 sm:pt-32 sm:pb-28">
-        {/* Ambient glow */}
+      <div className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20">
+        {/* Background image */}
+        <Image
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          fill
+          className="object-cover scale-105 blur-sm"
+          priority
+          aria-hidden
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#0a0a0a]/65" />
+        {/* Dot grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        {/* Orange glow top */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,107,44,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 70% 55% at 50% -10%, rgba(255,107,44,0.18) 0%, transparent 65%)",
         }} />
+        {/* Bottom fade into grid */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #0a0a0a)" }}
+        />
 
-        <Container>
+        <Container className="relative z-10">
           <div className="flex flex-col items-center text-center">
             <span className="inline-block text-[10px] font-bold tracking-[0.28em] text-primary uppercase border border-primary/30 px-4 py-1.5 mb-6">
               OUR PROGRAMS
@@ -128,7 +153,7 @@ export function CoursesListingPage() {
       </div>
 
       {/* ── Filter + Grid ── */}
-      <Container className="py-14 sm:py-20">
+      <Container className="pt-4 pb-20">
         {/* Tabs */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-10">
           <div className="flex items-center gap-1 p-1 border border-white/10 bg-white/5 w-full sm:w-auto">

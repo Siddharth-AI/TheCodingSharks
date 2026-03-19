@@ -5,11 +5,9 @@ import "react-toastify/dist/ReactToastify.css"
 
 import "./globals.css"
 
-import { SiteFooter } from "@/components/common/site-footer"
-import { SiteHeader } from "@/components/common/site-header"
 import { AppToaster } from "@/components/common/toaster"
-import { StickyHelpBar } from "@/components/common/sticky-help-bar"
-import { LeadModal } from "@/components/common/lead-modal"
+import { PublicShell } from "@/components/common/public-shell"
+import { StoreProvider } from "@/store/provider"
 
 // Body / UI font — Manrope (clean, modern sans-serif)
 const manrope = Manrope({
@@ -46,12 +44,10 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans min-h-dvh bg-background text-foreground antialiased`}
       >
-        <SiteHeader />
-        <main className="min-h-[calc(100dvh-4rem)]">{children}</main>
-        <SiteFooter />
-        <AppToaster />
-        <StickyHelpBar />
-        <LeadModal />
+        <StoreProvider>
+          <PublicShell>{children}</PublicShell>
+          <AppToaster />
+        </StoreProvider>
       </body>
     </html>
   )
