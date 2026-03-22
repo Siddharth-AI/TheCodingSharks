@@ -1,6 +1,7 @@
 [
   {
     "slug": "full-stack",
+    "crmCourseName": "Full Stack Web Development",
     "badge": "MOST POPULAR",
     "title": "Full Stack Web Development",
     "tagline": "Build, deploy and ship full-stack products from scratch",
@@ -67,6 +68,7 @@
   },
   {
     "slug": "ai-agents",
+    "crmCourseName": "AI Agents & Automation",
     "badge": "IN HIGH DEMAND",
     "title": "AI Agents & Automation",
     "tagline": "Build intelligent products with LLMs, agents and automation workflows",
@@ -129,6 +131,7 @@
   },
   {
     "slug": "frontend",
+    "crmCourseName": "Frontend Engineering — React & Next.js",
     "badge": "NSDC CERTIFIED",
     "title": "Frontend Engineering — React & Next.js",
     "tagline": "Become the frontend engineer every product team wants to hire",
@@ -191,6 +194,7 @@
   },
   {
     "slug": "backend",
+    "crmCourseName": "Backend Engineering — Node.js & APIs",
     "badge": "NSDC CERTIFIED",
     "title": "Backend Engineering — Node.js & APIs",
     "tagline": "Build the APIs and systems that power modern products",
@@ -253,6 +257,7 @@
   },
   {
     "slug": "system-design",
+    "crmCourseName": "System Design & DSA Masterclass",
     "badge": "PLACEMENT BOOSTER",
     "title": "System Design & DSA Masterclass",
     "tagline": "Crack senior engineer interviews at top product companies",
@@ -315,6 +320,7 @@
   },
   {
     "slug": "devops",
+    "crmCourseName": "DevOps, Cloud & CI/CD",
     "badge": "CLOUD SPECIALISATION",
     "title": "DevOps, Cloud & CI/CD",
     "tagline": "Automate everything. Deploy with confidence. Scale on demand.",
@@ -377,6 +383,7 @@
   },
   {
     "slug": "campus-bootcamp",
+    "crmCourseName": "On-Campus Full Stack Bootcamp",
     "badge": "IMMERSIVE · RESIDENTIAL",
     "title": "On-Campus Full Stack Bootcamp",
     "tagline": "6 months residential — from zero to job-ready in Bangalore",
@@ -439,6 +446,7 @@
   },
   {
     "slug": "campus-ai",
+    "crmCourseName": "AI & Automation Sprint — On-Campus",
     "badge": "FAST TRACK",
     "title": "AI & Automation Sprint — On-Campus",
     "tagline": "2-month intensive — build AI products with real users in Bangalore",

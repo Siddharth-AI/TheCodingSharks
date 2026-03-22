@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Code2,
@@ -25,6 +25,7 @@ import { Container } from "@/components/layout/container";
 import courses from "@/data/courses.json";
 import { ApplyNowButton } from "@/components/common/apply-now-button";
 import { openLeadModal } from "@/components/common/lead-modal";
+import { fetchCrmCourses, submitLeadToCrm } from "@/lib/crm-api";
 
 type Course = (typeof courses)[number];
 
@@ -174,6 +175,44 @@ function CurriculumAccordion({ modules }: { modules: Course["curriculum"] }) {
 
 function HeroForm({ course }: { course: Course }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [crmCourseId, setCrmCourseId] = useState<string>("");
+  const [form, setForm] = useState({ name: "", email: "", phone: "", background: "" });
+
+  // Match this course to its CRM UUID using explicit crmCourseName field
+  useEffect(() => {
+    const lookupName = (course as Course & { crmCourseName?: string }).crmCourseName ?? course.title;
+    fetchCrmCourses("all").then((crmCourses) => {
+      const match = crmCourses.find(
+        (c) => c.name.toLowerCase() === lookupName.toLowerCase()
+      );
+      if (match) setCrmCourseId(match.id);
+    });
+  }, [course]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const result = await submitLeadToCrm({
+      name: form.name,
+      email: form.email,
+      mobile: form.phone.replace(/\D/g, "").slice(-10),
+      courseInterest: crmCourseId || undefined,
+      notes: form.background ? `Background: ${form.background}` : undefined,
+    });
+
+    setLoading(false);
+    if (result.success) {
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", background: "" });
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <div
       className="bg-white shadow-2xl overflow-hidden"
@@ -240,16 +279,21 @@ function HeroForm({ course }: { course: Course }) {
               </p>
             </div>
 
-            <form
-              className="flex flex-col gap-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}>
+            <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
               <input
                 required
                 type="text"
                 placeholder="Your Full Name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full h-11 bg-gray-50 border border-gray-200 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors"
+              />
+              <input
+                required
+                type="email"
+                placeholder="Email Address"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full h-11 bg-gray-50 border border-gray-200 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors"
               />
               <div className="flex gap-2">
@@ -260,39 +304,43 @@ function HeroForm({ course }: { course: Course }) {
                   required
                   type="tel"
                   placeholder="WhatsApp Number"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="flex-1 min-w-0 h-11 bg-gray-50 border border-gray-200 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors"
                 />
               </div>
               <select
-                className="w-full h-11 bg-gray-50 border border-gray-200 px-4 text-sm text-gray-600 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors appearance-none cursor-pointer"
-                defaultValue="">
-                <option value="" disabled>
-                  I am a…
-                </option>
-                {[
-                  "Student / Fresher",
-                  "Working Professional",
-                  "Career Switcher",
-                  "Freelancer",
-                ].map((o) => (
-                  <option key={o} value={o}>
-                    {o}
-                  </option>
+                value={form.background}
+                onChange={(e) => setForm({ ...form, background: e.target.value })}
+                className="w-full h-11 bg-gray-50 border border-gray-200 px-4 text-sm text-gray-600 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors appearance-none cursor-pointer">
+                <option value="" disabled>I am a…</option>
+                {["Student / Fresher", "Working Professional", "Career Switcher", "Freelancer"].map((o) => (
+                  <option key={o} value={o}>{o}</option>
                 ))}
               </select>
+
+              {error && <p className="text-sm text-red-500">{error}</p>}
+
               <button
                 type="submit"
-                className="w-full h-12 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-wide transition-all shadow-[0_4px_16px_rgba(255,107,44,0.35)] hover:shadow-[0_6px_24px_rgba(255,107,44,0.45)] flex items-center justify-center gap-2 mt-1">
-                Get Free Callback
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M2 7h10M8 3l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                disabled={loading}
+                className="w-full h-12 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-wide transition-all shadow-[0_4px_16px_rgba(255,107,44,0.35)] hover:shadow-[0_6px_24px_rgba(255,107,44,0.45)] flex items-center justify-center gap-2 mt-1 disabled:opacity-70">
+                {loading ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="3" strokeOpacity="0.3"/>
+                      <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                    </svg>
+                    Submitting…
+                  </>
+                ) : (
+                  <>
+                    Get Free Callback
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </>
+                )}
               </button>
               <p className="text-[11px] text-gray-400 text-center">
                 No spam · Free · Response in 24 hours

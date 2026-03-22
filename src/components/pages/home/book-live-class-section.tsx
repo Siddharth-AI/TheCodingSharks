@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Play,
@@ -15,13 +15,44 @@ import {
 import home from "@/data/home.json";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
+import { fetchCrmCourses, submitLeadToCrm, type CrmCourse } from "@/lib/crm-api";
 
 export function BookLiveClassSection() {
   const live = home.liveClass;
   const [showVideo, setShowVideo] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [courses, setCourses] = useState<CrmCourse[]>([]);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", courseId: "" });
 
   const videoId = "JKXwbbSvlu0";
+
+  useEffect(() => {
+    fetchCrmCourses("all").then(setCourses);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const result = await submitLeadToCrm({
+      name: form.name,
+      email: form.email,
+      mobile: form.phone.replace(/\D/g, "").slice(-10),
+      courseInterest: form.courseId || undefined,
+      notes: "Book Live Class",
+    });
+
+    setLoading(false);
+    if (result.success) {
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", courseId: "" });
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <Section className="relative overflow-hidden py-14 sm:py-20 md:py-28 bg-gradient-to-b from-[#fff7ee] via-[#fffbf7] to-white">
@@ -161,13 +192,7 @@ export function BookLiveClassSection() {
                     </p>
                   </div>
 
-                  <form
-                    className="relative z-10 space-y-3 sm:space-y-4"
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setSubmitted(true);
-                    }}
-                  >
+                  <form className="relative z-10 space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
                     {/* Program Select */}
                     <div className="space-y-1.5">
                       <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">
@@ -176,16 +201,13 @@ export function BookLiveClassSection() {
                       <div className="relative">
                         <select
                           required
-                          defaultValue=""
+                          value={form.courseId}
+                          onChange={(e) => setForm({ ...form, courseId: e.target.value })}
                           className="w-full h-11 sm:h-12 rounded-xl border border-gray-200 bg-gray-50 px-3 sm:px-4 text-sm text-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none appearance-none cursor-pointer transition-all hover:border-gray-300"
                         >
-                          <option value="" disabled>
-                            Select Specialization
-                          </option>
-                          {live.form.programs.map((p) => (
-                            <option key={p} value={p}>
-                              {p}
-                            </option>
+                          <option value="" disabled>Select Specialization</option>
+                          {courses.map((c) => (
+                            <option key={c.id} value={c.id}>{c.name}</option>
                           ))}
                         </select>
                         <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -197,6 +219,8 @@ export function BookLiveClassSection() {
                     {/* Name */}
                     <input
                       required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full h-11 sm:h-12 min-w-0 rounded-xl border border-gray-200 bg-gray-50 px-3 sm:px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all outline-none hover:border-gray-300"
                       placeholder="Full Name"
                     />
@@ -205,6 +229,8 @@ export function BookLiveClassSection() {
                     <input
                       type="email"
                       required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="w-full h-11 sm:h-12 min-w-0 rounded-xl border border-gray-200 bg-gray-50 px-3 sm:px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all outline-none hover:border-gray-300"
                       placeholder="Email Address"
                     />
@@ -217,21 +243,41 @@ export function BookLiveClassSection() {
                       <input
                         type="tel"
                         required
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="flex-1 min-w-0 h-11 sm:h-12 rounded-xl border border-gray-200 bg-gray-50 px-3 sm:px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all outline-none hover:border-gray-300"
                         placeholder="WhatsApp Number"
                       />
                     </div>
 
+                    {/* Error */}
+                    {error && (
+                      <p className="text-sm text-red-500">{error}</p>
+                    )}
+
                     {/* Submit */}
                     <button
                       type="submit"
-                      className="group w-full h-12 sm:h-13 rounded-xl bg-primary text-sm font-bold text-white shadow-[0_8px_24px_rgba(255,107,44,0.3)] hover:shadow-[0_12px_32px_rgba(255,107,44,0.4)] hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mt-1"
+                      disabled={loading}
+                      className="group w-full h-12 sm:h-13 rounded-xl bg-primary text-sm font-bold text-white shadow-[0_8px_24px_rgba(255,107,44,0.3)] hover:shadow-[0_12px_32px_rgba(255,107,44,0.4)] hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mt-1 disabled:opacity-70"
                     >
-                      <span>{live.cta.label}</span>
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="3" strokeOpacity="0.3"/>
+                            <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                          </svg>
+                          Submitting…
+                        </>
+                      ) : (
+                        <>
+                          <span>{live.cta.label}</span>
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </>
+                      )}
                     </button>
 
-                    {/* Trust Row — stacks on mobile */}
+                    {/* Trust Row */}
                     <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-2 pt-3 border-t border-gray-100">
                       <div>
                         <p className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wide">

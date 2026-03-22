@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import courses from "@/data/courses.json";
 import codingLogo from "@/assets/images/Coding.png";
+import { fetchCrmCourses, submitLeadToCrm, type CrmCourse } from "@/lib/crm-api";
 
 /* ── helper any component can call ── */
 export function openLeadModal(source?: string) {
@@ -16,14 +16,9 @@ type FormState = {
   name: string;
   email: string;
   phone: string;
-  program: string;
+  courseId: string;
   background: string;
 };
-
-const PROGRAMS = [
-  "Not sure yet — help me decide",
-  ...courses.map((c) => c.title),
-];
 
 const BACKGROUNDS = [
   "Student / Fresher",
@@ -38,8 +33,11 @@ export function LeadModal() {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [courses, setCourses] = useState<CrmCourse[]>([]);
+  const [coursesLoading, setCoursesLoading] = useState(false);
   const [form, setForm] = useState<FormState>({
-    name: "", email: "", phone: "", program: "", background: "",
+    name: "", email: "", phone: "", courseId: "", background: "",
   });
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -47,10 +45,21 @@ export function LeadModal() {
     const handler = () => {
       setOpen(true);
       setSubmitted(false);
+      setError(null);
     };
     window.addEventListener("openLeadModal", handler);
     return () => window.removeEventListener("openLeadModal", handler);
   }, []);
+
+  /* fetch courses when modal opens */
+  useEffect(() => {
+    if (!open) return;
+    setCoursesLoading(true);
+    fetchCrmCourses("all").then((data) => {
+      setCourses(data);
+      setCoursesLoading(false);
+    });
+  }, [open]);
 
   /* lock body scroll */
   useEffect(() => {
@@ -63,9 +72,25 @@ export function LeadModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000)); // simulate API
+    setError(null);
+
+    const cleanPhone = form.phone.replace(/\D/g, "").replace(/^91/, "").slice(-10);
+
+    const result = await submitLeadToCrm({
+      name: form.name,
+      email: form.email,
+      mobile: cleanPhone,
+      courseInterest: form.courseId || undefined,
+      notes: form.background ? `Background: ${form.background}` : undefined,
+    });
+
     setLoading(false);
-    setSubmitted(true);
+    if (result.success) {
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", courseId: "", background: "" });
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
   };
 
   if (!open) return null;
@@ -237,12 +262,18 @@ export function LeadModal() {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Which Program?</label>
                   <select
-                    value={form.program}
-                    onChange={(e) => setForm({ ...form, program: e.target.value })}
+                    value={form.courseId}
+                    onChange={(e) => setForm({ ...form, courseId: e.target.value })}
                     className="h-11 border border-gray-200 px-4 text-sm text-gray-900 focus:outline-none focus:border-primary transition-colors bg-white appearance-none"
                   >
                     <option value="">Select a program…</option>
-                    {PROGRAMS.map((p) => <option key={p} value={p}>{p}</option>)}
+                    {coursesLoading ? (
+                      <option disabled>Loading…</option>
+                    ) : (
+                      courses.map((c) => (
+                        <option key={c.id} value={c.id}>{c.name}</option>
+                      ))
+                    )}
                   </select>
                 </div>
 
@@ -268,6 +299,11 @@ export function LeadModal() {
                     ))}
                   </div>
                 </div>
+
+                {/* Error message */}
+                {error && (
+                  <p className="text-sm text-red-500">{error}</p>
+                )}
 
                 {/* Submit */}
                 <button
