@@ -10,6 +10,10 @@
         "href": "/courses"
       },
       {
+        "label": "Workshops",
+        "href": "/workshops"
+      },
+      {
         "label": "Blog",
         "href": "/blog"
       }
