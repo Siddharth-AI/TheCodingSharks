@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, Clock, MapPin, ArrowRight, Users } from 'lucide-react';
-import axios from 'axios';
+import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/layout/container';
-import type { Workshop, PaginationMeta } from '@/types';
+import workshops from '@/data/workshops.json';
+
+type WorkshopJson = typeof workshops[number];
 
 const GRADIENTS = [
   'from-violet-500 to-purple-800',
@@ -25,7 +25,7 @@ function getGradient(slug: string) {
   return GRADIENTS[Math.abs(hash) % GRADIENTS.length];
 }
 
-function WorkshopCard({ workshop }: { workshop: Workshop }) {
+function WorkshopCard({ workshop }: { workshop: WorkshopJson }) {
   const gradient = getGradient(workshop.slug);
   const isPast = workshop.event_date ? new Date(workshop.event_date) < new Date() : false;
 
@@ -127,24 +127,7 @@ function WorkshopCard({ workshop }: { workshop: Workshop }) {
 }
 
 export function WorkshopListingPage() {
-  const [workshops, setWorkshops] = useState<Workshop[]>([]);
-  const [meta, setMeta] = useState<PaginationMeta | null>(null);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchWorkshops() {
-      setLoading(true);
-      try {
-        const { data } = await axios.get(`/api/public/workshops?page=${page}&limit=9`);
-        setWorkshops(data.data.data);
-        setMeta(data.data.meta);
-      } catch { /* ignore */ } finally {
-        setLoading(false);
-      }
-    }
-    fetchWorkshops();
-  }, [page]);
+  const active = workshops.filter((w) => w.is_active);
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
@@ -196,38 +179,16 @@ export function WorkshopListingPage() {
 
       {/* ── Grid ─────────────────────────────────────────────────────── */}
       <Container className="pt-4 pb-20 sm:pb-24">
-
-        {loading ? (
-          <WorkshopSkeleton />
-        ) : workshops.length === 0 ? (
-          <EmptyState />
+        {active.length === 0 ? (
+          <div className="border border-white/8 bg-white/3 py-24 flex flex-col items-center text-center gap-4">
+            <p className="text-white/50 text-base font-medium">No workshops scheduled</p>
+            <p className="text-white/25 text-sm">Check back soon — new events are on the way.</p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {workshops.map((w) => (
-              <WorkshopCard key={w.id} workshop={w} />
+            {active.map((w) => (
+              <WorkshopCard key={w.slug} workshop={w} />
             ))}
-          </div>
-        )}
-
-        {meta && meta.totalPages > 1 && (
-          <div className="mt-12 flex items-center justify-center gap-2">
-            <button
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-              disabled={page === 1}
-              className="h-10 px-5 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 uppercase tracking-[0.15em] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              ← Prev
-            </button>
-            <span className="px-4 text-xs text-white/25 font-mono">
-              {meta.page} / {meta.totalPages}
-            </span>
-            <button
-              onClick={() => setPage((p) => Math.min(meta.totalPages, p + 1))}
-              disabled={page === meta.totalPages}
-              className="h-10 px-5 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 uppercase tracking-[0.15em] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              Next →
-            </button>
           </div>
         )}
 
@@ -248,34 +209,6 @@ export function WorkshopListingPage() {
           </Link>
         </div>
       </Container>
-    </div>
-  );
-}
-
-function WorkshopSkeleton() {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="border border-white/8 bg-[#111] overflow-hidden">
-          <div className="h-48 bg-white/5 animate-pulse" />
-          <div className="p-5 space-y-3">
-            <div className="h-2.5 w-2/5 bg-white/8 rounded animate-pulse" />
-            <div className="h-4 bg-white/8 rounded animate-pulse" />
-            <div className="h-4 w-4/5 bg-white/8 rounded animate-pulse" />
-            <div className="h-3 w-full bg-white/5 rounded animate-pulse" />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function EmptyState() {
-  return (
-    <div className="border border-white/8 bg-white/3 py-24 flex flex-col items-center text-center gap-4">
-      <Users className="h-10 w-10 text-white/15" strokeWidth={1.2} />
-      <p className="text-white/50 text-base font-medium">No workshops scheduled</p>
-      <p className="text-white/25 text-sm">Check back soon — new events are on the way.</p>
     </div>
   );
 }

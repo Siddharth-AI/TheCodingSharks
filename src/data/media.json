@@ -1,0 +1,186 @@
+{
+  "workshops": {
+    "python-for-data-science": {
+      "hero_bg": "/images/workshops/python-for-data-science/hero-bg.jpg",
+      "hero_preview": "/images/workshops/python-for-data-science/check.png",
+      "hero_youtube": "/images/workshops/python-for-data-science/check.png",
+      "instructor": "/images/workshops/python-for-data-science/instructor.jpg",
+      "instructor_bg": "/images/workshops/python-for-data-science/instructor-bg.jpg",
+      "product": "/images/workshops/python-for-data-science/product.jpg",
+      "before": "/images/workshops/python-for-data-science/before.jpg",
+      "after": "/images/workshops/python-for-data-science/after.jpg",
+      "curriculum_sidebar": "/images/workshops/python-for-data-science/curriculum.jpg",
+      "pain": [
+        "/images/workshops/python-for-data-science/pain-1.jpg",
+        "/images/workshops/python-for-data-science/pain-2.jpg",
+        "/images/workshops/python-for-data-science/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/python-for-data-science/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/python-for-data-science/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "ai-for-beginners": {
+      "hero_bg": "/images/workshops/ai-for-beginners/hero-bg.jpg",
+      "hero_preview": "/images/workshops/ai-for-beginners/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/ai-for-beginners/instructor.jpg",
+      "instructor_bg": "/images/workshops/ai-for-beginners/instructor-bg.jpg",
+      "product": "/images/workshops/ai-for-beginners/product.jpg",
+      "before": "/images/workshops/ai-for-beginners/before.jpg",
+      "after": "/images/workshops/ai-for-beginners/after.jpg",
+      "curriculum_sidebar": "/images/workshops/ai-for-beginners/curriculum.jpg",
+      "pain": [
+        "/images/workshops/ai-for-beginners/pain-1.jpg",
+        "/images/workshops/ai-for-beginners/pain-2.jpg",
+        "/images/workshops/ai-for-beginners/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/ai-for-beginners/feat-1.jpg",
+          "youtube": "https://www.youtube.com/embed/Qwm6BSGrOq0?si=ryuHoKACIoLSwJsf"
+        },
+        {
+          "thumb": "/images/workshops/ai-for-beginners/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "machine-learning-masterclass": {
+      "hero_bg": "/images/workshops/machine-learning-masterclass/hero-bg.jpg",
+      "hero_preview": "/images/workshops/machine-learning-masterclass/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/machine-learning-masterclass/instructor.jpg",
+      "instructor_bg": "/images/workshops/machine-learning-masterclass/instructor-bg.jpg",
+      "product": "/images/workshops/machine-learning-masterclass/product.jpg",
+      "before": "/images/workshops/machine-learning-masterclass/before.jpg",
+      "after": "/images/workshops/machine-learning-masterclass/after.jpg",
+      "curriculum_sidebar": "/images/workshops/machine-learning-masterclass/curriculum.jpg",
+      "pain": [
+        "/images/workshops/machine-learning-masterclass/pain-1.jpg",
+        "/images/workshops/machine-learning-masterclass/pain-2.jpg",
+        "/images/workshops/machine-learning-masterclass/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/machine-learning-masterclass/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/machine-learning-masterclass/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "react-nextjs-bootcamp": {
+      "hero_bg": "/images/workshops/fullstack-web-development/hero-bg.jpg",
+      "hero_preview": "/images/workshops/fullstack-web-development/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/fullstack-web-development/instructor.jpg",
+      "instructor_bg": "/images/workshops/fullstack-web-development/instructor-bg.jpg",
+      "product": "/images/workshops/fullstack-web-development/product.jpg",
+      "before": "/images/workshops/fullstack-web-development/before.jpg",
+      "after": "/images/workshops/fullstack-web-development/after.jpg",
+      "curriculum_sidebar": "/images/workshops/fullstack-web-development/curriculum.jpg",
+      "pain": [
+        "/images/workshops/fullstack-web-development/pain-1.jpg",
+        "/images/workshops/fullstack-web-development/pain-2.jpg",
+        "/images/workshops/fullstack-web-development/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/fullstack-web-development/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/fullstack-web-development/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "devops-cloud-engineering": {
+      "hero_bg": "/images/workshops/python-for-data-science/hero-bg.jpg",
+      "hero_preview": "/images/workshops/python-for-data-science/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/python-for-data-science/instructor.jpg",
+      "instructor_bg": "/images/workshops/python-for-data-science/instructor-bg.jpg",
+      "product": "/images/workshops/python-for-data-science/product.jpg",
+      "before": "/images/workshops/python-for-data-science/before.jpg",
+      "after": "/images/workshops/python-for-data-science/after.jpg",
+      "curriculum_sidebar": "/images/workshops/python-for-data-science/curriculum.jpg",
+      "pain": [
+        "/images/workshops/python-for-data-science/pain-1.jpg",
+        "/images/workshops/python-for-data-science/pain-2.jpg",
+        "/images/workshops/python-for-data-science/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/python-for-data-science/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/python-for-data-science/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "ui-ux-design-masterclass": {
+      "hero_bg": "/images/workshops/machine-learning-masterclass/hero-bg.jpg",
+      "hero_preview": "/images/workshops/machine-learning-masterclass/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/machine-learning-masterclass/instructor.jpg",
+      "instructor_bg": "/images/workshops/machine-learning-masterclass/instructor-bg.jpg",
+      "product": "/images/workshops/machine-learning-masterclass/product.jpg",
+      "before": "/images/workshops/machine-learning-masterclass/before.jpg",
+      "after": "/images/workshops/machine-learning-masterclass/after.jpg",
+      "curriculum_sidebar": "/images/workshops/machine-learning-masterclass/curriculum.jpg",
+      "pain": [
+        "/images/workshops/machine-learning-masterclass/pain-1.jpg",
+        "/images/workshops/machine-learning-masterclass/pain-2.jpg",
+        "/images/workshops/machine-learning-masterclass/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/machine-learning-masterclass/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/machine-learning-masterclass/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    },
+    "fullstack-web-development": {
+      "hero_bg": "/images/workshops/fullstack-web-development/hero-bg.jpg",
+      "hero_preview": "/images/workshops/fullstack-web-development/preview.jpg",
+      "hero_youtube": null,
+      "instructor": "/images/workshops/fullstack-web-development/instructor.jpg",
+      "instructor_bg": "/images/workshops/fullstack-web-development/instructor-bg.jpg",
+      "product": "/images/workshops/fullstack-web-development/product.jpg",
+      "before": "/images/workshops/fullstack-web-development/before.jpg",
+      "after": "/images/workshops/fullstack-web-development/after.jpg",
+      "curriculum_sidebar": "/images/workshops/fullstack-web-development/curriculum.jpg",
+      "pain": [
+        "/images/workshops/fullstack-web-development/pain-1.jpg",
+        "/images/workshops/fullstack-web-development/pain-2.jpg",
+        "/images/workshops/fullstack-web-development/pain-3.jpg"
+      ],
+      "feature_videos": [
+        {
+          "thumb": "/images/workshops/fullstack-web-development/feat-1.jpg",
+          "youtube": null
+        },
+        {
+          "thumb": "/images/workshops/fullstack-web-development/feat-2.jpg",
+          "youtube": null
+        }
+      ]
+    }
+  }
+}

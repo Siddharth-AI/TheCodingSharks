@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, FileText, CalendarDays, LogOut } from 'lucide-react';
+import { LayoutDashboard, FileText, LogOut } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { logout } from '@/store/slices/authSlice';
 
 const navItems = [
   { label: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
   { label: 'Blogs', href: '/admin/blogs', icon: FileText },
-  { label: 'Workshops', href: '/admin/workshops', icon: CalendarDays },
 ];
 
 export function AdminSidebar() {

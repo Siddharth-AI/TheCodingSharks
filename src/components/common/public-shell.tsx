@@ -9,8 +9,9 @@ import { LeadModal } from './lead-modal';
 export function PublicShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith('/admin');
+  const isWorkshopDetail = /^\/workshops\/[^/]+/.test(pathname);
 
-  if (isAdmin) {
+  if (isAdmin || isWorkshopDetail) {
     return <>{children}</>;
   }
 
