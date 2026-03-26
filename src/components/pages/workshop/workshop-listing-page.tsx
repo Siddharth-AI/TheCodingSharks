@@ -32,6 +32,8 @@ function WorkshopCard({ workshop }: { workshop: WorkshopJson }) {
  return (
  <Link
  href={`/workshops/${workshop.slug}`}
+ target="_blank"
+ rel="noopener noreferrer"
  className="group border border-white/8 bg-[#111] overflow-hidden flex flex-col hover:border-primary/40 transition-all duration-300"
  >
  {/* Cover */}

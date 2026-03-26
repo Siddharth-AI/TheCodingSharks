@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from'react';
-import { X, CheckCircle2, Loader2, ChevronRight, ArrowLeft } from'lucide-react';
+import { useRouter } from'next/navigation';
+import { X, Loader2, ChevronRight, ArrowLeft } from'lucide-react';
 import { fetchCrmCourses, submitLeadToCrm } from'@/lib/crm-api';
 import { useCountdown } from'../hooks';
 import type { WorkshopJson } from'../types';
@@ -12,12 +13,13 @@ interface Props {
 }
 
 export function RegistrationModal({ workshop, onClose }: Props) {
+ const router = useRouter();
  const primary = workshop.page_primary_color ||'#ea580c';
  const countdown = useCountdown(workshop.event_date, workshop.event_time);
  const priceOriginal = workshop.price_original;
  const backdropRef = useRef<HTMLDivElement>(null);
 
- const [step, setStep] = useState<1 | 2 | 3>(1);
+ const [step, setStep] = useState<1 | 2>(1);
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
  const [email, setEmail] = useState('');
@@ -68,8 +70,10 @@ export function RegistrationModal({ workshop, onClose }: Props) {
  const mobile = phone.replace(/\D/g,'').slice(-10);
  const result = await submitLeadToCrm({ name, email, mobile, courseInterest: crmCourseId || undefined });
  setIsSubmitting(false);
- if (result.success) { setStep(3); }
- else setSubmitError(result.error ??'Registration failed. Please try again.');
+ if (result.success) {
+ const params = new URLSearchParams({ from: `/workshops/${workshop.slug}` });
+ router.push(`/thank-you?${params.toString()}`);
+ } else setSubmitError(result.error ??'Registration failed. Please try again.');
  }
  }
 
@@ -114,7 +118,7 @@ export function RegistrationModal({ workshop, onClose }: Props) {
 
  {/* Progress steps */}
  <div className="px-6 py-3 bg-gray-50 border-b border-gray-100 flex items-center justify-center">
- {([1, 2, 3] as const).map((s) => (
+ {([1, 2] as const).map((s) => (
  <div key={s} className="flex items-center">
  <div className="flex flex-col items-center gap-1">
  <div className="w-7 h-7 flex items-center justify-center text-xs font-extrabold shrink-0 transition-all"
@@ -122,10 +126,10 @@ export function RegistrationModal({ workshop, onClose }: Props) {
  {step > s ?'✓' : s}
  </div>
  <span className="text-[10px] font-medium" style={{ color: step >= s ? primary :'#9ca3af' }}>
- {s === 1 ?'Your Info' : s === 2 ?'Contact' :'Done!'}
+ {s === 1 ?'Your Info' :'Contact'}
  </span>
  </div>
- {s < 3 && <div className="w-16 sm:w-24 h-0.5 mb-4 transition-all" style={{ backgroundColor: step > s ? primary :'#e5e7eb' }} />}
+ {s < 2 && <div className="w-16 sm:w-24 h-0.5 mb-4 transition-all" style={{ backgroundColor: step > s ? primary :'#e5e7eb' }} />}
  </div>
  ))}
  </div>
@@ -189,28 +193,9 @@ export function RegistrationModal({ workshop, onClose }: Props) {
  </div>
  )}
 
- {step === 3 && (
- <div className="text-center py-4">
- <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor:`${primary}15` }}>
- <CheckCircle2 className="w-10 h-10" style={{ color: primary }} />
- </div>
- <h3 className="text-xl font-extrabold text-gray-900 mb-2">You&apos;re Enrolled!</h3>
- <p className="text-sm text-gray-500 mb-4">Check your WhatsApp and email for access details. Welcome to CodingShark!</p>
- <div className="bg-gray-50 p-4 text-left space-y-2">
- <p className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">What happens next?</p>
- {['Check your email for login credentials','Join our WhatsApp community for live support','Start with Module 1 — available immediately'].map((s, i) => (
- <div key={i} className="flex items-center gap-2">
- <span className="w-5 h-5 text-white text-xs flex items-center justify-center shrink-0" style={{ backgroundColor: primary }}>{i + 1}</span>
- <span className="text-xs text-gray-600">{s}</span>
- </div>
- ))}
- </div>
- </div>
- )}
  </div>
 
  {/* Footer actions */}
- {step < 3 && (
  <div className="px-6 pb-6 pt-2 flex items-center gap-3">
  {step === 2 && (
  <button onClick={handleBack} className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 transition-colors">
@@ -228,14 +213,6 @@ export function RegistrationModal({ workshop, onClose }: Props) {
  }
  </button>
  </div>
- )}
- {step === 3 && (
- <div className="px-6 pb-6">
- <button onClick={onClose} className="w-full py-3 font-bold text-sm transition-colors" style={{ backgroundColor:`${primary}15`, color: primary }}>
- Close &amp; Start Learning →
- </button>
- </div>
- )}
 
  <p className="text-[10px] text-center text-gray-400 pb-4 px-6">By enrolling you agree to CodingShark&apos;s terms. Your info is 100% secure.</p>
  </div>
