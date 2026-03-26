@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Code2, Brain, Monitor, Server, GitBranch, Cloud, Building2, Zap,
   Briefcase, Clock, CheckSquare, ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
@@ -13,15 +11,14 @@ import { ApplyNowButton } from "@/components/common/apply-now-button";
 
 type Course = (typeof courses)[number];
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  "full-stack": Code2,
-  "ai-agents": Brain,
-  "frontend": Monitor,
-  "backend": Server,
-  "system-design": GitBranch,
-  "devops": Cloud,
-  "campus-bootcamp": Building2,
-  "campus-ai": Zap,
+const COURSE_IMAGE: Record<string, string> = {
+  "full-stack":              "/images/courses/full-stack.jpg",
+  "ai-agents":               "/images/courses/ai-agents.jpg",
+  "python-for-data-science": "/images/courses/python-for-data-science.jpg",
+  "data-science":            "/images/courses/data-science.jpg",
+  "data-analytics":          "/images/courses/data-analytics.jpg",
+  "system-design":           "/images/courses/system-design.jpg",
+  "c-cpp":                   "/images/courses/c-cpp.jpg",
 };
 
 const META_ICON_MAP: Record<string, React.ElementType> = {
@@ -31,18 +28,26 @@ const META_ICON_MAP: Record<string, React.ElementType> = {
 };
 
 function CourseCard({ course }: { course: Course }) {
-  const Icon = ICON_MAP[course.slug] ?? Code2;
+  const img = COURSE_IMAGE[course.slug];
   return (
     <Link
       href={`/courses/${course.slug}`}
       className="group border border-white/8 bg-[#111] overflow-hidden flex flex-col hover:border-primary/40 transition-all duration-300"
     >
-      {/* Gradient header */}
-      <div className={`h-44 bg-linear-to-br ${course.gradient} flex items-center justify-center relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-black/10" />
-        <Icon className="h-14 w-14 text-white/90 relative z-10 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.2} />
+      {/* Image header */}
+      <div className={`h-44 relative overflow-hidden bg-linear-to-br ${course.gradient}`}>
+        {img && (
+          <Image
+            src={img}
+            alt={course.title}
+            fill
+            className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/15 to-transparent" />
         {course.isNew && (
-          <span className="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1">
+          <span className="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 z-10">
             New
           </span>
         )}
@@ -84,8 +89,6 @@ function CourseCard({ course }: { course: Course }) {
 }
 
 export function CoursesListingPage() {
-  const [tab, setTab] = useState<"online" | "campus">("online");
-  const filtered = courses.filter((c) => c.type === tab);
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
@@ -152,29 +155,21 @@ export function CoursesListingPage() {
         </Container>
       </div>
 
-      {/* ── Filter + Grid ── */}
+      {/* ── Grid ── */}
       <Container className="pt-4 pb-20">
-        {/* Tabs */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-10">
-          <div className="flex items-center gap-1 p-1 border border-white/10 bg-white/5 w-full sm:w-auto">
-            {(["online", "campus"] as const).map((t) => (
-              <button
-                key={t}
-                onClick={() => setTab(t)}
-                className={`flex-1 sm:flex-none h-9 px-4 sm:px-5 text-xs sm:text-sm font-medium transition-all ${
-                  tab === t ? "bg-primary text-white" : "text-white/45 hover:text-white"
-                }`}
-              >
-                {t === "online" ? "Online Programs" : "On-Campus Programs"}
-              </button>
-            ))}
+        {/* Count */}
+        <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase border border-primary/30 px-3 py-1">
+              On-Campus Programs
+            </span>
           </div>
-          <p className="text-xs sm:text-sm text-white/30">{filtered.length} programs available</p>
+          <p className="text-xs sm:text-sm text-white/30">{courses.length} programs available</p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map((course) => (
+          {courses.map((course) => (
             <CourseCard key={course.slug} course={course} />
           ))}
         </div>

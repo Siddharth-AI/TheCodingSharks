@@ -1,9 +1,19 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import codingLogo from "@/assets/images/Coding.png";
 import { fetchCrmCourses, submitLeadToCrm, type CrmCourse } from "@/lib/crm-api";
+import localCourses from "@/data/courses.json";
+
+const SLUG_TO_PDF: Record<string, string> = {
+  "data-analytics": "/pdfs/Data-Analytics.pdf",
+  "data-science": "/pdfs/Data-Science.pdf",
+  "python-for-data-science": "/pdfs/Python.pdf",
+  "full-stack": "/pdfs/Fullsstack.pdf",
+  "c-cpp": "/pdfs/C-Cpp.pdf",
+};
 
 /* ── helper any component can call ── */
 export function openLeadModal(source?: string) {
@@ -30,8 +40,8 @@ const BACKGROUNDS = [
 ];
 
 export function LeadModal() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [courses, setCourses] = useState<CrmCourse[]>([]);
@@ -44,7 +54,6 @@ export function LeadModal() {
   useEffect(() => {
     const handler = () => {
       setOpen(true);
-      setSubmitted(false);
       setError(null);
     };
     window.addEventListener("openLeadModal", handler);
@@ -86,8 +95,21 @@ export function LeadModal() {
 
     setLoading(false);
     if (result.success) {
-      setSubmitted(true);
       setForm({ name: "", email: "", phone: "", courseId: "", background: "" });
+      // find matching local course slug from selected CRM courseId
+      const selectedCrmName = courses.find((c) => c.id === form.courseId)?.name ?? "";
+      const localCourse = localCourses.find(
+        (c) => (c as typeof localCourses[number] & { crmCourseName?: string }).crmCourseName?.toLowerCase() === selectedCrmName.toLowerCase()
+      );
+      const pdf = localCourse ? SLUG_TO_PDF[localCourse.slug] : undefined;
+      const from = typeof window !== "undefined" ? window.location.pathname : "/";
+      const params = new URLSearchParams({ from });
+      if (pdf && localCourse) {
+        params.set("pdf", pdf);
+        params.set("course", localCourse.title);
+      }
+      setOpen(false);
+      router.push(`/thank-you?${params.toString()}`);
     } else {
       setError("Something went wrong. Please try again.");
     }
@@ -182,26 +204,7 @@ export function LeadModal() {
             RIGHT — Form panel
         ══════════════════════════════════════ */}
         <div className="flex-1 bg-white overflow-y-auto">
-          {submitted ? (
-            /* Success state */
-            <div className="h-full min-h-[500px] flex flex-col items-center justify-center px-8 py-12 text-center">
-              <div className="size-16 rounded-full bg-green-50 border-2 border-green-200 flex items-center justify-center mb-6">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <path d="M6 14l6 6 10-10" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 font-heading mb-2">You&apos;re in! 🎉</h3>
-              <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
-                A CodingSharks advisor will reach out within 24 hours. Check your WhatsApp and email.
-              </p>
-              <button
-                onClick={close}
-                className="mt-8 bg-primary text-white font-bold text-sm uppercase tracking-widest px-8 py-3 hover:bg-primary/85 transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          ) : (
+          {(
             <div className="px-6 sm:px-10 py-10">
               {/* Mobile brand header */}
               <div className="mb-5 sm:hidden">
@@ -247,14 +250,19 @@ export function LeadModal() {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Phone *</label>
-                    <input
-                      required
-                      type="tel"
-                      placeholder="+91 98765 43210"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="h-11 border border-gray-200 px-4 text-sm text-gray-900 placeholder-gray-300 focus:outline-none focus:border-primary transition-colors"
-                    />
+                    <div className="flex gap-2">
+                      <div className="shrink-0 w-16 h-11 border border-gray-200 bg-gray-50 flex items-center justify-center text-sm text-gray-600 font-semibold gap-1">
+                        🇮🇳 +91
+                      </div>
+                      <input
+                        required
+                        type="tel"
+                        placeholder="98765 43210"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        className="flex-1 min-w-0 h-11 border border-gray-200 px-4 text-sm text-gray-900 placeholder-gray-300 focus:outline-none focus:border-primary transition-colors"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -338,6 +346,7 @@ export function LeadModal() {
             </div>
           )}
         </div>
+
       </div>
 
       <style>{`

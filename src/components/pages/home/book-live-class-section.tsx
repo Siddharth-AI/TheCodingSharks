@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Play,
@@ -18,9 +19,9 @@ import { Section } from "@/components/layout/section";
 import { fetchCrmCourses, submitLeadToCrm, type CrmCourse } from "@/lib/crm-api";
 
 export function BookLiveClassSection() {
+  const router = useRouter();
   const live = home.liveClass;
   const [showVideo, setShowVideo] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [courses, setCourses] = useState<CrmCourse[]>([]);
@@ -47,8 +48,8 @@ export function BookLiveClassSection() {
 
     setLoading(false);
     if (result.success) {
-      setSubmitted(true);
       setForm({ name: "", email: "", phone: "", courseId: "" });
+      router.push("/thank-you?from=/");
     } else {
       setError("Something went wrong. Please try again.");
     }
@@ -180,8 +181,7 @@ export function BookLiveClassSection() {
               <div className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-orange-100/60 blur-[60px]" />
               <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-orange-50/80 blur-[60px]" />
 
-              {!submitted ? (
-                <>
+              <>
                   <div className="relative z-10 mb-5">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-1.5 font-heading tracking-tight">
                       {live.form.title}
@@ -295,25 +295,6 @@ export function BookLiveClassSection() {
                     </div>
                   </form>
                 </>
-              ) : (
-                <div className="relative z-10 py-10 flex flex-col items-center text-center">
-                  <div className="h-16 w-16 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mb-5">
-                    <CheckCircle2 className="h-8 w-8 text-green-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 font-heading">
-                    Booking Confirmed!
-                  </h3>
-                  <p className="text-gray-500 mb-6 text-sm max-w-[220px]">
-                    We&apos;ve sent the session details to your email and WhatsApp.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="text-primary text-sm font-semibold hover:underline"
-                  >
-                    Reschedule booking
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         </div>

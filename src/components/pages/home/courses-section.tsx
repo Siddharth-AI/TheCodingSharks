@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef } from "react";
 import { BrochureButton } from "@/components/common/apply-now-button";
 import {
@@ -9,144 +10,30 @@ import {
   ChevronDown,
   ChevronUp,
   Download,
-  Code2,
-  Brain,
-  Monitor,
-  Server,
-  GitBranch,
-  Cloud,
-  Zap,
-  Building2,
   Briefcase,
   Clock,
   CheckSquare,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import courses from "@/data/courses.json";
 
-type MetaIcon = "briefcase" | "clock" | "check";
+type Course = (typeof courses)[number];
 
-const COURSES = [
-  {
-    badge: "MOST POPULAR",
-    title: "Full Stack Web Development",
-    gradient: "from-violet-500 to-purple-800",
-    Icon: Code2,
-    type: "online" as const,
-    isNew: false,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: Open to all" },
-      { icon: "clock" as MetaIcon, text: "Duration: 6 months" },
-      { icon: "check" as MetaIcon, text: "10+ real-world products" },
-    ],
-    href: "/courses/full-stack",
-  },
-  {
-    badge: "IN HIGH DEMAND",
-    title: "AI Agents & Automation",
-    gradient: "from-rose-500 to-pink-700",
-    Icon: Brain,
-    type: "online" as const,
-    isNew: true,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: Open to all" },
-      { icon: "clock" as MetaIcon, text: "Duration: 4 months" },
-      { icon: "check" as MetaIcon, text: "Build 5+ AI agents from scratch" },
-    ],
-    href: "/courses/ai-agents",
-  },
-  {
-    badge: "NSDC CERTIFIED",
-    title: "Frontend Engineering — React & Next.js",
-    gradient: "from-fuchsia-500 to-pink-700",
-    Icon: Monitor,
-    type: "online" as const,
-    isNew: false,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: Open to all" },
-      { icon: "clock" as MetaIcon, text: "Duration: 4 months" },
-      { icon: "check" as MetaIcon, text: "Real-world UI products" },
-    ],
-    href: "/courses/frontend",
-  },
-  {
-    badge: "NSDC CERTIFIED",
-    title: "Backend Engineering — Node.js & APIs",
-    gradient: "from-orange-500 to-red-700",
-    Icon: Server,
-    type: "online" as const,
-    isNew: false,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: Open to all" },
-      { icon: "clock" as MetaIcon, text: "Duration: 4 months" },
-      { icon: "check" as MetaIcon, text: "APIs + Database projects" },
-    ],
-    href: "/courses/backend",
-  },
-  {
-    badge: "PLACEMENT BOOSTER",
-    title: "System Design & DSA Masterclass",
-    gradient: "from-indigo-500 to-blue-800",
-    Icon: GitBranch,
-    type: "online" as const,
-    isNew: false,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: 1 year" },
-      { icon: "clock" as MetaIcon, text: "Duration: 3 months" },
-      { icon: "check" as MetaIcon, text: "50+ coding problem sets" },
-    ],
-    href: "/courses/system-design",
-  },
-  {
-    badge: "CLOUD SPECIALISATION",
-    title: "DevOps, Cloud & CI/CD",
-    gradient: "from-cyan-500 to-blue-700",
-    Icon: Cloud,
-    type: "online" as const,
-    isNew: true,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Min. work exp: Open to all" },
-      { icon: "clock" as MetaIcon, text: "Duration: 3 months" },
-      { icon: "check" as MetaIcon, text: "AWS + Docker hands-on labs" },
-    ],
-    href: "/courses/devops",
-  },
-  {
-    badge: "IMMERSIVE · RESIDENTIAL",
-    title: "On-Campus Full Stack Bootcamp",
-    gradient: "from-slate-500 to-blue-900",
-    Icon: Building2,
-    type: "campus" as const,
-    isNew: false,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Completed 12th grade" },
-      { icon: "clock" as MetaIcon, text: "Duration: 6 months residential" },
-      { icon: "check" as MetaIcon, text: "Fully in Bangalore" },
-    ],
-    href: "/courses/campus-bootcamp",
-  },
-  {
-    badge: "FAST TRACK",
-    title: "AI & Automation Sprint — On-Campus",
-    gradient: "from-emerald-500 to-teal-700",
-    Icon: Zap,
-    type: "campus" as const,
-    isNew: true,
-    meta: [
-      { icon: "briefcase" as MetaIcon, text: "Basic coding experience" },
-      { icon: "clock" as MetaIcon, text: "Duration: 2 months" },
-      { icon: "check" as MetaIcon, text: "Hands-on AI projects" },
-    ],
-    href: "/courses/campus-ai",
-  },
-];
+const COURSE_IMAGE: Record<string, string> = {
+  "full-stack":              "/images/courses/full-stack.jpg",
+  "ai-agents":               "/images/courses/ai-agents.jpg",
+  "python-for-data-science": "/images/courses/python-for-data-science.jpg",
+  "data-science":            "/images/courses/data-science.jpg",
+  "data-analytics":          "/images/courses/data-analytics.jpg",
+  "system-design":           "/images/courses/system-design.jpg",
+  "c-cpp":                   "/images/courses/c-cpp.jpg",
+};
 
-const MetaIconMap: Record<MetaIcon, typeof Briefcase> = {
+const META_ICON_MAP: Record<string, React.ElementType> = {
   briefcase: Briefcase,
   clock: Clock,
   check: CheckSquare,
 };
-
-type Course = (typeof COURSES)[number];
 
 function CourseCard({
   course,
@@ -155,18 +42,33 @@ function CourseCard({
   course: Course;
   className?: string;
 }) {
+  const img = COURSE_IMAGE[course.slug];
   return (
     <div
       className={`border border-white/8 bg-[#111] overflow-hidden flex flex-col hover:border-primary/30 transition-colors ${className}`}>
-      {/* Gradient image area */}
-      <div
-        className={`h-44 sm:h-48 bg-linear-to-br ${course.gradient} flex items-center justify-center`}>
-        <course.Icon className="h-14 w-14 text-white/90" strokeWidth={1.2} />
+
+      {/* Image / gradient header */}
+      <div className={`h-44 sm:h-48 relative overflow-hidden bg-linear-to-br ${course.gradient}`}>
+        {img ? (
+          <Image
+            src={img}
+            alt={course.title}
+            fill
+            className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 320px"
+          />
+        ) : null}
+        {/* gradient overlay so text stays readable */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+        {course.isNew && (
+          <span className="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 z-10">
+            New
+          </span>
+        )}
       </div>
 
       {/* Card content */}
       <div className="flex flex-col flex-1 p-5 gap-3 border-t border-primary/20">
-        {/* Badge */}
         <p className="text-xs font-bold tracking-[0.15em] text-primary/60 uppercase flex items-center gap-1.5">
           <span className="h-3 w-3 border border-primary/30 inline-flex items-center justify-center shrink-0">
             <span className="h-1 w-1 bg-primary/50" />
@@ -174,47 +76,30 @@ function CourseCard({
           {course.badge}
         </p>
 
-        {/* Title */}
         <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
           {course.title}
         </h3>
 
-        {/* Meta */}
         <ul className="space-y-2 flex-1">
           {course.meta.map((m, j) => {
-            const IconComp = MetaIconMap[m.icon];
+            const IconComp = META_ICON_MAP[m.icon] ?? Briefcase;
             return (
-              <li
-                key={j}
-                className="text-sm text-white/50 flex items-center gap-2.5">
-                <IconComp
-                  className="h-3.5 w-3.5 text-white/30 shrink-0"
-                  strokeWidth={1.5}
-                />
+              <li key={j} className="text-sm text-white/50 flex items-center gap-2.5">
+                <IconComp className="h-3.5 w-3.5 text-white/30 shrink-0" strokeWidth={1.5} />
                 {m.text}
               </li>
             );
           })}
         </ul>
 
-        {/* NEW badge */}
-        {course.isNew && (
-          <div className="w-fit bg-primary/15 border border-primary/25 px-2.5 py-1">
-            <span className="text-xs font-bold text-primary uppercase tracking-wider">
-              New
-            </span>
-          </div>
-        )}
-
-        {/* Actions */}
         <div className="flex flex-col gap-2 mt-1">
           <Link
-            href={course.href}
+            href={`/courses/${course.slug}`}
             className="h-11 border border-white/10 text-xs font-bold text-white/50 hover:text-white hover:border-white/25 transition-all flex items-center justify-center tracking-[0.15em] uppercase">
             Go To Program
           </Link>
           <BrochureButton
-            source={`brochure-${course.href}`}
+            source={`brochure-home-${course.slug}`}
             className="h-11 bg-primary hover:bg-primary/85 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 tracking-[0.15em] uppercase">
             <Download className="h-4 w-4" />
             Brochure
@@ -226,12 +111,10 @@ function CourseCard({
 }
 
 export function CoursesSection() {
-  const [activeTab, setActiveTab] = useState<"online" | "campus">("online");
   const [showAll, setShowAll] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const filtered = COURSES.filter((c) => c.type === activeTab);
-  const visibleMobile = showAll ? filtered : filtered.slice(0, 2);
+  const visibleMobile = showAll ? courses : courses.slice(0, 2);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -239,12 +122,6 @@ export function CoursesSection() {
       left: dir === "left" ? -660 : 660,
       behavior: "smooth",
     });
-  };
-
-  // reset showAll when tab changes
-  const handleTab = (tab: "online" | "campus") => {
-    setActiveTab(tab);
-    setShowAll(false);
   };
 
   return (
@@ -261,46 +138,27 @@ export function CoursesSection() {
             Structured programs built around real projects, 1-on-1 mentorship,
             and guaranteed placement support.
           </p>
-
-          {/* Tabs */}
-          <div className="flex items-center gap-1 mt-8 p-1 rounded-full border border-white/10 bg-white/5 w-full sm:w-auto">
-            {(["online", "campus"] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => handleTab(tab)}
-                className={`flex-1 sm:flex-none h-9 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                  activeTab === tab
-                    ? "bg-primary text-white"
-                    : "text-white/50 hover:text-white/80"
-                }`}>
-                <span className="sm:hidden">{tab === "online" ? "Online" : "On-Campus"}</span>
-                <span className="hidden sm:inline">{tab === "online" ? "Online Programs" : "On-Campus Programs"}</span>
-              </button>
-            ))}
-          </div>
+          <span className="mt-6 inline-block text-[10px] font-bold tracking-[0.2em] text-primary uppercase border border-primary/30 px-4 py-1.5">
+            On-Campus · Indore
+          </span>
         </div>
 
-        {/* ── MOBILE grid (hidden on md+) ── */}
+        {/* ── MOBILE grid ── */}
         <div className="md:hidden">
           <div className="grid grid-cols-1 gap-3">
             {visibleMobile.map((course, i) => (
               <CourseCard key={i} course={course} className="w-full" />
             ))}
           </div>
-
-          {filtered.length > 2 && (
+          {courses.length > 2 && (
             <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setShowAll((p) => !p)}
                 className="flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white/60 hover:border-primary hover:text-primary transition-all">
                 {showAll ? (
-                  <>
-                    <ChevronUp className="size-4" /> View Less
-                  </>
+                  <><ChevronUp className="size-4" /> View Less</>
                 ) : (
-                  <>
-                    <ChevronDown className="size-4" /> View More
-                  </>
+                  <><ChevronDown className="size-4" /> View More ({courses.length - 2} more)</>
                 )}
               </button>
             </div>
@@ -308,9 +166,8 @@ export function CoursesSection() {
         </div>
       </Container>
 
-      {/* ── DESKTOP carousel (hidden on mobile) ── */}
+      {/* ── DESKTOP carousel ── */}
       <div className="relative mt-2 hidden md:block">
-        {/* Left arrow */}
         <button
           onClick={() => scroll("left")}
           aria-label="Previous"
@@ -319,8 +176,6 @@ export function CoursesSection() {
             <ChevronLeft className="h-5 w-5" />
           </span>
         </button>
-
-        {/* Right arrow */}
         <button
           onClick={() => scroll("right")}
           aria-label="Next"
@@ -329,17 +184,11 @@ export function CoursesSection() {
             <ChevronRight className="h-5 w-5" />
           </span>
         </button>
-
-        {/* Scroll track */}
         <div
           ref={scrollRef}
           className="no-scrollbar flex gap-2 overflow-x-auto px-20 sm:px-32">
-          {filtered.map((course, i) => (
-            <CourseCard
-              key={i}
-              course={course}
-              className="flex-none w-72 sm:w-80"
-            />
+          {courses.map((course, i) => (
+            <CourseCard key={i} course={course} className="flex-none w-72 sm:w-80" />
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   Code2,
@@ -20,7 +21,11 @@ import {
   Users,
   BarChart3,
   Layers,
+  FlaskConical,
+  Terminal,
+  Cpu,
 } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import courses from "@/data/courses.json";
 import { ApplyNowButton } from "@/components/common/apply-now-button";
@@ -38,6 +43,28 @@ const ICON_MAP: Record<string, React.ElementType> = {
   devops: Cloud,
   "campus-bootcamp": Building2,
   "campus-ai": Zap,
+  "data-analytics": BarChart3,
+  "data-science": FlaskConical,
+  "python-for-data-science": Terminal,
+  "c-cpp": Cpu,
+};
+
+const COURSE_IMAGE: Record<string, string> = {
+  "full-stack":              "/images/courses/full-stack.jpg",
+  "ai-agents":               "/images/courses/ai-agents.jpg",
+  "python-for-data-science": "/images/courses/python-for-data-science.jpg",
+  "data-science":            "/images/courses/data-science.jpg",
+  "data-analytics":          "/images/courses/data-analytics.jpg",
+  "system-design":           "/images/courses/system-design.jpg",
+  "c-cpp":                   "/images/courses/c-cpp.jpg",
+};
+
+const SLUG_TO_PDF: Record<string, string> = {
+  "data-analytics": "/pdfs/Data-Analytics.pdf",
+  "data-science": "/pdfs/Data-Science.pdf",
+  "python-for-data-science": "/pdfs/Python.pdf",
+  "full-stack": "/pdfs/Fullsstack.pdf",
+  "c-cpp": "/pdfs/C-Cpp.pdf",
 };
 
 const META_ICON_MAP: Record<string, React.ElementType> = {
@@ -174,7 +201,7 @@ function CurriculumAccordion({ modules }: { modules: Course["curriculum"] }) {
 }
 
 function HeroForm({ course }: { course: Course }) {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [crmCourseId, setCrmCourseId] = useState<string>("");
@@ -206,8 +233,14 @@ function HeroForm({ course }: { course: Course }) {
 
     setLoading(false);
     if (result.success) {
-      setSubmitted(true);
       setForm({ name: "", email: "", phone: "", background: "" });
+      const pdf = SLUG_TO_PDF[course.slug];
+      const params = new URLSearchParams({ from: `/courses/${course.slug}` });
+      if (pdf) {
+        params.set("pdf", pdf);
+        params.set("course", course.title);
+      }
+      router.push(`/thank-you?${params.toString()}`);
     } else {
       setError("Something went wrong. Please try again.");
     }
@@ -221,28 +254,7 @@ function HeroForm({ course }: { course: Course }) {
       <div className={`h-1.5 bg-linear-to-r ${course.gradient}`} />
 
       <div className="p-6">
-        {submitted ? (
-          <div className="py-10 flex flex-col items-center text-center gap-3">
-            <div className="size-14 rounded-full bg-green-50 border-2 border-green-200 flex items-center justify-center mb-1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M5 12l5 5 9-9"
-                  stroke="#16a34a"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <p className="text-gray-900 font-bold text-base font-heading">
-              We&apos;ll call you within 24 hours!
-            </p>
-            <p className="text-gray-400 text-sm">
-              Also check your WhatsApp for details.
-            </p>
-          </div>
-        ) : (
-          <>
+        <>
             {/* Header */}
             <div className="mb-5">
               <div className="flex items-center gap-2 mb-3">
@@ -347,7 +359,6 @@ function HeroForm({ course }: { course: Course }) {
               </p>
             </form>
           </>
-        )}
       </div>
     </div>
   );
@@ -372,22 +383,41 @@ export function CourseDetailPage({ slug }: { slug: string }) {
   }
 
   const Icon = ICON_MAP[course.slug] ?? Code2;
+  const heroImg = COURSE_IMAGE[course.slug];
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
       {/* ── Hero ── */}
-      <div
-        className={`relative overflow-hidden bg-linear-to-br ${course.gradient} pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pb-28`}>
-        <div className="absolute inset-0 bg-black/55" />
+      <div className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pb-28">
+        {/* Background image */}
+        {heroImg ? (
+          <Image
+            src={heroImg}
+            alt=""
+            fill
+            className="object-cover scale-105 blur-sm"
+            priority
+            aria-hidden
+          />
+        ) : (
+          <div className={`absolute inset-0 bg-linear-to-br ${course.gradient}`} />
+        )}
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#0a0a0a]/60" />
 
         {/* Dot grid texture */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)",
+              "radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #0a0a0a)" }}
         />
 
         <Container>
@@ -411,7 +441,7 @@ export function CourseDetailPage({ slug }: { slug: string }) {
                   </span>
                 )}
                 <span className="text-[10px] font-bold tracking-widest text-white/60 uppercase border border-white/15 px-3 py-1">
-                  {course.type === "campus" ? "On-Campus" : "Online"}
+                  On-Campus
                 </span>
               </div>
 
@@ -635,23 +665,8 @@ export function CourseDetailPage({ slug }: { slug: string }) {
               <div className={`h-2 bg-linear-to-r ${course.gradient}`} />
 
               <div className="p-6 flex flex-col gap-5">
-                {/* Price */}
-                <div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-3xl font-bold text-white font-heading">
-                      {course.price}
-                    </span>
-                    <span className="text-sm text-white/30 line-through">
-                      {course.originalPrice}
-                    </span>
-                  </div>
-                  <p className="text-xs text-primary mt-1 font-medium">
-                    Or pay after placement with ISA
-                  </p>
-                </div>
-
                 {/* Quick info */}
-                <div className="flex flex-col gap-2 border-t border-white/8 pt-4">
+                <div className="flex flex-col gap-2">
                   {[
                     { label: "Duration", value: course.duration },
                     { label: "Mode", value: course.mode },

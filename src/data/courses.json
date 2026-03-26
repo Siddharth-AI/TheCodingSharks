@@ -1,72 +1,5 @@
 [
   {
-    "slug": "full-stack",
-    "crmCourseName": "Full Stack Web Development",
-    "badge": "MOST POPULAR",
-    "title": "Full Stack Web Development",
-    "tagline": "Build, deploy and ship full-stack products from scratch",
-    "gradient": "from-violet-500 to-purple-800",
-    "accentColor": "#7c3aed",
-    "type": "online",
-    "isNew": false,
-    "duration": "6 Months",
-    "mode": "Live + Async",
-    "level": "Beginner to Advanced",
-    "students": "3,200+",
-    "projectCount": "10+",
-    "placementRate": "94%",
-    "price": "₹1,20,000",
-    "originalPrice": "₹1,80,000",
-    "description": "The most complete full-stack program in India — from HTML to deploying scalable microservices on AWS. You will build 10+ real products, get weekly code reviews from senior engineers, and get placed at top startups.",
-    "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
-      { "icon": "clock", "text": "Duration: 6 months" },
-      { "icon": "check", "text": "10+ real-world products" }
-    ],
-    "whatYouLearn": [
-      "Build and deploy full-stack apps with React, Next.js, Node.js and PostgreSQL",
-      "Design RESTful APIs and GraphQL endpoints used in production",
-      "Implement authentication, payments, real-time features and file uploads",
-      "Write clean, tested, type-safe code with TypeScript and Jest",
-      "Deploy on AWS with Docker, CI/CD pipelines and monitoring",
-      "Crack technical interviews with system design + DSA preparation"
-    ],
-    "curriculum": [
-      {
-        "module": "Module 1 — Web Foundations",
-        "topics": ["HTML5 & Semantic Markup", "CSS3, Flexbox & Grid", "JavaScript ES6+", "Git & GitHub workflow", "VS Code & Dev Tools"]
-      },
-      {
-        "module": "Module 2 — Frontend with React",
-        "topics": ["React fundamentals & hooks", "State management with Zustand", "React Query & data fetching", "Next.js App Router", "Tailwind CSS & component libraries"]
-      },
-      {
-        "module": "Module 3 — Backend with Node.js",
-        "topics": ["Node.js & Express fundamentals", "REST API design patterns", "Authentication with JWT & OAuth", "File uploads & email services", "WebSockets & real-time features"]
-      },
-      {
-        "module": "Module 4 — Databases & Cloud",
-        "topics": ["PostgreSQL & SQL mastery", "MongoDB & NoSQL patterns", "Redis caching strategies", "AWS EC2, S3, RDS", "Docker & containerisation"]
-      },
-      {
-        "module": "Module 5 — System Design & Placement",
-        "topics": ["High-level system design", "Database schema design", "Caching, queues & CDN", "Mock interviews & DSA sprints", "Resume & portfolio review"]
-      }
-    ],
-    "projects": [
-      { "name": "E-commerce Platform", "desc": "Full-stack store with payments, auth and admin dashboard" },
-      { "name": "Real-time Chat App", "desc": "WebSocket-powered chat with rooms and notifications" },
-      { "name": "SaaS Dashboard", "desc": "Multi-tenant app with role-based access and analytics" },
-      { "name": "Job Board", "desc": "Full-featured job listing platform with search and filters" }
-    ],
-    "whoIsItFor": [
-      { "title": "Career Switchers", "desc": "Non-tech professionals who want to move into software engineering" },
-      { "title": "Fresh Graduates", "desc": "CS or non-CS graduates who want strong placement-ready skills" },
-      { "title": "Self-taught Coders", "desc": "Developers with some basics who want structured depth" }
-    ],
-    "tools": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Redis", "AWS", "Docker", "Tailwind CSS"]
-  },
-  {
     "slug": "ai-agents",
     "crmCourseName": "AI Agents & Automation",
     "badge": "IN HIGH DEMAND",
@@ -74,10 +7,10 @@
     "tagline": "Build intelligent products with LLMs, agents and automation workflows",
     "gradient": "from-rose-500 to-pink-700",
     "accentColor": "#e11d48",
-    "type": "online",
+    "type": "campus",
     "isNew": true,
     "duration": "4 Months",
-    "mode": "Live + Projects",
+    "mode": "Live · Indore",
     "level": "Intermediate",
     "students": "980+",
     "projectCount": "5+",
@@ -86,9 +19,18 @@
     "originalPrice": "₹1,40,000",
     "description": "Master LLMs, AI agents and automation to build products that 99% of developers can't. This program covers everything from OpenAI APIs to deploying production-grade AI tools with real users.",
     "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
-      { "icon": "clock", "text": "Duration: 4 months" },
-      { "icon": "check", "text": "Build 5+ AI agents from scratch" }
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 4 months"
+      },
+      {
+        "icon": "check",
+        "text": "Build 5+ AI agents from scratch"
+      }
     ],
     "whatYouLearn": [
       "Integrate LLMs like GPT-4, Claude and Gemini into production apps",
@@ -101,159 +43,89 @@
     "curriculum": [
       {
         "module": "Module 1 — Python & AI Foundations",
-        "topics": ["Python for AI developers", "OpenAI & Anthropic APIs", "Prompt engineering patterns", "Token management & cost optimisation", "Streaming & async AI calls"]
+        "topics": [
+          "Python for AI developers",
+          "OpenAI & Anthropic APIs",
+          "Prompt engineering patterns",
+          "Token management & cost optimisation",
+          "Streaming & async AI calls"
+        ]
       },
       {
         "module": "Module 2 — LangChain & Agents",
-        "topics": ["LangChain chains and runnables", "Tool-calling and function execution", "Agent memory and state management", "CrewAI multi-agent systems", "ReAct and plan-execute patterns"]
+        "topics": [
+          "LangChain chains and runnables",
+          "Tool-calling and function execution",
+          "Agent memory and state management",
+          "CrewAI multi-agent systems",
+          "ReAct and plan-execute patterns"
+        ]
       },
       {
         "module": "Module 3 — RAG & Vector DBs",
-        "topics": ["Embeddings and similarity search", "Pinecone and Weaviate setup", "Document ingestion pipelines", "Hybrid search strategies", "RAG evaluation and quality"]
+        "topics": [
+          "Embeddings and similarity search",
+          "Pinecone and Weaviate setup",
+          "Document ingestion pipelines",
+          "Hybrid search strategies",
+          "RAG evaluation and quality"
+        ]
       },
       {
         "module": "Module 4 — Shipping AI Products",
-        "topics": ["Next.js + AI SDK integration", "Subscription and billing with Stripe", "AI product deployment on Vercel/AWS", "Monitoring with LangSmith", "Building waitlists and user onboarding"]
+        "topics": [
+          "Next.js + AI SDK integration",
+          "Subscription and billing with Stripe",
+          "AI product deployment on Vercel/AWS",
+          "Monitoring with LangSmith",
+          "Building waitlists and user onboarding"
+        ]
       }
     ],
     "projects": [
-      { "name": "AI Coding Assistant", "desc": "GitHub Copilot-like tool with context-aware suggestions" },
-      { "name": "Document Q&A Bot", "desc": "RAG-powered chatbot that answers from uploaded PDFs" },
-      { "name": "Autonomous Research Agent", "desc": "Agent that searches, reads and summarises web content" },
-      { "name": "AI Content SaaS", "desc": "Subscription product that generates marketing copy" }
-    ],
-    "whoIsItFor": [
-      { "title": "Software Developers", "desc": "Engineers who want to add high-demand AI skills to their stack" },
-      { "title": "Product Builders", "desc": "Founders and PMs who want to ship AI-powered features" },
-      { "title": "Career Upgraders", "desc": "Professionals targeting AI Engineer and ML Ops roles" }
-    ],
-    "tools": ["Python", "OpenAI API", "LangChain", "CrewAI", "Pinecone", "Next.js", "FastAPI", "Vercel", "Stripe", "LangSmith"]
-  },
-  {
-    "slug": "frontend",
-    "crmCourseName": "Frontend Engineering — React & Next.js",
-    "badge": "NSDC CERTIFIED",
-    "title": "Frontend Engineering — React & Next.js",
-    "tagline": "Become the frontend engineer every product team wants to hire",
-    "gradient": "from-fuchsia-500 to-pink-700",
-    "accentColor": "#a21caf",
-    "type": "online",
-    "isNew": false,
-    "duration": "4 Months",
-    "mode": "Live + Workshops",
-    "level": "Beginner to Intermediate",
-    "students": "2,100+",
-    "projectCount": "5+",
-    "placementRate": "92%",
-    "price": "₹75,000",
-    "originalPrice": "₹1,20,000",
-    "description": "Go deep on React, Next.js, TypeScript, animations and design systems. Ship 5 pixel-perfect production apps that make interviewers stop and take notice.",
-    "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
-      { "icon": "clock", "text": "Duration: 4 months" },
-      { "icon": "check", "text": "Real-world UI products" }
-    ],
-    "whatYouLearn": [
-      "Master React from fundamentals to advanced patterns like compound components",
-      "Build full applications with Next.js App Router, RSC and server actions",
-      "Write type-safe code with TypeScript and handle complex form logic",
-      "Create stunning animations with Framer Motion and CSS",
-      "Test your components with Jest, React Testing Library and Playwright",
-      "Build and consume design systems with Storybook and Radix UI"
-    ],
-    "curriculum": [
       {
-        "module": "Module 1 — JavaScript Mastery",
-        "topics": ["ES6+ deep dive", "Async/await & Promises", "DOM manipulation", "Functional programming patterns", "TypeScript fundamentals"]
+        "name": "AI Coding Assistant",
+        "desc": "GitHub Copilot-like tool with context-aware suggestions"
       },
       {
-        "module": "Module 2 — React In-Depth",
-        "topics": ["Hooks deep dive", "Custom hooks & composition", "Context API & Zustand", "React Query & SWR", "Performance & memoisation"]
+        "name": "Document Q&A Bot",
+        "desc": "RAG-powered chatbot that answers from uploaded PDFs"
       },
       {
-        "module": "Module 3 — Next.js & Full App",
-        "topics": ["App Router & layouts", "Server components & actions", "API routes & middleware", "SEO & metadata", "Authentication with NextAuth"]
+        "name": "Autonomous Research Agent",
+        "desc": "Agent that searches, reads and summarises web content"
       },
       {
-        "module": "Module 4 — UI Engineering",
-        "topics": ["Tailwind CSS mastery", "Framer Motion animations", "Design system with Radix UI", "Accessibility (a11y)", "Storybook documentation"]
+        "name": "AI Content SaaS",
+        "desc": "Subscription product that generates marketing copy"
       }
     ],
-    "projects": [
-      { "name": "SaaS Landing Page", "desc": "Animated marketing site with Framer Motion" },
-      { "name": "Dashboard App", "desc": "Data visualisation dashboard with charts and filters" },
-      { "name": "E-commerce Storefront", "desc": "Product listing, cart and checkout UI" },
-      { "name": "Design System", "desc": "Component library documented in Storybook" }
-    ],
     "whoIsItFor": [
-      { "title": "Web Beginners", "desc": "People who know basic HTML/CSS and want to go professional" },
-      { "title": "Backend Devs", "desc": "Engineers who want to become full-stack by mastering frontend" },
-      { "title": "UI Designers", "desc": "Designers who want to code their own designs" }
-    ],
-    "tools": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "React Query", "Jest", "Playwright", "Storybook"]
-  },
-  {
-    "slug": "backend",
-    "crmCourseName": "Backend Engineering — Node.js & APIs",
-    "badge": "NSDC CERTIFIED",
-    "title": "Backend Engineering — Node.js & APIs",
-    "tagline": "Build the APIs and systems that power modern products",
-    "gradient": "from-orange-500 to-red-700",
-    "accentColor": "#ea580c",
-    "type": "online",
-    "isNew": false,
-    "duration": "4 Months",
-    "mode": "Live + Async",
-    "level": "Beginner to Intermediate",
-    "students": "1,650+",
-    "projectCount": "6+",
-    "placementRate": "90%",
-    "price": "₹75,000",
-    "originalPrice": "₹1,20,000",
-    "description": "Master Node.js, databases, security and system scalability. Build APIs used by thousands of users — with proper auth, caching, queues and observability.",
-    "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
-      { "icon": "clock", "text": "Duration: 4 months" },
-      { "icon": "check", "text": "APIs + Database projects" }
-    ],
-    "whatYouLearn": [
-      "Build scalable REST APIs with Node.js, Express and Fastify",
-      "Design and optimise SQL schemas with PostgreSQL",
-      "Implement JWT, OAuth2 and session-based authentication",
-      "Cache data with Redis and handle background jobs with queues",
-      "Write unit and integration tests with Jest and Supertest",
-      "Deploy APIs on AWS with load balancers, autoscaling and monitoring"
-    ],
-    "curriculum": [
       {
-        "module": "Module 1 — Node.js Core",
-        "topics": ["Node.js event loop", "Modules & file system", "HTTP server & streams", "Express fundamentals", "Middleware patterns"]
+        "title": "Software Developers",
+        "desc": "Engineers who want to add high-demand AI skills to their stack"
       },
       {
-        "module": "Module 2 — Databases",
-        "topics": ["PostgreSQL & SQL", "Prisma ORM", "MongoDB & Mongoose", "Database indexing", "Migrations & seeding"]
+        "title": "Product Builders",
+        "desc": "Founders and PMs who want to ship AI-powered features"
       },
       {
-        "module": "Module 3 — Auth & Security",
-        "topics": ["JWT & refresh tokens", "OAuth2 with Google/GitHub", "Rate limiting & CORS", "Input validation & sanitisation", "OWASP security practices"]
-      },
-      {
-        "module": "Module 4 — Scale & Deploy",
-        "topics": ["Redis caching", "Bull queues & workers", "AWS EC2 & RDS", "Nginx reverse proxy", "Logging with Winston & Datadog"]
+        "title": "Career Upgraders",
+        "desc": "Professionals targeting AI Engineer and ML Ops roles"
       }
     ],
-    "projects": [
-      { "name": "Twitter-like API", "desc": "Social feed with follows, likes and real-time notifications" },
-      { "name": "Payment Gateway", "desc": "Stripe integration with webhooks and subscription billing" },
-      { "name": "File Storage Service", "desc": "S3-backed upload API with access control" },
-      { "name": "Auth Microservice", "desc": "Standalone auth service with JWT and OAuth2" }
-    ],
-    "whoIsItFor": [
-      { "title": "Frontend Developers", "desc": "Devs who want to go full-stack by learning the backend" },
-      { "title": "Career Switchers", "desc": "Non-tech professionals targeting backend engineer roles" },
-      { "title": "College Students", "desc": "CS students who want real industry experience beyond theory" }
-    ],
-    "tools": ["Node.js", "Express", "PostgreSQL", "Prisma", "MongoDB", "Redis", "JWT", "AWS", "Docker", "Jest"]
+    "tools": [
+      "Python",
+      "OpenAI API",
+      "LangChain",
+      "CrewAI",
+      "Pinecone",
+      "Next.js",
+      "FastAPI",
+      "Vercel",
+      "Stripe",
+      "LangSmith"
+    ]
   },
   {
     "slug": "system-design",
@@ -263,10 +135,10 @@
     "tagline": "Crack senior engineer interviews at top product companies",
     "gradient": "from-indigo-500 to-blue-800",
     "accentColor": "#4f46e5",
-    "type": "online",
+    "type": "campus",
     "isNew": false,
     "duration": "3 Months",
-    "mode": "Live + Mock Interviews",
+    "mode": "Live · Indore",
     "level": "Intermediate to Advanced",
     "students": "1,400+",
     "projectCount": "50+",
@@ -275,9 +147,18 @@
     "originalPrice": "₹90,000",
     "description": "The most focused interview prep program for engineers targeting senior roles at Swiggy, Razorpay, PhonePe and similar companies. Covers HLD, LLD, and 300+ DSA problems.",
     "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: 1 year" },
-      { "icon": "clock", "text": "Duration: 3 months" },
-      { "icon": "check", "text": "50+ coding problem sets" }
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: 1 year"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 3 months"
+      },
+      {
+        "icon": "check",
+        "text": "50+ coding problem sets"
+      }
     ],
     "whatYouLearn": [
       "Design systems like URL shorteners, Instagram, WhatsApp and Uber",
@@ -290,220 +171,807 @@
     "curriculum": [
       {
         "module": "Module 1 — DSA Foundations",
-        "topics": ["Arrays, strings & two pointers", "Hash maps & sets", "Stacks, queues & deques", "Recursion & backtracking", "Sorting & binary search"]
+        "topics": [
+          "Arrays, strings & two pointers",
+          "Hash maps & sets",
+          "Stacks, queues & deques",
+          "Recursion & backtracking",
+          "Sorting & binary search"
+        ]
       },
       {
         "module": "Module 2 — Advanced DSA",
-        "topics": ["Trees & BST operations", "Graphs: BFS, DFS, Dijkstra", "Dynamic programming patterns", "Tries & segment trees", "Heaps & priority queues"]
+        "topics": [
+          "Trees & BST operations",
+          "Graphs: BFS, DFS, Dijkstra",
+          "Dynamic programming patterns",
+          "Tries & segment trees",
+          "Heaps & priority queues"
+        ]
       },
       {
         "module": "Module 3 — High Level Design",
-        "topics": ["Load balancers & CDNs", "SQL vs NoSQL tradeoffs", "Caching strategies", "Message queues & Kafka", "Rate limiting & API gateways"]
+        "topics": [
+          "Load balancers & CDNs",
+          "SQL vs NoSQL tradeoffs",
+          "Caching strategies",
+          "Message queues & Kafka",
+          "Rate limiting & API gateways"
+        ]
       },
       {
         "module": "Module 4 — Low Level Design",
-        "topics": ["SOLID principles", "Design patterns (Factory, Observer, Strategy)", "Class diagram design", "LLD: Parking lot, Chess, Elevator", "Concurrency & thread safety"]
+        "topics": [
+          "SOLID principles",
+          "Design patterns (Factory, Observer, Strategy)",
+          "Class diagram design",
+          "LLD: Parking lot, Chess, Elevator",
+          "Concurrency & thread safety"
+        ]
       }
     ],
     "projects": [
-      { "name": "Design URL Shortener", "desc": "Bitly-like system with 100M+ redirects/day" },
-      { "name": "Design Instagram Feed", "desc": "Social feed with fanout, ranking and CDN" },
-      { "name": "Design Chat System", "desc": "WhatsApp-scale messaging with presence and delivery" },
-      { "name": "Design Ride-sharing", "desc": "Uber-like matching, maps and surge pricing" }
+      {
+        "name": "Design URL Shortener",
+        "desc": "Bitly-like system with 100M+ redirects/day"
+      },
+      {
+        "name": "Design Instagram Feed",
+        "desc": "Social feed with fanout, ranking and CDN"
+      },
+      {
+        "name": "Design Chat System",
+        "desc": "WhatsApp-scale messaging with presence and delivery"
+      },
+      {
+        "name": "Design Ride-sharing",
+        "desc": "Uber-like matching, maps and surge pricing"
+      }
     ],
     "whoIsItFor": [
-      { "title": "Working Engineers", "desc": "1–4 year experience devs targeting senior roles at product companies" },
-      { "title": "Competitive Coders", "desc": "Those who want to crack FAANG and unicorn-level interviews" },
-      { "title": "Bootcamp Grads", "desc": "Developers with projects but weak on CS fundamentals" }
+      {
+        "title": "Working Engineers",
+        "desc": "1–4 year experience devs targeting senior roles at product companies"
+      },
+      {
+        "title": "Competitive Coders",
+        "desc": "Those who want to crack FAANG and unicorn-level interviews"
+      },
+      {
+        "title": "Bootcamp Grads",
+        "desc": "Developers with projects but weak on CS fundamentals"
+      }
     ],
-    "tools": ["Java / Python / JavaScript", "LeetCode", "Excalidraw", "PostgreSQL", "Redis", "Kafka", "AWS", "Docker"]
+    "tools": [
+      "Java / Python / JavaScript",
+      "LeetCode",
+      "Excalidraw",
+      "PostgreSQL",
+      "Redis",
+      "Kafka",
+      "AWS",
+      "Docker"
+    ]
   },
   {
-    "slug": "devops",
-    "crmCourseName": "DevOps, Cloud & CI/CD",
-    "badge": "CLOUD SPECIALISATION",
-    "title": "DevOps, Cloud & CI/CD",
-    "tagline": "Automate everything. Deploy with confidence. Scale on demand.",
-    "gradient": "from-cyan-500 to-blue-700",
-    "accentColor": "#0891b2",
-    "type": "online",
-    "isNew": true,
-    "duration": "3 Months",
-    "mode": "Live + Labs",
-    "level": "Intermediate",
-    "students": "620+",
-    "projectCount": "8+",
-    "placementRate": "89%",
-    "price": "₹60,000",
-    "originalPrice": "₹90,000",
-    "description": "From zero to DevOps engineer — learn Docker, Kubernetes, AWS, Terraform and GitHub Actions to build and run production infrastructure like the best engineering teams do.",
+    "slug": "python-for-data-science",
+    "crmCourseName": "Python for Data Science",
+    "badge": "PERFECT STARTING POINT",
+    "title": "Python for Data Science",
+    "tagline": "Master Python from ground up — the essential first step before ML & AI",
+    "gradient": "from-green-500 to-teal-700",
+    "accentColor": "#10b981",
+    "type": "campus",
+    "isNew": false,
+    "duration": "6 Weeks",
+    "mode": "Live · Indore",
+    "level": "Absolute Beginner",
+    "students": "1,800+",
+    "projectCount": "2",
+    "placementRate": "88%",
+    "price": "₹25,000",
+    "originalPrice": "₹40,000",
+    "description": "A focused 6-week intensive covering Python from zero — data structures, OOP, file handling, and everything you need to start your Data Science journey. Build 2 real-world projects and write clean, professional Python by Week 6.",
     "meta": [
-      { "icon": "briefcase", "text": "Min. work exp: Open to all" },
-      { "icon": "clock", "text": "Duration: 3 months" },
-      { "icon": "check", "text": "AWS + Docker hands-on labs" }
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 6 weeks"
+      },
+      {
+        "icon": "check",
+        "text": "2 portfolio projects"
+      }
     ],
     "whatYouLearn": [
-      "Containerise applications with Docker and Docker Compose",
-      "Orchestrate services with Kubernetes — deployments, services, ingress",
-      "Provision cloud infrastructure on AWS with Terraform",
-      "Build CI/CD pipelines with GitHub Actions and ArgoCD",
-      "Monitor systems with Prometheus, Grafana and CloudWatch",
-      "Implement GitOps practices and zero-downtime deployments"
+      "Write clean, readable Python programs from absolute scratch",
+      "Use all data structures — list, dict, set, tuple — like a pro",
+      "Apply OOP principles to build real modular programs",
+      "Handle exceptions and read/write files (txt, CSV, JSON)",
+      "Use Python's built-in library and install packages with pip",
+      "Build complete command-line applications",
+      "Confidently start learning NumPy, Pandas and Data Analytics"
     ],
     "curriculum": [
       {
-        "module": "Module 1 — Linux & Networking",
-        "topics": ["Linux CLI mastery", "Bash scripting", "Networking basics (TCP/IP, DNS)", "SSH & server management", "Nginx configuration"]
+        "module": "Module 1 & 2 — Python Basics & Control Flow (Week 1)",
+        "topics": [
+          "Variables, Data Types, Operators & Type Casting",
+          "Strings: creation, slicing & methods",
+          "if/elif/else, nested conditionals & chaining",
+          "for/while loops, break, continue & pass",
+          "Pattern printing & ternary expressions"
+        ]
       },
       {
-        "module": "Module 2 — Docker & Containers",
-        "topics": ["Dockerfile best practices", "Multi-stage builds", "Docker Compose", "Container networking", "Image registries (ECR, DockerHub)"]
+        "module": "Module 3 & 4 — Functions & Data Structures (Week 2–3)",
+        "topics": [
+          "Functions: parameters, *args/**kwargs, return values",
+          "Lambda, map(), filter() & reduce()",
+          "Lists: indexing, slicing, methods & comprehensions",
+          "Tuples: immutability, packing & unpacking",
+          "2D lists, sorting with key functions"
+        ]
       },
       {
-        "module": "Module 3 — AWS & Kubernetes",
-        "topics": ["EC2, VPC, IAM, S3, RDS", "EKS cluster setup", "Kubernetes deployments & services", "Helm charts", "Terraform IaC"]
+        "module": "Module 5 — Sets & Dictionaries (Week 3–4)",
+        "topics": [
+          "Sets: union, intersection, difference & frozensets",
+          "Dictionaries: key-value pairs & all methods",
+          "Nested dicts & dictionary comprehensions",
+          "defaultdict & Counter from collections",
+          "Choosing the right data structure"
+        ]
       },
       {
-        "module": "Module 4 — CI/CD & Monitoring",
-        "topics": ["GitHub Actions workflows", "ArgoCD & GitOps", "Prometheus & Grafana dashboards", "Log aggregation with ELK", "Incident response playbooks"]
+        "module": "Module 6 — Object-Oriented Programming (Week 4–5)",
+        "topics": [
+          "Classes, Objects & __init__ method",
+          "Instance/class variables & static methods",
+          "Inheritance, super() & method overriding",
+          "Multiple inheritance & encapsulation",
+          "Polymorphism & duck typing"
+        ]
+      },
+      {
+        "module": "Module 7 & 8 — File I/O, Modules & Modern Python (Week 5–6)",
+        "topics": [
+          "try/except/finally & custom exceptions",
+          "File handling: txt, CSV & JSON",
+          "Built-in modules: os, sys, math, random",
+          "Iterators, generators & decorators",
+          "f-strings, walrus operator & PEP 8 best practices"
+        ]
       }
     ],
     "projects": [
-      { "name": "Auto-deploying API", "desc": "Full CI/CD pipeline from push to production in minutes" },
-      { "name": "Kubernetes Cluster", "desc": "Multi-service app on EKS with autoscaling" },
-      { "name": "Infra as Code", "desc": "Full AWS environment managed with Terraform" },
-      { "name": "Monitoring Stack", "desc": "Prometheus + Grafana + Alertmanager setup" }
+      {
+        "name": "WhatsApp Chat Analyser",
+        "desc": "Parse a real WhatsApp export to uncover message counts, top senders, emoji usage and word frequency — saved as a formatted report"
+      },
+      {
+        "name": "Personal Expense Tracker",
+        "desc": "CLI app with OOP, CSV storage, category filtering, monthly summaries and exception handling"
+      }
     ],
     "whoIsItFor": [
-      { "title": "Developers", "desc": "Devs who want to own their deployment pipeline end-to-end" },
-      { "title": "Sys Admins", "desc": "Server admins transitioning to modern cloud and DevOps roles" },
-      { "title": "SRE Aspirants", "desc": "Engineers targeting Site Reliability and Platform Engineering" }
+      {
+        "title": "Complete Beginners",
+        "desc": "Zero coding experience — the perfect, structured starting point for Python"
+      },
+      {
+        "title": "Aspiring Data Scientists",
+        "desc": "The essential first step before jumping into ML, Deep Learning and AI"
+      },
+      {
+        "title": "Working Professionals & Entrepreneurs",
+        "desc": "Quickly add Python to your skillset or automate your own data tasks"
+      }
     ],
-    "tools": ["Docker", "Kubernetes", "AWS", "Terraform", "GitHub Actions", "ArgoCD", "Prometheus", "Grafana", "Nginx", "Bash"]
+    "tools": [
+      "Python 3.x",
+      "Anaconda",
+      "Jupyter Notebooks",
+      "VS Code",
+      "pip",
+      "os / sys / math / random",
+      "csv module",
+      "json module",
+      "collections (defaultdict, Counter)"
+    ]
   },
   {
-    "slug": "campus-bootcamp",
-    "crmCourseName": "On-Campus Full Stack Bootcamp",
-    "badge": "IMMERSIVE · RESIDENTIAL",
-    "title": "On-Campus Full Stack Bootcamp",
-    "tagline": "6 months residential — from zero to job-ready in Bangalore",
-    "gradient": "from-slate-500 to-blue-900",
-    "accentColor": "#334155",
+    "slug": "data-science",
+    "crmCourseName": "DATA SCIENCE & MACHINE LEARNING",
+    "badge": "MOST COMPREHENSIVE",
+    "title": "Data Science & Machine Learning",
+    "tagline": "Zero to job-ready Data Scientist — Python, ML, Deep Learning & Gen AI in 8 months",
+    "gradient": "from-sky-500 to-indigo-700",
+    "accentColor": "#0ea5e9",
+    "type": "campus",
+    "isNew": false,
+    "duration": "8 Months",
+    "mode": "Live · Indore",
+    "level": "Beginner to Advanced",
+    "students": "850+",
+    "projectCount": "10+",
+    "placementRate": "92%",
+    "price": "₹1,40,000",
+    "originalPrice": "₹2,20,000",
+    "description": "A complete 8-month Data Science mastery program — 4 structured courses covering Python, Data Analytics, Machine Learning, Deep Learning and Generative AI. Build 10+ real-world projects and graduate targeting roles like Data Scientist, ML Engineer, Deep Learning Engineer and AI Developer.",
+    "meta": [
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 8 months"
+      },
+      {
+        "icon": "check",
+        "text": "10+ real-world projects"
+      }
+    ],
+    "whatYouLearn": [
+      "Write professional Python programs and solve real data problems from scratch",
+      "Load, clean, analyse and visualise any dataset like a senior analyst",
+      "Build, tune and deploy ML models for classification, regression and clustering",
+      "Design and train deep neural networks for vision, NLP and generative tasks",
+      "Deploy production AI models with Flask and FastAPI",
+      "Build LLM-powered pipelines with LangChain, RAG and vector databases",
+      "Use Gen AI tools to supercharge your data science productivity"
+    ],
+    "curriculum": [
+      {
+        "module": "Course 1 — Python Programming Fundamentals (6 Weeks)",
+        "topics": [
+          "Variables, Data Types, Operators & Control Flow",
+          "Functions, Lambda & Higher-order Functions",
+          "OOP: Classes, Inheritance, Polymorphism",
+          "Data Structures: Lists, Tuples, Sets, Dicts",
+          "File I/O: CSV, JSON — 2 Projects"
+        ]
+      },
+      {
+        "module": "Course 2 — Data Analytics with Python (2 Months)",
+        "topics": [
+          "NumPy: N-d arrays, broadcasting & math ops",
+          "Pandas: DataFrames, cleaning & feature engineering",
+          "Matplotlib & Seaborn: charts, heatmaps & pair plots",
+          "Statistical Analysis & Descriptive Stats",
+          "RegEx, Text Pre-processing & Image Data basics — 2 Projects"
+        ]
+      },
+      {
+        "module": "Course 3 — Advanced Machine Learning (3 Months)",
+        "topics": [
+          "Linear/Logistic Regression & Gradient Descent",
+          "Decision Trees, Random Forests & XGBoost",
+          "SVM, KNN & Model Evaluation (F1, ROC-AUC)",
+          "K-Means, DBSCAN & Dimensionality Reduction (PCA, t-SNE)",
+          "Neural Networks, Hyperparameter Tuning — 3 Projects"
+        ]
+      },
+      {
+        "module": "Course 4 — Deep Learning & Neural Networks (2 Months)",
+        "topics": [
+          "CNNs: LeNet, AlexNet, VGG, ResNet",
+          "RNN, LSTM & GRU for sequence modelling",
+          "Transfer Learning & Fine-tuning pretrained models",
+          "Autoencoders & Generative Adversarial Networks (GANs)",
+          "Model Deployment with Flask / FastAPI — 2 Projects"
+        ]
+      },
+      {
+        "module": "Bonus — Generative AI for Data Scientists",
+        "topics": [
+          "LLMs: GPT-4, Gemini, Claude & OpenAI API",
+          "Prompt Engineering for Data Scientists",
+          "LangChain pipelines & RAG systems",
+          "Vector databases: Pinecone, ChromaDB",
+          "Hugging Face models, bias detection & Responsible AI"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Python Data Projects (×2)",
+        "desc": "Real-world programs solving data problems with clean, professional Python"
+      },
+      {
+        "name": "Data Analytics Projects (×2)",
+        "desc": "EDA and insight reports on industry datasets using Pandas and Seaborn"
+      },
+      {
+        "name": "ML Projects (×3)",
+        "desc": "Classification, regression and clustering models tuned and evaluated at scale"
+      },
+      {
+        "name": "Deep Learning Projects (×2)",
+        "desc": "CNN image classifier and LSTM sequence model deployed via FastAPI"
+      },
+      {
+        "name": "Gen AI Capstone",
+        "desc": "LangChain + RAG-powered AI chatbot for intelligent data querying"
+      }
+    ],
+    "whoIsItFor": [
+      {
+        "title": "Fresh Graduates",
+        "desc": "BCA, B.Tech, BSc, MBA, BBA — any stream, zero coding background welcome"
+      },
+      {
+        "title": "Career Switchers & Analysts",
+        "desc": "Excel users and professionals ready to level up to Python, ML and AI"
+      },
+      {
+        "title": "Working Professionals",
+        "desc": "Employees who want to add high-demand data science skills without quitting their job"
+      }
+    ],
+    "tools": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Scikit-Learn",
+      "TensorFlow",
+      "Keras",
+      "OpenCV",
+      "NLTK / spaCy",
+      "Flask / FastAPI",
+      "LangChain",
+      "ChatGPT API",
+      "Pinecone",
+      "GitHub"
+    ]
+  },
+  {
+    "slug": "data-analytics",
+    "crmCourseName": "DATA ANALYTICS",
+    "badge": "JOB READY",
+    "title": "Data Analytics",
+    "tagline": "From Python basics to dashboards — become a job-ready Data Analyst in 6 months",
+    "gradient": "from-amber-500 to-orange-700",
+    "accentColor": "#d97706",
     "type": "campus",
     "isNew": false,
     "duration": "6 Months",
-    "mode": "Residential · Bangalore",
-    "level": "Beginner to Advanced",
-    "students": "450+",
-    "projectCount": "12+",
-    "placementRate": "97%",
-    "price": "₹2,50,000",
-    "originalPrice": "₹3,50,000",
-    "description": "The most immersive coding experience in India — 6 months residential in Bangalore, living and building alongside 50 other engineers. Daily standups, weekly demos and direct placement support.",
+    "mode": "Live · Indore",
+    "level": "Beginner to Job-Ready",
+    "students": "1,100+",
+    "projectCount": "5+",
+    "placementRate": "93%",
+    "price": "₹90,000",
+    "originalPrice": "₹1,50,000",
+    "description": "A complete 6-month Data Analytics program covering Python, NumPy, Pandas, SQL, Statistics, Power BI, Tableau, Excel and Gen AI. Build 5+ real-world projects and graduate with a strong portfolio, polished resume and full placement support.",
     "meta": [
-      { "icon": "briefcase", "text": "Completed 12th grade" },
-      { "icon": "clock", "text": "Duration: 6 months residential" },
-      { "icon": "check", "text": "Fully in Bangalore" }
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 6 months"
+      },
+      {
+        "icon": "check",
+        "text": "5+ industry projects"
+      }
     ],
     "whatYouLearn": [
-      "Complete full-stack curriculum from HTML to cloud deployment",
-      "Daily pair-programming and live code review from senior mentors",
-      "Work in product squads shipping features every Friday",
-      "Attend weekly guest talks from founders and CTOs",
-      "Interview prep with 20+ mock rounds and whiteboard sessions",
-      "Graduate with a portfolio of 12+ production-quality projects"
+      "Write clean Python programs and solve real data problems from scratch",
+      "Clean, transform and analyse messy datasets using NumPy and Pandas",
+      "Extract and transform data from any relational database using SQL",
+      "Apply statistical thinking to validate findings and present data-backed conclusions",
+      "Design impactful visualisations with Matplotlib, Seaborn and Plotly",
+      "Build professional, interactive dashboards in Power BI and Tableau",
+      "Use Excel and Gen AI tools to become 3x more productive as a Data Analyst"
     ],
     "curriculum": [
       {
-        "module": "Phase 1 — Foundations (Month 1–2)",
-        "topics": ["Web fundamentals", "JavaScript & TypeScript", "React & Next.js", "Git & team workflow", "Agile & standups"]
+        "module": "Module 1 — Python Programming Foundations",
+        "topics": [
+          "Variables, Data Types & Control Flow",
+          "Functions, *args/**kwargs & OOP",
+          "Data Structures: List, Tuple, Set, Dict",
+          "File Handling: CSV, JSON, TXT",
+          "List Comprehensions, Lambda, map/filter"
+        ]
       },
       {
-        "module": "Phase 2 — Backend & DBs (Month 3–4)",
-        "topics": ["Node.js & APIs", "PostgreSQL & MongoDB", "Auth & security", "Testing", "Product squads begin"]
+        "module": "Module 2 — NumPy & Pandas — Data Manipulation",
+        "topics": [
+          "NumPy Arrays: Indexing, Slicing & Broadcasting",
+          "Pandas Series & DataFrame Basics",
+          "Data Cleaning: Nulls, Duplicates & Outliers",
+          "GroupBy, Aggregations & Pivot Tables",
+          "Merging, Joining & Date/Time Operations"
+        ]
       },
       {
-        "module": "Phase 3 — Advanced & Cloud (Month 5)",
-        "topics": ["AWS & Docker", "System design", "Performance optimisation", "Capstone project kick-off", "Weekly CTO talks"]
+        "module": "Module 3 — SQL for Data Analysts",
+        "topics": [
+          "DDL, DML & Filtering (WHERE, IN, LIKE)",
+          "Joins: INNER, LEFT, RIGHT, FULL, SELF",
+          "Subqueries, CTEs & Window Functions",
+          "Views, Indexes & Query Optimisation",
+          "Stored Procedures, Triggers & Transactions"
+        ]
       },
       {
-        "module": "Phase 4 — Placement Sprint (Month 6)",
-        "topics": ["20+ mock interviews", "Resume & LinkedIn polish", "Referral activation", "Salary negotiation", "Offer day 🎉"]
+        "module": "Module 4 — Statistics & Data Visualization",
+        "topics": [
+          "Central Tendency, Dispersion & Probability",
+          "Hypothesis Testing, p-value & Confidence Intervals",
+          "t-test, Chi-Square, ANOVA & Correlation",
+          "Matplotlib & Seaborn Charts & Heatmaps",
+          "Data Storytelling: Right Chart for Right Data"
+        ]
+      },
+      {
+        "module": "Module 5 — Power BI, Tableau & Excel",
+        "topics": [
+          "Power Query & Data Modelling (Star/Snowflake)",
+          "DAX: CALCULATE, FILTER, SUMX, RANKX",
+          "Tableau: Dashboards, Stories & Publishing",
+          "Excel: VLOOKUP, Pivot Tables, Dynamic Arrays",
+          "Gen AI for Analysis: ChatGPT, Copilot & AWS Basics"
+        ]
+      },
+      {
+        "module": "Module 6 — Projects, EDA & Career Prep",
+        "topics": [
+          "EDA on 5+ industry datasets",
+          "Capstone: End-to-End Data Analysis Project",
+          "ATS-Friendly Resume & LinkedIn Optimisation",
+          "Mock Interviews: SQL, Python, Stats & Case Studies",
+          "Placement Drive & Company Connect Sessions"
+        ]
       }
     ],
     "projects": [
-      { "name": "Product Sprint #1–5", "desc": "Five weekly product challenges in cross-functional squads" },
-      { "name": "Capstone Project", "desc": "End-to-end product shipped and presented to industry panel" },
-      { "name": "Open Source Contribution", "desc": "Merged PRs to real production open-source projects" },
-      { "name": "Hackathon Win", "desc": "Internal 48-hour hackathon with prizes and LinkedIn badges" }
+      {
+        "name": "Sales Performance Dashboard",
+        "desc": "End-to-end Power BI dashboard tracking revenue, trends and KPIs"
+      },
+      {
+        "name": "Customer Churn Analysis",
+        "desc": "Python + SQL analysis to predict and reduce customer churn"
+      },
+      {
+        "name": "HR Analytics Report",
+        "desc": "Excel + Tableau report on attrition, headcount and performance"
+      },
+      {
+        "name": "E-Commerce Analysis",
+        "desc": "Pandas + Seaborn deep dive into sales, returns and customer behaviour"
+      },
+      {
+        "name": "Capstone Project",
+        "desc": "Full end-to-end data analysis from raw data to executive dashboard"
+      }
     ],
     "whoIsItFor": [
-      { "title": "School Graduates", "desc": "12th passouts who want to fast-track a software career" },
-      { "title": "College Dropouts", "desc": "Those who want practical skills over theory" },
-      { "title": "Gap Year Students", "desc": "Anyone ready to commit 6 months to transform their life" }
+      {
+        "title": "Fresh Graduates",
+        "desc": "BCA, B.Tech, BSc, MBA, BBA — any discipline welcome, no prior coding needed"
+      },
+      {
+        "title": "Career Switchers",
+        "desc": "Professionals from any background who want to move into analytics roles"
+      },
+      {
+        "title": "Working Professionals",
+        "desc": "Employees who want to upskill and transition into data-driven positions"
+      }
     ],
-    "tools": ["React", "Next.js", "Node.js", "PostgreSQL", "MongoDB", "AWS", "Docker", "TypeScript", "Figma", "Jira"]
+    "tools": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "SQL",
+      "Power BI",
+      "Tableau",
+      "MS Excel",
+      "Matplotlib",
+      "Seaborn",
+      "Plotly",
+      "Jupyter",
+      "GitHub",
+      "ChatGPT / AI",
+      "AWS Basics"
+    ]
   },
   {
-    "slug": "campus-ai",
-    "crmCourseName": "AI & Automation Sprint — On-Campus",
-    "badge": "FAST TRACK",
-    "title": "AI & Automation Sprint — On-Campus",
-    "tagline": "2-month intensive — build AI products with real users in Bangalore",
-    "gradient": "from-emerald-500 to-teal-700",
-    "accentColor": "#059669",
+    "slug": "full-stack",
+    "crmCourseName": "FULL STACK WEB DEVELOPMENT",
+    "badge": "MOST POPULAR",
+    "title": "Full Stack Web Development",
+    "tagline": "From zero to deploying real full-stack apps — HTML to AWS in 15 weeks",
+    "gradient": "from-violet-500 to-purple-800",
+    "accentColor": "#7c3aed",
     "type": "campus",
-    "isNew": true,
-    "duration": "2 Months",
-    "mode": "Residential · Bangalore",
-    "level": "Intermediate",
-    "students": "180+",
-    "projectCount": "3+",
-    "placementRate": "88%",
-    "price": "₹1,20,000",
-    "originalPrice": "₹1,80,000",
-    "description": "The fastest way to become an AI engineer — 2 months residential in Bangalore. Build, ship and launch AI products with paying users by the time you graduate.",
+    "isNew": false,
+    "duration": "15 Weeks",
+    "mode": "Live · Indore",
+    "level": "Beginner to Job-Ready",
+    "students": "3,200+",
+    "projectCount": "5+",
+    "placementRate": "94%",
+    "price": "₹80,000",
+    "originalPrice": "₹1,20,000",
+    "description": "A complete 15-week Full Stack program covering HTML, CSS, Bootstrap, JavaScript, React, SQL, Node.js, MongoDB, AWS and Gen AI. Build 5+ real production apps and graduate with a strong portfolio and full placement support.",
     "meta": [
-      { "icon": "briefcase", "text": "Basic coding experience" },
-      { "icon": "clock", "text": "Duration: 2 months" },
-      { "icon": "check", "text": "Hands-on AI projects" }
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 15 weeks"
+      },
+      {
+        "icon": "check",
+        "text": "5+ real full-stack projects"
+      }
     ],
     "whatYouLearn": [
-      "Integrate GPT-4, Claude and Gemini APIs into production apps",
-      "Build autonomous agents with LangChain and tool-calling",
-      "Create RAG systems using Pinecone and OpenAI embeddings",
-      "Ship an AI SaaS product with real paying users",
-      "Automate business workflows with n8n and Zapier",
-      "Deploy and monitor AI applications on Vercel and AWS"
+      "Build and structure any web page with semantic HTML5 and CSS3",
+      "Build polished, mobile-first UIs rapidly with Bootstrap",
+      "Write dynamic, interactive web apps with modern JavaScript (ES6+)",
+      "Build fast, component-driven SPAs with React.js hooks and routing",
+      "Design and query relational databases with SQL",
+      "Build secure, scalable REST APIs with Node.js, Express and JWT auth",
+      "Deploy full production applications on AWS EC2 with CI/CD"
     ],
     "curriculum": [
       {
-        "module": "Week 1–2 — AI Foundations",
-        "topics": ["Python & OpenAI APIs", "Prompt engineering", "LangChain basics", "RAG with Pinecone", "Embeddings & semantic search"]
+        "module": "Module 0–3 — Web Foundations (Week 0–3)",
+        "topics": [
+          "Dev Setup: GitHub, VS Code, Terminal, DevTools",
+          "HTML5: Structure, Forms, Semantic Markup",
+          "CSS3: Box Model, Flexbox, Responsive Units",
+          "Bootstrap: Grid, Components, Custom Theming"
+        ]
       },
       {
-        "module": "Week 3–4 — Agent Building",
-        "topics": ["Tool-calling agents", "CrewAI multi-agents", "Memory & state", "Web scraping agents", "Code execution agents"]
+        "module": "Module 4 — JavaScript Core to ES6+ (Week 4–5)",
+        "topics": [
+          "Variables, Data Types, Operators & Loops",
+          "DOM Manipulation & Event Listeners",
+          "Async JS: Promises, async/await, Fetch API",
+          "ES6+: Destructuring, Spread, Modules",
+          "OOP: Classes, Inheritance, Prototypes"
+        ]
       },
       {
-        "module": "Week 5–6 — Product Sprint",
-        "topics": ["Next.js + AI SDK", "Stripe for billing", "User auth & dashboard", "Product launch strategy", "Demo day preparation"]
+        "module": "Module 5 — React.js (Week 6–7)",
+        "topics": [
+          "Components, JSX, Props & State",
+          "Hooks: useState, useEffect, useRef",
+          "React Router for SPA Navigation",
+          "Context API & Controlled Forms",
+          "Connecting to APIs with Axios / Fetch"
+        ]
       },
       {
-        "module": "Week 7–8 — Launch & Placement",
-        "topics": ["Launch on ProductHunt", "Get first 10 users", "AI engineer interviews", "Portfolio polish", "Offer negotiations"]
+        "module": "Module 6–7 — SQL & Node.js Backend (Week 8–10)",
+        "topics": [
+          "SQL: DDL, DML, JOINs, Subqueries, Window Functions",
+          "Node.js architecture & Express middleware",
+          "REST API design: GET/POST/PUT/DELETE",
+          "JWT Authentication & bcrypt security",
+          "CORS, Helmet & security best practices"
+        ]
+      },
+      {
+        "module": "Module 8–9 — MongoDB, Deployment & Advanced (Week 11–15)",
+        "topics": [
+          "MongoDB CRUD, Mongoose schemas & Aggregation",
+          "Full-stack MERN capstone project",
+          "AWS EC2 deployment & CI/CD basics",
+          "Redis caching, Multer file uploads, Payment APIs",
+          "Gen AI: ChatGPT API, GitHub Copilot in apps"
+        ]
       }
     ],
     "projects": [
-      { "name": "AI Chrome Extension", "desc": "Browser extension that summarises and explains any webpage" },
-      { "name": "Research Agent", "desc": "Autonomous agent that researches topics and writes reports" },
-      { "name": "AI SaaS Product", "desc": "Subscription product launched with real paying users" }
+      {
+        "name": "Portfolio Website",
+        "desc": "Responsive personal site with HTML, CSS and Bootstrap"
+      },
+      {
+        "name": "JavaScript Web App",
+        "desc": "DOM-driven interactive app with async API integration"
+      },
+      {
+        "name": "React SPA",
+        "desc": "Multi-page React app with routing, hooks and API calls"
+      },
+      {
+        "name": "REST API Server",
+        "desc": "Node.js + Express backend with JWT auth and SQL database"
+      },
+      {
+        "name": "Full-Stack MERN Capstone",
+        "desc": "End-to-end MERN application deployed on AWS EC2 with CI/CD"
+      }
     ],
     "whoIsItFor": [
-      { "title": "Developers", "desc": "Devs with coding basics who want to pivot into AI engineering" },
-      { "title": "Builders", "desc": "Founders who want to add AI capabilities to their products" },
-      { "title": "Recent Graduates", "desc": "CS graduates who want cutting-edge AI skills before job hunting" }
+      {
+        "title": "Fresh Graduates",
+        "desc": "Any degree — BCA, B.Tech, BSc, Arts, Commerce — zero coding needed"
+      },
+      {
+        "title": "Career Switchers & Entrepreneurs",
+        "desc": "Build your own web products or move into developer roles from scratch"
+      },
+      {
+        "title": "Designers & Working Professionals",
+        "desc": "Add coding skills to your toolkit and upskill into frontend or full-stack roles"
+      }
     ],
-    "tools": ["Python", "OpenAI", "LangChain", "CrewAI", "Pinecone", "Next.js", "Stripe", "Vercel", "n8n", "FastAPI"]
+    "tools": [
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "SQL / MySQL",
+      "REST APIs",
+      "GitHub",
+      "AWS EC2",
+      "Redis",
+      "ChatGPT API",
+      "VS Code"
+    ]
+  },
+  {
+    "slug": "c-cpp",
+    "crmCourseName": "C / C++ PROGRAMMING",
+    "badge": "PROGRAMMING FOUNDATION",
+    "title": "C / C++ Programming",
+    "tagline": "Master the foundation of all modern software — from C basics to object-oriented C++",
+    "gradient": "from-slate-500 to-zinc-800",
+    "accentColor": "#64748b",
+    "type": "campus",
+    "isNew": false,
+    "duration": "2 Courses",
+    "mode": "Live · Indore",
+    "level": "Beginner to Intermediate",
+    "students": "1,400+",
+    "projectCount": "4+",
+    "placementRate": "87%",
+    "price": "₹30,000",
+    "originalPrice": "₹50,000",
+    "description": "A complete C and C++ program covering pointers, memory management, OOP, data structures and file handling. Two structured courses — start with C fundamentals, then master object-oriented C++ with templates, STL and real projects.",
+    "meta": [
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 2 courses"
+      },
+      {
+        "icon": "check",
+        "text": "4+ real coding projects"
+      }
+    ],
+    "whatYouLearn": [
+      "Write structured C programs from scratch and understand how memory works",
+      "Use arrays, strings, pointers and dynamic memory allocation confidently",
+      "Build modular, reusable programs with functions and recursion",
+      "Model real-world data with structures and file handling",
+      "Design clean, encapsulated classes with OOP principles in C++",
+      "Implement inheritance, polymorphism, templates and STL in C++",
+      "Write generic, maintainable software systems ready for DSA and competitive coding"
+    ],
+    "curriculum": [
+      {
+        "module": "C Course — Module 1 & 2: Basics & Control Flow",
+        "topics": [
+          "Variables, Data Types, Operators & I/O (printf/scanf)",
+          "Type Casting, sizeof & Operator Precedence",
+          "if/else, switch, Ternary Operator",
+          "for/while/do-while loops, break/continue/goto",
+          "Pattern Programs & Logic Building"
+        ]
+      },
+      {
+        "module": "C Course — Module 3 & 4: Arrays, Functions & Pointers",
+        "topics": [
+          "1D & 2D Arrays, Strings & String Functions",
+          "Function Declaration, Call by Value vs Reference",
+          "Recursion & Function Pointers",
+          "Pointer Arithmetic, Pointers with Arrays & Strings",
+          "Dynamic Memory: malloc, calloc, free, Pointer to Pointer"
+        ]
+      },
+      {
+        "module": "C Course — Module 5: Structures, Files & Project",
+        "topics": [
+          "Structures, Array of Structures, typedef & enum",
+          "Storage Classes: auto, static, extern, register",
+          "File Handling: fopen, fclose, read/write/append",
+          "Mini Project: Logic-based application",
+          "Final Project + Interview Questions"
+        ]
+      },
+      {
+        "module": "C++ Course — Module 1–3: OOP Foundations",
+        "topics": [
+          "C vs C++ differences, iostream, cin/cout, namespace",
+          "Classes, Objects, Access Modifiers & Encapsulation",
+          "this Pointer, Inline Functions, Passing Objects",
+          "Constructors: default, parameterized, copy",
+          "Operator Overloading, Deep Copy vs Shallow Copy"
+        ]
+      },
+      {
+        "module": "C++ Course — Module 4–5: Inheritance, Templates & STL",
+        "topics": [
+          "Single, Multilevel, Multiple & Hybrid Inheritance",
+          "Virtual Functions, Abstract Classes & Polymorphism",
+          "Friend Functions, Templates & Class Templates",
+          "STL: vector, list, map",
+          "Exception Handling & Final OOP Project"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "C Logic Application",
+        "desc": "Structured C program using arrays, pointers and file handling"
+      },
+      {
+        "name": "C Mini Project",
+        "desc": "Real-world C application with structures, enums and file I/O"
+      },
+      {
+        "name": "C++ OOP Application",
+        "desc": "Class-based C++ app demonstrating encapsulation and operator overloading"
+      },
+      {
+        "name": "C++ Final Project",
+        "desc": "OOP-based system using inheritance, templates and STL containers"
+      }
+    ],
+    "whoIsItFor": [
+      {
+        "title": "Complete Beginners",
+        "desc": "Zero programming background — start with C, the foundation of all software"
+      },
+      {
+        "title": "CS / IT Students",
+        "desc": "Strengthen fundamentals for university exams, placements and competitive coding"
+      },
+      {
+        "title": "Competitive Coders & Professionals",
+        "desc": "Build the logic foundation for DSA, CP or add systems programming to your skillset"
+      }
+    ],
+    "tools": [
+      "GCC Compiler",
+      "CodeBlocks",
+      "VS Code",
+      "GDB",
+      "Valgrind",
+      "Make / CMake",
+      "Git / GitHub",
+      "Linux Terminal",
+      "STL",
+      "C++17"
+    ]
   }
 ]
