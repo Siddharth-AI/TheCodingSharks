@@ -64,7 +64,7 @@ export function LeadModal() {
   useEffect(() => {
     if (!open) return;
     setCoursesLoading(true);
-    fetchCrmCourses("all").then((data) => {
+    fetchCrmCourses("regular").then((data) => {
       setCourses(data);
       setCoursesLoading(false);
     });
