@@ -1,280 +1,195 @@
 [
   {
     "template": "teal-fresh",
-    "slug": "python-for-data-science",
-    "crm_workshop_name": "Python for Data Science",
-    "title": "Revealing Data Secrets I Learnt After Analysing",
-    "title_highlight": "10,000+ Hours Of Real Data",
-    "tagline": "Master Python · Data Science · Machine Learning",
-    "short_description": "Join thousands of students who turned raw data into real insights — using the same Python frameworks used at Google, Netflix and Flipkart.",
-    "badge_text": "Enroll Now",
-    "badge_subtext": "Master Python for Data Science",
-    "subtitle": "Learn &amp; Master Just 10 Core Python &amp; ML Frameworks That Drive Real Insights <strong>Again And Again.</strong> All With Industry-Backed Projects Designed For Indian Learners.",
+    "slug": "ai-ml-career-roadmap-indore",
+    "crm_workshop_name": "AI/ML Career Roadmap Indore",
+    "title": "AI/ML Career Roadmap Indore",
+    "title_highlight": "Way to Become An AI/ML Engineer In 2026",
+    "tagline": "AI · Machine Learning · Career Roadmap",
+    "short_description": "Discover the exact roadmap Indore students are using to break into AI/ML roles — even without coding background. Learn what to study, what to skip, and how to actually get hired.",
+    "badge_text": "Reserve Your Seat",
+    "badge_subtext": "Live AI/ML Career Workshop",
+    "subtitle": "Stop Wasting Time On Random Tutorials. Learn The Exact <strong>Step-by-Step Roadmap</strong> To Become An AI/ML Engineer — Even If You're Starting From Zero.",
     "event_date": "2026-04-25",
     "event_time": "19:00",
-    "duration": "6 Weeks",
+    "duration": "2 Hours",
     "mode": "online",
     "platform": "Zoom + LMS",
-    "instructor_name": "Ravi Sharma",
-    "instructor_bio": "Founder And Lead Instructor At CodingShark, Is A Data Science Prodigy Who Built India's Top Data Analytics Agency By Age 24.\nStarting His Python Journey At 17, He Has Trained Over 50,000 Students, Worked With 200+ Clients, And Analysed Datasets Exceeding 10 Crore Rows.\nThrough CodingShark, Ravi Shares His Expertise To Empower Individuals With The Skills To Succeed In Data Science.",
-    "topics": [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Scikit-learn",
-      "Data Visualisation",
-      "Machine Learning"
-    ],
-    "price": "₹999",
-    "price_original": "₹4,999",
-    "is_free": false,
-    "base_url": "",
-    "is_active": true,
-    "hero_label": "LIVE ONLINE WORKSHOP",
-    "youtube_url": "https://www.youtube.com/embed/cb05VK4W5Ds?si=8Q5SXhMGRKhhxRkh",
-    "cta_button_text": "BECOME A DATA NINJA",
-    "cta_button_subtext": "GET INSTANT ACCESS ₹4999/— RS. 999 ONLY",
-    "page_primary_color": "#ea580c",
-    "instructor_title": "Data Science Lead & Python Expert",
-    "instructor_quote": "Anyone can turn raw data into real decisions with the right frameworks. You don't need a PhD — you need the right blueprint.",
+    "instructor_name": "Adarsh Kewat",
+    "instructor_bio": "Founder of CodingSharks, Adarsh has trained 1000+ students in Indore and helped them transition from confusion to clarity in tech careers.\nWith 6+ years of real development experience, he specializes in simplifying complex AI/ML concepts into practical, job-ready skills.\nHis mission is to help Tier-2/Tier-3 students crack high-paying tech roles without wasting years.",
     "instructor_feature_videos": [
       {
         "platform": "TEDX",
         "label": "Featured in TEDX"
       },
       {
-        "platform": "JOSH TALK",
-        "label": "Featured in JOSH TALK"
+        "platform": "CNBC AWAAZ",
+        "label": "Featured in CNBC Awaaz"
       }
     ],
+    "topics": [
+      "AI Career Roadmap",
+      "Machine Learning Basics",
+      "Python for AI",
+      "Data Science vs AI",
+      "Real Job Skills",
+      "Portfolio Strategy"
+    ],
+    "price": "₹99",
+    "price_original": "₹999",
+    "is_free": false,
+    "base_url": "",
+    "is_active": true,
+    "hero_label": "LIVE CAREER WORKSHOP",
+    "youtube_url": null,
+    "cta_button_text": "START YOUR AI JOURNEY",
+    "cta_button_subtext": "LIMITED SEATS • ₹999 → ₹99",
+    "page_primary_color": "#ea580c",
+    "instructor_title": "AI Career Mentor & Full Stack Developer",
+    "instructor_quote": "AI/ML is not hard — confusion is. Once you get the right roadmap, everything becomes simple.",
     "why_join_items": [
-      "Learn the only 10 Python frameworks you need to 10x your data career",
-      "Understand why messy notebooks are outperforming clean code in 2025",
-      "Get plug-and-play ML project templates proven to impress recruiters",
-      "Apply psychology-backed problem-solving used by top data teams",
-      "Cut debug time & stop wasting hours on errors — with data to prove it",
-      "Use real Indian dataset examples & case studies — not US-based theory"
+      "Understand the exact roadmap to become AI/ML Engineer from scratch",
+      "Avoid 90% of mistakes students in Indore are making right now",
+      "Learn what companies actually expect from freshers in AI roles",
+      "Get clarity between Data Science, AI, ML & Software roles",
+      "Discover high-paying opportunities beyond traditional engineering jobs",
+      "See real student case studies from Indore who cracked tech roles"
     ],
     "pain_points": [
       {
-        "title": "Tutorial Hell",
-        "description": "Even Great Tutorials Won't Work If You Skip Building Real Projects."
+        "title": "No Clarity",
+        "description": "You're watching random YouTube videos but still don’t know what to learn first or next."
       },
       {
-        "title": "Drowning In Libraries",
-        "description": "You Have Seconds To Prove Value. Your Notebook Must Show Results That Matter."
+        "title": "Too Many Options",
+        "description": "AI, ML, Data Science, Web Dev — everything looks good but you feel stuck and confused."
       },
       {
-        "title": "Wasted Learning Budgets",
-        "description": "Most Learners Burn ₹1L+ On Courses That Never Had A Chance To Get Them Hired."
+        "title": "Fear Of Wasting Time",
+        "description": "You don’t want to spend 1-2 years learning something that won’t get you a job."
       }
     ],
-    "pain_section_title_plain": "Your Career Isn't Failing Because Of Your Degree...",
-    "pain_section_title_bold": "It's Failing Because Of Your Practical Skills",
-    "features_bg_color": "#ea580c",
-    "features_section_title": "Proven Data Science System We Use To Place Students At Top Companies",
+    "pain_section_title_plain": "You're Not Behind Because You're Dumb...",
+    "pain_section_title_bold": "You're Behind Because You Don't Have The Right Roadmap",
+    "features_section_title": "What You Will Discover In This Workshop",
     "features_section_items": [
       {
-        "emoji": "🧠",
-        "title": "Psychology-Backed Learning Frameworks",
-        "description": "We Don't Teach Syntax — We Teach Why Code Works.",
-        "link_text": "Learn The 7 Mental Models Behind Production-Grade Python."
+        "emoji": "🧭",
+        "title": "Step-by-Step AI Roadmap",
+        "description": "From Beginner To Job-Ready — Complete Clarity",
+        "link_text": "No More Guesswork. Just Execution."
       },
       {
-        "emoji": "🎬",
-        "title": "Projects & Notebooks That Actually Work",
-        "description": "Forget Theory. Get Access To Proven Project Templates.",
-        "link_text": "Real EDA, ML Models, Dashboards & API Integrations."
+        "emoji": "⚡",
+        "title": "Skills That Actually Get You Hired",
+        "description": "Focus Only On What Companies Pay For",
+        "link_text": "Skip Useless Theory & Outdated Content"
       },
       {
-        "emoji": "📊",
-        "title": "Data-First Career Strategy",
-        "description": "Match Your Skills With Industry Demand",
-        "link_text": "Entry, Mid & Senior Roles All Mapped With Examples."
+        "emoji": "📁",
+        "title": "Portfolio Strategy",
+        "description": "Build Projects That Impress Recruiters",
+        "link_text": "Not Just Certificates — Real Work"
       },
       {
-        "emoji": "🔍",
-        "title": "Real Case Studies + Breakdown",
-        "description": "We Break Down Projects By Accuracy, Speed & Business Impact",
-        "link_text": "See How Minor Tweaks Lifted Performance By 3–10x."
+        "emoji": "💰",
+        "title": "Salary & Career Reality",
+        "description": "Understand Real AI Salaries In India",
+        "link_text": "Freshers To 20+ LPA Path Explained"
       }
     ],
-    "before_after_title_plain": "Before Vs After Taking The Python For Data Science Course",
-    "before_after_title_bold": "The Transformation You Can Expect",
+    "before_after_title_plain": "Before Vs After This Workshop",
+    "before_after_title_bold": "Your Transformation",
     "before_items": [
-      "Stuck In Tutorial Hell With No Real Projects",
-      "Randomly Copying Code Hoping Something Works",
-      "Using Kaggle Notebooks That Get Ignored By Recruiters",
-      "No Real Data Strategy — Just Trial & Error",
-      "Burn ₹1L+ On 50 Courses That Teach The Same Basics",
-      "Confused Between Pandas, NumPy, Spark, Dask, SQL"
+      "Confused Between AI, ML, Data Science & Development",
+      "Watching Tutorials Without Direction",
+      "No Idea What Skills Companies Need",
+      "Fear Of Choosing Wrong Career Path",
+      "No Projects Or Portfolio",
+      "Thinking AI Is Too Hard"
     ],
     "after_items": [
-      "Build Portfolio Projects That Impress HRs By 30–50%",
-      "Build Models Using Proven ML & Visualisation Frameworks",
-      "Map Your Skills To Industry Roles — Entry To Senior",
-      "Confidently Write Python Code Or Brief Your Team",
-      "Learn Only 10 Frameworks Instead Of Testing 100 Libraries",
-      "Use A Project Library Built From ₹70Cr+ Worth Of Data Work"
+      "Clear Step-by-Step AI/ML Roadmap",
+      "Know Exactly What To Learn & Skip",
+      "Confidence To Start Your AI Journey",
+      "Clarity On Career Path & Salary Growth",
+      "Project Ideas That Stand Out",
+      "Mindset Shift From Confusion To Action"
     ],
     "curriculum_title_plain": "What You Will Learn In This",
-    "curriculum_title_highlight": "Power Packed Program",
-    "curriculum_ps": "All Strategies Are 2025 Updated!",
+    "curriculum_title_highlight": "Power-Packed Workshop",
+    "curriculum_ps": "100% Beginner Friendly",
     "curriculum": [
       {
         "lesson_num": 1,
-        "title": "Python Fundamentals for Data",
+        "title": "AI/ML Career Landscape 2026",
         "points": [
-          "What makes Python the #1 data language in 2025",
-          "Data types, loops, functions & list comprehensions",
-          "File I/O, JSON, CSV & API handling",
-          "Virtual environments & project structure"
+          "What is AI, ML, Data Science (Simple Explanation)",
+          "Job Roles & Salary Breakdown",
+          "Industry Demand In India & Indore",
+          "Future Scope & Opportunities"
         ]
       },
       {
         "lesson_num": 2,
-        "title": "NumPy & Pandas Mastery",
+        "title": "Step-by-Step Learning Roadmap",
         "points": [
-          "Array operations & broadcasting in NumPy",
-          "DataFrame manipulation, groupby & merge in Pandas",
-          "Time series indexing & rolling windows",
-          "Memory optimisation for large datasets"
+          "What to learn first (Python, Maths, ML)",
+          "Exact sequence to follow",
+          "Best resources & tools",
+          "Timeline to become job-ready"
         ]
       },
       {
         "lesson_num": 3,
-        "title": "Exploratory Data Analysis",
+        "title": "Skills That Actually Matter",
         "points": [
-          "EDA frameworks that impress hiring managers",
-          "Univariate, bivariate & multivariate analysis",
-          "Outlier detection using IQR & Z-score",
-          "Correlation heatmaps & feature relationships"
+          "Top skills recruiters look for",
+          "Difference between average vs top candidates",
+          "Mistakes most students make",
+          "How to stand out in interviews"
         ]
       },
       {
         "lesson_num": 4,
-        "title": "Data Visualisation That Tells Stories",
+        "title": "Project & Portfolio Strategy",
         "points": [
-          "Matplotlib, Seaborn & Plotly fundamentals",
-          "Dashboard design with Streamlit",
-          "Chart selection by data type & audience",
-          "Colour psychology for Indian business reports"
-        ]
-      },
-      {
-        "lesson_num": 5,
-        "title": "Machine Learning Foundations",
-        "points": [
-          "Supervised vs unsupervised learning",
-          "Train/test split, cross-validation & leakage prevention",
-          "Bias-variance tradeoff with real examples",
-          "Scikit-learn pipeline from raw data to predictions"
-        ]
-      },
-      {
-        "lesson_num": 6,
-        "title": "Regression & Classification Models",
-        "points": [
-          "Linear, Ridge & Lasso regression with tuning",
-          "Logistic regression, SVM & KNN",
-          "Decision trees & random forests",
-          "Model evaluation: RMSE, AUC, F1, Confusion Matrix"
-        ]
-      },
-      {
-        "lesson_num": 7,
-        "title": "Feature Engineering & Selection",
-        "points": [
-          "Encoding categorical variables for Indian datasets",
-          "Scaling, normalisation & imputation strategies",
-          "PCA & dimensionality reduction",
-          "Feature importance with SHAP values"
-        ]
-      },
-      {
-        "lesson_num": 8,
-        "title": "Advanced ML & Ensembles",
-        "points": [
-          "XGBoost, LightGBM & CatBoost deep dive",
-          "Stacking & blending for Kaggle-winning models",
-          "Hyperparameter tuning with Optuna",
-          "Real competition walkthrough from top 5%"
+          "What kind of projects to build",
+          "How to showcase your work",
+          "GitHub & resume strategy",
+          "Real examples of winning portfolios"
         ]
       }
     ],
     "faq": [
       {
-        "question": "IS THIS COURSE BEGINNER-FRIENDLY OR DO I NEED CODING EXPERIENCE?",
-        "answer": "This course is perfect for both beginners and experienced developers. We teach data science from the ground up including Python basics, data manipulation, and ML models. Even if you've never written a line of code before, you'll walk away confident and ready to tackle real-world data problems."
+        "question": "IS THIS FOR BEGINNERS?",
+        "answer": "Yes, this workshop is designed for absolute beginners. Even if you have zero coding knowledge, you will understand the roadmap clearly."
       },
       {
-        "question": "WILL THIS WORK FOR MY GOAL (JOB, FREELANCE, STARTUP, ETC.)?",
-        "answer": "Yes — the frameworks we teach are industry-agnostic. Whether you want to get hired as a data analyst, freelance for businesses, or use data to grow your own startup, this course gives you the practical foundation and project portfolio to achieve it."
+        "question": "DO I NEED CODING EXPERIENCE?",
+        "answer": "No. We will explain everything from scratch and show you how to start your journey step-by-step."
       },
       {
-        "question": "WHAT IS YOUR REFUND POLICY?",
-        "answer": "We offer a 7-day no-questions-asked refund. If you go through the first two modules and don't feel the content delivers value, just email us and we'll refund 100% of your payment."
-      },
-      {
-        "question": "HOW LONG DO I HAVE ACCESS TO THE CONTENT?",
-        "answer": "You get lifetime access to all course materials including future updates. Once enrolled, the content is yours forever including all project notebooks, templates, and the private community."
+        "question": "WILL THIS HELP ME GET A JOB?",
+        "answer": "Yes — this workshop gives you the exact roadmap, skills and strategy needed to move towards a job in AI/ML."
       }
     ],
-    "learn_items": [
-      {
-        "title": "Python for Data",
-        "description": "Master the core Python stack used in every data role."
-      },
-      {
-        "title": "Real ML Models",
-        "description": "Build, train and deploy models on actual Indian datasets."
-      }
-    ],
-    "testimonials": [
-      {
-        "name": "Aryan Mehta",
-        "role": "Data Analyst at Wipro",
-        "text": "I went from zero Python knowledge to landing a Data Analyst role in 4 months. The real datasets and project templates made all the difference.",
-        "youtube_url": "https://www.youtube.com/embed/cb05VK4W5Ds?si=8Q5SXhMGRKhhxRkh"
-      },
-      {
-        "name": "Priya Sharma",
-        "role": "ML Engineer at Zomato",
-        "text": "The curriculum is perfectly structured. I finally understood Pandas and Scikit-learn after struggling with random tutorials for a year.",
-        "youtube_url": null
-      },
-      {
-        "name": "Rahul Gupta",
-        "role": "Data Scientist at Paytm",
-        "text": "Best investment I made for my career. The Indian dataset examples made concepts click instantly. Got placed within 2 months of completing.",
-        "youtube_url": null
-      }
-    ],
-    "about_description": "CodingShark is India's fastest-growing tech education platform, helping over 15,000 students build profitable software careers.",
+    "about_description": "CodingSharks is helping students in Indore build real-world tech skills and transition into high-paying careers through practical, no-fluff training.",
     "about_stats": [
       {
-        "value": "15,000+",
-        "label": "Students Enrolled"
+        "value": "1000+",
+        "label": "Students Trained"
       },
       {
-        "value": "94%",
-        "label": "Placement Rate"
+        "value": "6+ Years",
+        "label": "Industry Experience"
       },
       {
-        "value": "₹32L",
-        "label": "Highest Package"
-      },
-      {
-        "value": "50+",
-        "label": "Hiring Partners"
+        "value": "Top 1%",
+        "label": "Career Clarity Focus"
       }
-    ],
-    "companies_founded": [],
-    "partners": [],
-    "featured_in": [],
-    "bonus_title": null,
-    "bonus_description": null,
-    "bonus_image_url": null
+    ]
   },
   {
     "template": "dark-hero",
