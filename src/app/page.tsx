@@ -8,7 +8,7 @@ import { ReviewsSection } from "@/components/pages/home/reviews-section";
 import { CommunitySection } from "@/components/pages/home/community-section";
 import { MentorsSection } from "@/components/pages/home/mentors-section";
 import { HowToApplySection } from "@/components/pages/home/how-to-apply-section";
-import { CourseShowcaseCard } from "@/components/pages/home/course-showcase-section";
+// import { CourseShowcaseCard } from "@/components/pages/home/course-showcase-section";
 import { ComparisonSection } from "@/components/pages/home/comparison-section";
 import { FaqSection } from "@/components/pages/home/faq-section";
 import { FinalCtaSection } from "@/components/pages/home/final-cta-section";
@@ -35,13 +35,13 @@ export default function HomePage() {
       </div>
       <HeroSection />
       <BookLiveClassSection />
-      <CourseShowcaseCard index={0} />
+      {/* <CourseShowcaseCard index={0} /> */}
       <WorkAtSection />
       <WhyCodingSharksSection />
-      <CourseShowcaseCard index={1} />
+      {/* <CourseShowcaseCard index={1} /> */}
       <CoursesSection />
       <PlacementStoriesSection />
-      <CourseShowcaseCard index={2} />
+      {/* <CourseShowcaseCard index={2} /> */}
       <ReviewsSection />
       <CommunitySection />
       <MentorsSection />
