@@ -128,6 +128,152 @@
     ]
   },
   {
+    "slug": "dsa-mastery",
+    "crmCourseName": "DSA Mastery",
+    "badge": "INTERVIEW CRUSHER",
+    "title": "DSA Mastery",
+    "tagline": "Master Data Structures & Algorithms to crack any tech interview with confidence",
+    "gradient": "from-emerald-500 to-cyan-700",
+    "accentColor": "#10b981",
+    "type": "campus",
+    "isNew": true,
+    "duration": "2 Months",
+    "mode": "Live · Indore",
+    "level": "Beginner to Advanced",
+    "students": "600+",
+    "projectCount": "100+",
+    "placementRate": "94%",
+    "price": "₹35,000",
+    "originalPrice": "₹60,000",
+    "description": "A focused 2-month DSA program that takes you from basics to advanced problem-solving. Solve 100+ handpicked problems, master every key pattern and learn how to think algorithmically — exactly what top companies like Swiggy, Razorpay, Google and Amazon test in interviews.",
+    "meta": [
+      {
+        "icon": "briefcase",
+        "text": "Min. work exp: Open to all"
+      },
+      {
+        "icon": "clock",
+        "text": "Duration: 2 months"
+      },
+      {
+        "icon": "check",
+        "text": "100+ curated problems"
+      }
+    ],
+    "whatYouLearn": [
+      "Analyse time and space complexity using Big-O notation confidently",
+      "Master arrays, strings, linked lists, stacks, queues and hash maps",
+      "Solve tree and graph problems with BFS, DFS, Dijkstra and Bellman-Ford",
+      "Crack dynamic programming with 15+ proven patterns",
+      "Implement heaps, tries, segment trees and disjoint sets from scratch",
+      "Solve 100+ LeetCode-style problems with optimal solutions and explanations",
+      "Perform in live coding interviews with speed, accuracy and confidence"
+    ],
+    "curriculum": [
+      {
+        "module": "Module 1 — Complexity & Arrays (Week 1)",
+        "topics": [
+          "Big-O notation: time and space analysis",
+          "Arrays: sliding window, two pointers, prefix sum",
+          "Strings: reversal, anagram, palindrome patterns",
+          "Sorting: bubble, selection, insertion, merge, quick",
+          "Binary search and its variations"
+        ]
+      },
+      {
+        "module": "Module 2 — Linked Lists, Stacks & Queues (Week 2)",
+        "topics": [
+          "Singly & doubly linked lists: insert, delete, reverse",
+          "Fast & slow pointer (Floyd's cycle detection)",
+          "Stacks: monotonic stack, next greater element",
+          "Queues & deques: sliding window maximum",
+          "Priority queues & heap basics"
+        ]
+      },
+      {
+        "module": "Module 3 — Hashing, Recursion & Backtracking (Week 3)",
+        "topics": [
+          "Hash maps & sets: frequency counting, two-sum family",
+          "Recursion: tree recursion, memoization intro",
+          "Backtracking: N-Queens, subsets, permutations",
+          "Divide and conquer patterns",
+          "Greedy algorithms: interval scheduling, activity selection"
+        ]
+      },
+      {
+        "module": "Module 4 — Trees & Heaps (Week 4–5)",
+        "topics": [
+          "Binary trees: inorder, preorder, postorder traversals",
+          "BST: insertion, deletion, search, validation",
+          "Level-order BFS, height, diameter, LCA",
+          "Heaps: min/max heap, heap sort, K-th largest",
+          "Tries: insert, search, prefix matching"
+        ]
+      },
+      {
+        "module": "Module 5 — Graphs (Week 5–6)",
+        "topics": [
+          "Graph representations: adjacency list & matrix",
+          "BFS & DFS traversal patterns",
+          "Topological sort: Kahn's algorithm & DFS",
+          "Shortest paths: Dijkstra & Bellman-Ford",
+          "Union-Find / Disjoint Set Union"
+        ]
+      },
+      {
+        "module": "Module 6 — Dynamic Programming (Week 7–8)",
+        "topics": [
+          "DP fundamentals: memoization vs tabulation",
+          "1D DP: climbing stairs, house robber, coin change",
+          "2D DP: longest common subsequence, edit distance",
+          "Knapsack family: 0/1, unbounded, partition",
+          "DP on trees, graphs and strings"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "LeetCode Sprint (×50)",
+        "desc": "50 curated easy & medium problems solved with full explanation and complexity analysis"
+      },
+      {
+        "name": "Advanced Problem Set (×50)",
+        "desc": "50 hard and company-tagged problems targeting FAANG and unicorn interviews"
+      },
+      {
+        "name": "Mock Interview Rounds",
+        "desc": "Live whiteboard sessions simulating real Google, Amazon and Razorpay rounds"
+      },
+      {
+        "name": "DSA Revision Sheet",
+        "desc": "Personal cheatsheet covering all patterns, templates and edge cases"
+      }
+    ],
+    "whoIsItFor": [
+      {
+        "title": "CS / IT Students",
+        "desc": "Build a strong DSA foundation for campus placements and coding rounds"
+      },
+      {
+        "title": "Working Engineers",
+        "desc": "Upskill for FAANG, unicorn and senior engineer interviews"
+      },
+      {
+        "title": "Competitive Coders",
+        "desc": "Level up from basics to advanced patterns and contest-level problem solving"
+      }
+    ],
+    "tools": [
+      "Java / Python / C++",
+      "LeetCode",
+      "GeeksforGeeks",
+      "VS Code",
+      "GitHub",
+      "Excalidraw",
+      "Notion (revision)"
+    ]
+  },
+  {
     "slug": "system-design",
     "crmCourseName": "System Design & DSA Masterclass",
     "badge": "PLACEMENT BOOSTER",

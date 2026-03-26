@@ -19,6 +19,7 @@ const COURSE_IMAGE: Record<string, string> = {
   "data-analytics":          "/images/courses/data-analytics.jpg",
   "system-design":           "/images/courses/system-design.jpg",
   "c-cpp":                   "/images/courses/c-cpp.jpg",
+  "dsa-mastery":             "/images/courses/dsa-mastery.jpg",
 };
 
 const META_ICON_MAP: Record<string, React.ElementType> = {

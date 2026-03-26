@@ -40,6 +40,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   frontend: Monitor,
   backend: Server,
   "system-design": GitBranch,
+  "dsa-mastery": GitBranch,
   devops: Cloud,
   "campus-bootcamp": Building2,
   "campus-ai": Zap,
@@ -57,6 +58,7 @@ const COURSE_IMAGE: Record<string, string> = {
   "data-analytics":          "/images/courses/data-analytics.jpg",
   "system-design":           "/images/courses/system-design.jpg",
   "c-cpp":                   "/images/courses/c-cpp.jpg",
+  "dsa-mastery":             "/images/courses/dsa-mastery.jpg",
 };
 
 const SLUG_TO_PDF: Record<string, string> = {
@@ -388,7 +390,7 @@ export function CourseDetailPage({ slug }: { slug: string }) {
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
       {/* ── Hero ── */}
-      <div className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pb-28">
+      <div className="relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pb-24">
         {/* Background image */}
         {heroImg ? (
           <Image
@@ -424,11 +426,11 @@ export function CourseDetailPage({ slug }: { slug: string }) {
           {/* Breadcrumb */}
           <Link
             href="/courses"
-            className="relative z-10 inline-flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors mb-8">
+            className="relative z-10 inline-flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors mb-5">
             <ArrowLeft className="h-4 w-4" /> All Programs
           </Link>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 lg:gap-12 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.6fr_380px] gap-8 lg:gap-10 items-center">
             {/* Left — info */}
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -471,7 +473,7 @@ export function CourseDetailPage({ slug }: { slug: string }) {
               </div>
 
               {/* Quick stats */}
-              <div className="grid grid-cols-3 gap-3 mt-7">
+              <div className="flex flex-wrap gap-2 mt-7">
                 {[
                   { value: course.placementRate, label: "Placement Rate" },
                   { value: course.students, label: "Students Enrolled" },
@@ -479,11 +481,11 @@ export function CourseDetailPage({ slug }: { slug: string }) {
                 ].map((s, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center text-center py-3 px-2 border border-white/10 bg-white/5">
-                    <span className="text-xl sm:text-2xl font-bold text-white font-heading leading-none">
+                    className="flex flex-col items-center text-center py-2.5 px-5 border border-white/10 bg-white/5">
+                    <span className="text-lg sm:text-xl font-bold text-white font-heading leading-none">
                       {s.value}
                     </span>
-                    <span className="text-[10px] text-white/40 mt-1 leading-tight">
+                    <span className="text-[10px] text-white/40 mt-1 leading-tight whitespace-nowrap">
                       {s.label}
                     </span>
                   </div>
