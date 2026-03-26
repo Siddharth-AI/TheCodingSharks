@@ -17,16 +17,6 @@
     "platform": "Zoom + LMS",
     "instructor_name": "Adarsh Kewat",
     "instructor_bio": "Founder of CodingSharks, Adarsh has trained 1000+ students in Indore and helped them transition from confusion to clarity in tech careers.\nWith 6+ years of real development experience, he specializes in simplifying complex AI/ML concepts into practical, job-ready skills.\nHis mission is to help Tier-2/Tier-3 students crack high-paying tech roles without wasting years.",
-    "instructor_feature_videos": [
-      {
-        "platform": "TEDX",
-        "label": "Featured in TEDX"
-      },
-      {
-        "platform": "CNBC AWAAZ",
-        "label": "Featured in CNBC Awaaz"
-      }
-    ],
     "topics": [
       "AI Career Roadmap",
       "Machine Learning Basics",
@@ -41,7 +31,7 @@
     "base_url": "",
     "is_active": true,
     "hero_label": "LIVE CAREER WORKSHOP",
-    "youtube_url": null,
+    "youtube_url": "https://www.youtube.com/embed/cb05VK4W5Ds?si=8Q5SXhMGRKhhxRkh",
     "cta_button_text": "START YOUR AI JOURNEY",
     "cta_button_subtext": "LIMITED SEATS • ₹999 → ₹99",
     "page_primary_color": "#ea580c",
@@ -229,16 +219,6 @@
     "page_primary_color": "#7c3aed",
     "instructor_title": "AI Tools Expert & Automation Consultant",
     "instructor_quote": "AI won't replace you. But someone who knows how to use AI will. The window to get ahead is closing fast.",
-    "instructor_feature_videos": [
-      {
-        "platform": "TEDX",
-        "label": "Featured in TEDX"
-      },
-      {
-        "platform": "CNBC AWAAZ",
-        "label": "Featured in CNBC Awaaz"
-      }
-    ],
     "why_join_items": [
       "Master ChatGPT prompts that produce expert-level output in seconds",
       "Build AI automation workflows that save 10+ hours every single week",
@@ -486,16 +466,6 @@
     "page_primary_color": "#0ea5e9",
     "instructor_title": "Senior ML Engineer & Deep Learning Researcher",
     "instructor_quote": "Every production ML system I've seen fail had one thing in common — it was never designed to leave the notebook. I'll show you how to think differently from day one.",
-    "instructor_feature_videos": [
-      {
-        "platform": "GOOGLE I/O",
-        "label": "Speaker at Google I/O"
-      },
-      {
-        "platform": "PYDATA",
-        "label": "Featured at PyData"
-      }
-    ],
     "why_join_items": [
       "Build deep neural networks from scratch using PyTorch and understand every line",
       "Train computer vision models that achieve 95%+ accuracy on real datasets",
@@ -763,16 +733,6 @@
     "page_primary_color": "#10b981",
     "instructor_title": "Senior Full Stack Engineer & Startup Advisor",
     "instructor_quote": "The gap between tutorial projects and the work companies actually hire for is enormous. This program closes that gap in 10 weeks.",
-    "instructor_feature_videos": [
-      {
-        "platform": "JSCONF",
-        "label": "Speaker at JSConf India"
-      },
-      {
-        "platform": "REACTINDIA",
-        "label": "Featured at React India"
-      }
-    ],
     "why_join_items": [
       "Build a complete SaaS application from scratch — frontend, backend, database & deployment",
       "Master TypeScript patterns that prevent the bugs that fail you in technical interviews",
@@ -1060,16 +1020,6 @@
     "page_primary_color": "#7c3aed",
     "instructor_title": "Full-Stack Architect & React Expert",
     "instructor_quote": "The fastest way to get hired is to ship real products. We skip the theory and go straight to deployment.",
-    "instructor_feature_videos": [
-      {
-        "platform": "TEDX",
-        "label": "Featured in TEDX"
-      },
-      {
-        "platform": "JOSH TALK",
-        "label": "Featured in JOSH TALK"
-      }
-    ],
     "why_join_items": [
       "Build 3 full-stack SaaS apps you can put on your portfolio immediately",
       "Master the React + Next.js stack used by 90% of top Indian startups",
@@ -1317,16 +1267,6 @@
     "page_primary_color": "#4f46e5",
     "instructor_title": "Cloud Architect & DevOps Lead",
     "instructor_quote": "Every company in India is moving to cloud. The engineers who can automate this transition will command the highest salaries of the decade.",
-    "instructor_feature_videos": [
-      {
-        "platform": "TEDX",
-        "label": "Featured in TEDX"
-      },
-      {
-        "platform": "JOSH TALK",
-        "label": "Featured in JOSH TALK"
-      }
-    ],
     "why_join_items": [
       "Get hands-on with AWS, Docker, and Kubernetes — not just theory",
       "Build a production-grade CI/CD pipeline from scratch in Week 2",
@@ -1594,16 +1534,6 @@
     "page_primary_color": "#c2410c",
     "instructor_title": "Product Designer & UX Lead",
     "instructor_quote": "Design isn't about making things pretty. It's about making things work so well that users never have to think.",
-    "instructor_feature_videos": [
-      {
-        "platform": "TEDX",
-        "label": "Featured in TEDX"
-      },
-      {
-        "platform": "JOSH TALK",
-        "label": "Featured in JOSH TALK"
-      }
-    ],
     "why_join_items": [
       "Build a 5-app portfolio using the same Figma process used at Swiggy & Zepto",
       "Learn UX research — user interviews, journey maps, and usability testing",

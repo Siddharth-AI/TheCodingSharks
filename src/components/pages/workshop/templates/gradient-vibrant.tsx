@@ -20,12 +20,12 @@ type WorkshopMedia =
   (typeof mediaData.workshops)[keyof typeof mediaData.workshops];
 
 const REVEAL_CSS = `
-  [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
-  [data-reveal]{transform:translateY(24px)}[data-reveal-left]{transform:translateX(-28px)}[data-reveal-right]{transform:translateX(28px)}[data-reveal-up]{transform:translateY(-20px)}
-  [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
-  [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
-  @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
-  .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
+ [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
+ [data-reveal]{transform:translateY(24px)}[data-reveal-left]{transform:translateX(-28px)}[data-reveal-right]{transform:translateX(28px)}[data-reveal-up]{transform:translateY(-20px)}
+ [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
+ [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
+ @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
+ .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
 `;
 
 const BG = "#0f0a2e";
@@ -39,6 +39,7 @@ export function TemplateGradientVibrant({
   workshop: WorkshopJson;
 }) {
   const [showModal, setShowModal] = useState(false);
+  const [showHeroVideo, setShowHeroVideo] = useState(false);
   const [activeFeatureVideo, setActiveFeatureVideo] = useState<number | null>(
     null,
   );
@@ -65,7 +66,7 @@ export function TemplateGradientVibrant({
   }) {
     return (
       <div
-        className={`rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md ${className}`}>
+        className={` border border-white/20 bg-white/10 backdrop-blur-md ${className}`}>
         {children}
       </div>
     );
@@ -83,7 +84,7 @@ export function TemplateGradientVibrant({
     return (
       <button
         onClick={openModal}
-        className={`${full ? "w-full" : ""} group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-extrabold uppercase tracking-widest text-white text-sm hover:scale-[1.03] active:scale-100 transition-all cta-pulse`}
+        className={`${full ? "w-full" : ""} group inline-flex items-center justify-center gap-3 px-8 py-4 font-extrabold uppercase tracking-widest text-white text-sm hover:scale-[1.03] active:scale-100 transition-all cta-pulse`}
         style={
           {
             background: `linear-gradient(135deg, ${P} 0%, ${P_PINK} 100%)`,
@@ -100,7 +101,7 @@ export function TemplateGradientVibrant({
             </span>
           )}
         </span>
-        <span className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+        <span className="w-8 h-8 bg-white/20 flex items-center justify-center shrink-0">
           <svg
             className="w-4 h-4 text-white"
             fill="currentColor"
@@ -130,14 +131,14 @@ export function TemplateGradientVibrant({
           )}
           {/* Purple gradient blobs */}
           <div
-            className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full pointer-events-none"
+            className="absolute top-0 left-0 w-[800px] h-[800px] pointer-events-none"
             style={{
               background: `radial-gradient(circle, ${P}33 0%, transparent 60%)`,
               transform: "translate(-30%, -30%)",
             }}
           />
           <div
-            className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
+            className="absolute bottom-0 right-0 w-[600px] h-[600px] pointer-events-none"
             style={{
               background: `radial-gradient(circle, ${P_PINK}22 0%, transparent 60%)`,
               transform: "translate(20%, 20%)",
@@ -148,9 +149,9 @@ export function TemplateGradientVibrant({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left: content */}
               <div data-reveal-left>
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 border border-purple-500/30 bg-purple-500/10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-purple-500/30 bg-purple-500/10">
                   <span
-                    className="w-2 h-2 rounded-full animate-pulse"
+                    className="w-2 h-2 animate-pulse"
                     style={{ backgroundColor: P_PINK }}></span>
                   <span
                     className="text-xs font-bold uppercase tracking-widest"
@@ -185,7 +186,7 @@ export function TemplateGradientVibrant({
                   {workshop.topics.map((t, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1.5 rounded-full text-xs font-bold border border-purple-500/30 bg-purple-500/10"
+                      className="px-3 py-1.5 text-xs font-bold border border-purple-500/30 bg-purple-500/10"
                       style={{ color: P_LIGHT }}>
                       {t}
                     </span>
@@ -218,16 +219,46 @@ export function TemplateGradientVibrant({
               {/* Right: floating image/video card */}
               <div className="relative" data-reveal-right>
                 <div
-                  className={`relative rounded-3xl overflow-hidden ${workshop.youtube_url ? "aspect-video" : "aspect-3/4"}`}
+                  className={`relative overflow-hidden ${workshop.youtube_url ? "aspect-video" : "aspect-3/4"}`}
                   style={{ boxShadow: `0 0 100px ${P}44` }}>
                   {workshop.youtube_url ? (
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?rel=0&modestbranding=1`}
-                      title={workshop.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full border-0"
-                    />
+                    showHeroVideo ? (
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?autoplay=1&rel=0&modestbranding=1`}
+                        title={workshop.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full border-0"
+                      />
+                    ) : (
+                      <>
+                        {(media?.hero_preview || media?.hero_bg) && (
+                          <Image
+                            src={media?.hero_preview ?? media?.hero_bg ?? ""}
+                            alt={workshop.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width:768px) 100vw, 660px"
+                            priority
+                          />
+                        )}
+
+                        <div
+                          className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
+                          onClick={() => setShowHeroVideo(true)}>
+                          <div
+                            className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-white shadow-2xl"
+                            style={{ backgroundColor: P }}>
+                            <svg
+                              className="w-7 h-7 sm:w-9 sm:h-9 ml-1"
+                              fill="currentColor"
+                              viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
+                    )
                   ) : (
                     <>
                       {(media?.hero_preview || media?.hero_bg) && (
@@ -253,7 +284,7 @@ export function TemplateGradientVibrant({
                       <div className="absolute bottom-6 left-4 right-4">
                         <GlassCard className="p-4 flex items-center gap-3">
                           {instructorImg ? (
-                            <div className="w-12 h-12 rounded-xl overflow-hidden relative shrink-0">
+                            <div className="w-12 h-12 overflow-hidden relative shrink-0">
                               <Image
                                 src={instructorImg}
                                 alt={workshop.instructor_name ?? ""}
@@ -264,7 +295,7 @@ export function TemplateGradientVibrant({
                             </div>
                           ) : (
                             <div
-                              className="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-white font-bold"
+                              className="w-12 h-12 shrink-0 flex items-center justify-center text-white font-bold"
                               style={{ backgroundColor: P }}>
                               {workshop.instructor_name?.[0]}
                             </div>
@@ -279,7 +310,7 @@ export function TemplateGradientVibrant({
                           </div>
                           <div className="ml-auto">
                             <div
-                              className="w-8 h-8 rounded-full flex items-center justify-center"
+                              className="w-8 h-8 flex items-center justify-center"
                               style={{
                                 background: `linear-gradient(135deg, ${P}, ${P_PINK})`,
                               }}>
@@ -333,7 +364,7 @@ export function TemplateGradientVibrant({
                 return (
                   <div
                     key={i}
-                    className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition-all group backdrop-blur-sm"
+                    className=" overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition-all group backdrop-blur-sm"
                     style={{ borderLeftColor: accent, borderLeftWidth: "4px" }}
                     data-reveal>
                     {painImg && (
@@ -409,7 +440,7 @@ export function TemplateGradientVibrant({
               </div>
               <div data-reveal-right>
                 <div
-                  className="relative rounded-3xl overflow-hidden aspect-video border border-white/20"
+                  className="relative overflow-hidden aspect-video border border-white/20"
                   style={{ boxShadow: `0 0 80px ${P}33` }}>
                   {productImg && (
                     <Image
@@ -429,7 +460,7 @@ export function TemplateGradientVibrant({
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
                       onClick={openModal}
-                      className="w-20 h-20 rounded-full border-4 border-white/30 flex items-center justify-center hover:scale-110 transition-transform"
+                      className="w-20 h-20 border-4 border-white/30 flex items-center justify-center hover:scale-110 transition-transform"
                       style={{
                         background: `linear-gradient(135deg, ${P}, ${P_PINK})`,
                       }}>
@@ -469,7 +500,7 @@ export function TemplateGradientVibrant({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div
-                className="rounded-2xl overflow-hidden"
+                className=" overflow-hidden"
                 data-reveal-left
                 style={{
                   border: `2px solid rgba(239,68,68,0.3)`,
@@ -485,7 +516,7 @@ export function TemplateGradientVibrant({
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   )}
-                  <div className="absolute inset-0 bg-red-600/50" />
+
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-extrabold text-white tracking-[0.2em]">
                     BEFORE
                   </span>
@@ -500,7 +531,7 @@ export function TemplateGradientVibrant({
                 </div>
               </div>
               <div
-                className="rounded-2xl overflow-hidden"
+                className=" overflow-hidden"
                 data-reveal-right
                 style={{
                   border: `2px solid ${P}44`,
@@ -580,78 +611,12 @@ export function TemplateGradientVibrant({
                     </p>
                   </GlassCard>
                 )}
-                <div className="flex flex-wrap gap-4">
-                  {workshop.instructor_feature_videos.map((v, i) => {
-                    const feature = media?.feature_videos?.[i];
-                    const thumbSrc = feature?.thumb ?? "";
-                    const videoUrl = feature?.youtube ?? null;
-                    const videoId = videoUrl ? getYouTubeId(videoUrl) : null;
-                    const isPlaying =
-                      activeFeatureVideo === i && !!videoId;
-                    return (
-                      <div key={i} className="flex flex-col items-center gap-1">
-                        <div
-                          className="w-40 h-24 rounded-xl overflow-hidden relative border border-white/20"
-                          style={{ cursor: videoId ? "pointer" : "default" }}
-                          onClick={
-                            videoId
-                              ? () => setActiveFeatureVideo(i)
-                              : undefined
-                          }>
-                          {isPlaying && videoId ? (
-                            <iframe
-                              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-                              title={v.label}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="absolute inset-0 w-full h-full border-0"
-                            />
-                          ) : (
-                            <>
-                              {thumbSrc && (
-                                <Image
-                                  src={thumbSrc}
-                                  alt={v.label}
-                                  fill
-                                  className="object-cover"
-                                  sizes="160px"
-                                />
-                              )}
-                              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <div
-                                  className="w-8 h-8 rounded-full flex items-center justify-center"
-                                  style={{
-                                    background: `linear-gradient(135deg, ${P}, ${P_PINK})`,
-                                  }}>
-                                  <svg
-                                    className="w-4 h-4 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                  </svg>
-                                </div>
-                              </div>
-                            </>
-                          )}
-                        </div>
-                        <p className="text-xs text-gray-400">
-                          Featured in{" "}
-                          <span
-                            className="font-bold"
-                            style={{ color: P_LIGHT }}>
-                            {v.platform}
-                          </span>
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
               <div
                 className="order-1 lg:order-2 flex justify-center"
                 data-reveal-right>
                 <div
-                  className="relative w-80 h-96 rounded-3xl overflow-hidden"
+                  className="relative w-80 h-96 overflow-hidden"
                   style={{ boxShadow: `0 0 80px ${P}55` }}>
                   {instructorBg && (
                     <Image
@@ -696,7 +661,7 @@ export function TemplateGradientVibrant({
                 <GlassCard key={i} className="overflow-hidden" data-reveal>
                   <div className="px-5 py-3 border-b border-white/10 flex items-center gap-3">
                     <span
-                      className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-extrabold shrink-0"
+                      className="w-7 h-7 flex items-center justify-center text-white text-xs font-extrabold shrink-0"
                       style={{
                         background: `linear-gradient(135deg, ${P}, ${P_PINK})`,
                       }}>
@@ -781,7 +746,7 @@ function VibrantFaqSection({
           {workshop.faq.map((item, i) => (
             <div
               key={i}
-              className="rounded-2xl overflow-hidden border transition-all"
+              className=" overflow-hidden border transition-all"
               style={{
                 backgroundColor:
                   open === i
@@ -795,7 +760,7 @@ function VibrantFaqSection({
                 <span className="text-sm font-extrabold text-white uppercase tracking-wide">
                   {item.question}
                 </span>
-                <span className="shrink-0 w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-gray-400">
+                <span className="shrink-0 w-7 h-7 border border-white/20 flex items-center justify-center text-gray-400">
                   {open === i ? (
                     <Minus className="w-3.5 h-3.5" />
                   ) : (
@@ -849,7 +814,7 @@ function VibrantStickyBar({
           </div>
           <button
             onClick={onCta}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-extrabold uppercase tracking-widest text-white text-sm shadow-lg shrink-0"
+            className="flex items-center gap-2 px-6 py-3 font-extrabold uppercase tracking-widest text-white text-sm shadow-lg shrink-0"
             style={{ background: `linear-gradient(135deg, ${P}, ${P_PINK})` }}>
             {ctaText}
             <svg

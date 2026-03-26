@@ -20,12 +20,12 @@ type WorkshopMedia =
   (typeof mediaData.workshops)[keyof typeof mediaData.workshops];
 
 const REVEAL_CSS = `
-  [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
-  [data-reveal]{transform:translateY(20px)}[data-reveal-left]{transform:translateX(-24px)}[data-reveal-right]{transform:translateX(24px)}[data-reveal-up]{transform:translateY(-16px)}
-  [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
-  [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
-  @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
-  .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
+ [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
+ [data-reveal]{transform:translateY(20px)}[data-reveal-left]{transform:translateX(-24px)}[data-reveal-right]{transform:translateX(24px)}[data-reveal-up]{transform:translateY(-16px)}
+ [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
+ [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
+ @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
+ .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
 `;
 
 const P = "#c2410c";
@@ -34,6 +34,7 @@ const P_OFF_WHITE = "#fafaf8";
 
 export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
   const [showModal, setShowModal] = useState(false);
+  const [showHeroVideo, setShowHeroVideo] = useState(false);
   const [activeFeatureVideo, setActiveFeatureVideo] = useState<number | null>(
     null,
   );
@@ -60,7 +61,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
     return (
       <button
         onClick={openModal}
-        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 font-extrabold uppercase tracking-widest text-sm hover:opacity-90 transition-all rounded-xl ${!white ? "cta-pulse" : ""}`}
+        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 font-extrabold uppercase tracking-widest text-sm hover:opacity-90 transition-all ${!white ? "cta-pulse" : ""}`}
         style={
           white
             ? { backgroundColor: "white", color: P }
@@ -104,10 +105,10 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
             data-reveal-left>
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 text-xs font-extrabold uppercase tracking-widest self-start"
+              className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-extrabold uppercase tracking-widest self-start"
               style={{ backgroundColor: P_LIGHT, color: P }}>
               <span
-                className="w-2 h-2 rounded-full animate-pulse"
+                className="w-2 h-2 animate-pulse"
                 style={{ backgroundColor: P }}
               />
               LIVE ONLINE
@@ -140,7 +141,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                 {workshop.why_join_items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span
-                      className="w-7 h-7 rounded-full flex items-center justify-center font-black text-xs text-white shrink-0 mt-0.5"
+                      className="w-7 h-7 flex items-center justify-center font-black text-xs text-white shrink-0 mt-0.5"
                       style={{ backgroundColor: P }}>
                       {i + 1}
                     </span>
@@ -174,15 +175,44 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
             {workshop.youtube_url ? (
               <div className="absolute inset-0 flex items-center justify-center bg-gray-50 p-6">
                 <div
-                  className="w-full rounded-xl overflow-hidden shadow-lg"
+                  className="w-full overflow-hidden shadow-lg"
                   style={{ aspectRatio: "16/9" }}>
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?rel=0&modestbranding=1`}
-                    title={workshop.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full border-0"
-                  />
+                  {showHeroVideo ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?autoplay=1&rel=0&modestbranding=1`}
+                      title={workshop.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full border-0"
+                    />
+                  ) : (
+                    <>
+                      {(media?.hero_bg || media?.hero_preview) && (
+                        <Image
+                          src={media?.hero_preview ?? media?.hero_bg ?? ""}
+                          alt={workshop.title}
+                          fill
+                          className="object-cover"
+                          sizes="40vw"
+                          priority
+                        />
+                      )}
+                      <div
+                        className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
+                        onClick={() => setShowHeroVideo(true)}>
+                        <div
+                          className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-white shadow-2xl"
+                          style={{ backgroundColor: P }}>
+                          <svg
+                            className="w-7 h-7 sm:w-9 sm:h-9 ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ) : (
@@ -232,7 +262,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                     className="flex items-center gap-5 py-5 border-b border-orange-100 last:border-b-0"
                     data-reveal>
                     <span
-                      className="w-8 h-8 rounded-full flex items-center justify-center font-black text-xs text-white shrink-0"
+                      className="w-8 h-8 flex items-center justify-center font-black text-xs text-white shrink-0"
                       style={{ backgroundColor: P }}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -294,7 +324,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                       <div className="flex gap-4 items-start">
                         {painImg && (
                           <div
-                            className="relative rounded-xl overflow-hidden shrink-0"
+                            className="relative overflow-hidden shrink-0"
                             style={{ width: 80, height: 80 }}>
                             <Image
                               src={painImg}
@@ -356,7 +386,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                       }}>
                       {i === 0 && media?.product ? (
                         <div
-                          className="relative w-full rounded-2xl overflow-hidden"
+                          className="relative w-full overflow-hidden"
                           style={{ aspectRatio: "4/3" }}>
                           <Image
                             src={media.product}
@@ -374,7 +404,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                         </div>
                       ) : (
                         <div
-                          className="w-40 h-40 rounded-3xl flex items-center justify-center text-7xl"
+                          className="w-40 h-40 flex items-center justify-center text-7xl"
                           style={{ backgroundColor: P_LIGHT }}>
                           {item.emoji}
                         </div>
@@ -432,7 +462,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
               {/* Before card: slightly higher */}
               <div
-                className="bg-white rounded-2xl overflow-hidden shadow-sm sm:-mt-6"
+                className="bg-white overflow-hidden shadow-sm sm:-mt-6"
                 style={{ borderTop: "4px solid #ef4444" }}
                 data-reveal-left>
                 {media?.before && (
@@ -464,7 +494,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
               </div>
               {/* After card: slightly lower */}
               <div
-                className="bg-white rounded-2xl overflow-hidden shadow-sm sm:mt-6"
+                className="bg-white overflow-hidden shadow-sm sm:mt-6"
                 style={{ borderTop: `4px solid ${P}` }}
                 data-reveal-right>
                 {media?.after && (
@@ -526,7 +556,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
               {/* Left: photo with glow */}
               <div className="flex justify-center" data-reveal-left>
                 <div
-                  className="relative rounded-2xl overflow-hidden shadow-2xl"
+                  className="relative overflow-hidden shadow-2xl"
                   style={{
                     width: 280,
                     height: 360,
@@ -589,74 +619,7 @@ export function TemplateWarmModern({ workshop }: { workshop: WorkshopJson }) {
                     &#8220;{workshop.instructor_quote}&#8221;
                   </blockquote>
                 )}
-                {/* Feature videos */}
-                {workshop.instructor_feature_videos.length > 0 && (
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {workshop.instructor_feature_videos.map((v, i) => {
-                      const feature = media?.feature_videos?.[i];
-                      const thumbSrc = feature?.thumb ?? "";
-                      const videoUrl = feature?.youtube ?? null;
-                      const videoId = videoUrl ? getYouTubeId(videoUrl) : null;
-                      const isPlaying = activeFeatureVideo === i && !!videoId;
-                      return (
-                        <div
-                          key={i}
-                          className="flex flex-col items-center gap-1">
-                          <div
-                            className="w-32 rounded-xl overflow-hidden relative"
-                            style={{
-                              height: 72,
-                              cursor: videoId ? "pointer" : "default",
-                            }}
-                            onClick={
-                              videoId
-                                ? () => setActiveFeatureVideo(i)
-                                : undefined
-                            }>
-                            {isPlaying && videoId ? (
-                              <iframe
-                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-                                title={v.label}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="absolute inset-0 w-full h-full border-0"
-                              />
-                            ) : (
-                              <>
-                                {thumbSrc && (
-                                  <Image
-                                    src={thumbSrc}
-                                    alt={v.label}
-                                    fill
-                                    className="object-cover"
-                                    sizes="128px"
-                                  />
-                                )}
-                                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                  <div className="w-7 h-7 rounded-full flex items-center justify-center bg-white/80">
-                                    <svg
-                                      className="w-3.5 h-3.5 ml-0.5"
-                                      style={{ color: P }}
-                                      fill="currentColor"
-                                      viewBox="0 0 24 24">
-                                      <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </>
-                            )}
-                          </div>
-                          <p className="text-[10px] text-gray-500">
-                            in{" "}
-                            <span className="font-black text-white">
-                              {v.platform}
-                            </span>
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+
                 <CtaBtn text={ctaText} white />
               </div>
             </div>
@@ -861,7 +824,7 @@ function WarmStickyBar({
           </div>
           <button
             onClick={onCta}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-extrabold uppercase tracking-widest text-sm shadow-md shrink-0 hover:opacity-90 transition-opacity bg-white"
+            className="flex items-center gap-2 px-6 py-3 font-extrabold uppercase tracking-widest text-sm shadow-md shrink-0 hover:opacity-90 transition-opacity bg-white"
             style={{ color: "#c2410c" }}>
             {ctaText}
             <svg

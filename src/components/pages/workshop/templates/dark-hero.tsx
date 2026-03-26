@@ -20,12 +20,12 @@ type WorkshopMedia =
   (typeof mediaData.workshops)[keyof typeof mediaData.workshops];
 
 const REVEAL_CSS = `
-  [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
-  [data-reveal]{transform:translateY(24px)}[data-reveal-left]{transform:translateX(-28px)}[data-reveal-right]{transform:translateX(28px)}[data-reveal-up]{transform:translateY(-20px)}
-  [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
-  [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}[data-d5]{transition-delay:.5s}
-  @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
-  .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
+ [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
+ [data-reveal]{transform:translateY(24px)}[data-reveal-left]{transform:translateX(-28px)}[data-reveal-right]{transform:translateX(28px)}[data-reveal-up]{transform:translateY(-20px)}
+ [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
+ [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}[data-d5]{transition-delay:.5s}
+ @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
+ .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
 `;
 
 function PlayIcon() {
@@ -58,6 +58,7 @@ function CheckIcon() {
 
 export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
   const [showModal, setShowModal] = useState(false);
+  const [showHeroVideo, setShowHeroVideo] = useState(false);
   const openModal = useCallback(() => setShowModal(true), []);
   useScrollReveal();
   const stickyVisible = useStickyBar();
@@ -84,7 +85,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
     return (
       <button
         onClick={openModal}
-        className={`${full ? "w-full" : ""} group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-extrabold uppercase tracking-widest text-white text-sm hover:scale-[1.03] active:scale-100 transition-all cta-pulse`}
+        className={`${full ? "w-full" : ""} group inline-flex items-center justify-center gap-3 px-8 py-4 font-extrabold uppercase tracking-widest text-white text-sm hover:scale-[1.03] active:scale-100 transition-all cta-pulse`}
         style={
           {
             background: `linear-gradient(135deg, ${P} 0%, ${P}dd 100%)`,
@@ -101,7 +102,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
             </span>
           )}
         </span>
-        <span className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors">
+        <span className="w-8 h-8 bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors">
           <ArrowIcon />
         </span>
       </button>
@@ -142,7 +143,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
             }}
           />
           <div
-            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
             style={{
               background: `radial-gradient(circle, ${P}22 0%, transparent 65%)`,
             }}
@@ -150,9 +151,9 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
 
           <div className="relative max-w-6xl mx-auto w-full">
             <div className="flex justify-center mb-8" data-reveal>
-              <div className="inline-flex items-center gap-0 rounded-full overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-0 overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
                 <span
-                  className="px-4 py-2 text-xs font-extrabold text-white uppercase tracking-widest rounded-full"
+                  className="px-4 py-2 text-xs font-extrabold text-white uppercase tracking-widest"
                   style={{ backgroundColor: P }}>
                   {workshop.badge_text || "Enroll Now"}
                 </span>
@@ -187,17 +188,47 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start w-full">
               <div className="space-y-4" data-reveal-left>
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                  className=" overflow-hidden border border-white/10 shadow-2xl"
                   style={{ boxShadow: `0 0 60px ${P}22` }}>
                   <div className="aspect-video relative bg-gray-900">
                     {workshop.youtube_url ? (
-                      <iframe
-                        src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?rel=0&modestbranding=1`}
-                        title={workshop.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute inset-0 w-full h-full border-0"
-                      />
+                      showHeroVideo ? (
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?autoplay=1&rel=0&modestbranding=1`}
+                          title={workshop.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="absolute inset-0 w-full h-full border-0"
+                        />
+                      ) : (
+                        <>
+                          {(media?.hero_preview || media?.hero_bg) && (
+                            <Image
+                              src={media?.hero_preview ?? media?.hero_bg ?? ""}
+                              alt={workshop.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width:768px) 100vw, 660px"
+                              priority
+                            />
+                          )}
+
+                          <div
+                            className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
+                            onClick={() => setShowHeroVideo(true)}>
+                            <div
+                              className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-white shadow-2xl"
+                              style={{ backgroundColor: P }}>
+                              <svg
+                                className="w-7 h-7 sm:w-9 sm:h-9 ml-1"
+                                fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
+                        </>
+                      )
                     ) : (
                       <>
                         {heroPreview && (
@@ -212,14 +243,14 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                         <div className="absolute inset-0 flex items-center justify-center">
                           <button
                             onClick={openModal}
-                            className="w-20 h-20 rounded-full border-4 border-white/30 flex items-center justify-center hover:scale-110 transition-transform"
+                            className="w-20 h-20 border-4 border-white/30 flex items-center justify-center hover:scale-110 transition-transform"
                             style={{ backgroundColor: `${P}cc` }}>
                             <PlayIcon />
                           </button>
                         </div>
-                        <div className="absolute top-3 left-3 flex items-center gap-2 bg-black/60 rounded-lg px-3 py-2 backdrop-blur-sm">
+                        <div className="absolute top-3 left-3 flex items-center gap-2 bg-black/60 px-3 py-2 backdrop-blur-sm">
                           <div
-                            className="w-6 h-6 rounded-full flex items-center justify-center text-white text-[10px] font-extrabold"
+                            className="w-6 h-6 flex items-center justify-center text-white text-[10px] font-extrabold"
                             style={{ backgroundColor: P }}>
                             CS
                           </div>
@@ -232,7 +263,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                             </p>
                           </div>
                         </div>
-                        <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-1.5">
+                        <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm px-3 py-1.5">
                           <p className="text-white text-xs font-bold">
                             {workshop.duration} · {workshop.platform}
                           </p>
@@ -243,9 +274,9 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                 </div>
 
                 {workshop.instructor_name && (
-                  <div className="rounded-2xl p-4 flex items-start gap-4 border border-white/10 bg-white/5 backdrop-blur-sm">
+                  <div className=" p-4 flex items-start gap-4 border border-white/10 bg-white/5 backdrop-blur-sm">
                     {instructorImg ? (
-                      <div className="w-14 h-14 rounded-xl overflow-hidden relative shrink-0 border border-white/20">
+                      <div className="w-14 h-14 overflow-hidden relative shrink-0 border border-white/20">
                         <Image
                           src={instructorImg}
                           alt={workshop.instructor_name}
@@ -256,14 +287,14 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                       </div>
                     ) : (
                       <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0"
+                        className="w-14 h-14 flex items-center justify-center text-white font-bold text-xl shrink-0"
                         style={{ backgroundColor: P }}>
                         {workshop.instructor_name[0]}
                       </div>
                     )}
                     <div className="flex-1">
                       <span
-                        className="text-xs font-bold text-white px-2 py-0.5 rounded-full"
+                        className="text-xs font-bold text-white px-2 py-0.5"
                         style={{ backgroundColor: P }}>
                         Meet Your Trainer
                       </span>
@@ -286,7 +317,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
 
               {workshop.why_join_items.length > 0 && (
                 <div
-                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6"
+                  className=" border border-white/10 bg-white/5 backdrop-blur-sm p-6"
                   data-reveal-right>
                   <h3 className="text-lg font-extrabold text-white mb-5 text-center">
                     Why Join This Program?
@@ -295,9 +326,9 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                     {workshop.why_join_items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-3 rounded-xl px-4 py-3 border border-white/8 bg-white/5">
+                        className="flex items-start gap-3 px-4 py-3 border border-white/8 bg-white/5">
                         <span
-                          className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                          className="w-5 h-5 flex items-center justify-center shrink-0 mt-0.5"
                           style={{ backgroundColor: P }}>
                           <CheckIcon />
                         </span>
@@ -355,7 +386,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                     </div>
                     <div className="flex items-start gap-4">
                       {painImg && (
-                        <div className="hidden sm:block w-24 h-16 rounded-lg overflow-hidden relative shrink-0 border border-white/10">
+                        <div className="hidden sm:block w-24 h-16 overflow-hidden relative shrink-0 border border-white/10">
                           <Image
                             src={painImg}
                             alt={p.title}
@@ -405,7 +436,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                 <button
                   key={i}
                   onClick={() => setActiveFeature(i)}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all border"
+                  className="flex items-center gap-2 px-4 py-2.5 text-sm font-bold transition-all border"
                   style={
                     activeFeature === i
                       ? { backgroundColor: P, color: "white", borderColor: P }
@@ -424,7 +455,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
             {workshop.features_section_items[activeFeature] && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div
-                  className="rounded-2xl border border-white/10 p-8"
+                  className=" border border-white/10 p-8"
                   style={{ backgroundColor: "#0d1117" }}
                   data-reveal-left>
                   <span className="text-5xl mb-5 block">
@@ -442,7 +473,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                   <CtaBtn text={ctaText} full />
                 </div>
                 <div
-                  className="relative rounded-2xl overflow-hidden aspect-4/3 border border-white/10"
+                  className="relative overflow-hidden aspect-4/3 border border-white/10"
                   style={{ boxShadow: `0 0 80px ${P}18` }}
                   data-reveal-right>
                   {productImg && (
@@ -462,9 +493,9 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                   />
                   <div className="absolute top-4 left-4">
                     <span
-                      className="px-3 py-1.5 rounded-lg text-white text-xs font-extrabold uppercase tracking-widest"
+                      className="px-3 py-1.5 text-white text-xs font-extrabold uppercase tracking-widest"
                       style={{ backgroundColor: P }}>
-                      {activeFeature + 1} /{" "}
+                      {activeFeature + 1} /{""}
                       {workshop.features_section_items.length}
                     </span>
                   </div>
@@ -487,7 +518,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div
-                className="rounded-2xl overflow-hidden border-2 border-red-500/30"
+                className=" overflow-hidden border-2 border-red-500/30"
                 data-reveal-left>
                 {beforeImg && (
                   <div className="relative aspect-3/2 overflow-hidden">
@@ -498,7 +529,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                       className="object-cover opacity-50"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-red-900/60" />
+
                     <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-extrabold text-white tracking-[0.2em] drop-shadow-lg">
                       BEFORE
                     </span>
@@ -525,7 +556,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                 </div>
               </div>
               <div
-                className="rounded-2xl overflow-hidden border-2 border-green-500/30"
+                className=" overflow-hidden border-2 border-green-500/30"
                 data-reveal-right>
                 {afterImg && (
                   <div className="relative aspect-3/2 overflow-hidden">
@@ -536,7 +567,7 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                       className="object-cover opacity-50"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-green-900/60" />
+
                     <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-extrabold text-white tracking-[0.2em] drop-shadow-lg">
                       AFTER
                     </span>
@@ -619,66 +650,6 @@ export function TemplateDarkHero({ workshop }: { workshop: WorkshopJson }) {
                     </p>
                   ))}
               </div>
-              {workshop.instructor_feature_videos.length > 0 && (
-                <div className="flex flex-wrap gap-4">
-                  {workshop.instructor_feature_videos.map((v, i) => {
-                    const feature = media?.feature_videos?.[i];
-                    const thumbSrc = feature?.thumb ?? "";
-                    const videoUrl = feature?.youtube ?? null;
-                    const videoId = videoUrl ? getYouTubeId(videoUrl) : null;
-                    const isPlaying =
-                      activeFeatureVideo === i && !!videoId;
-                    return (
-                      <div key={i} className="flex flex-col items-center gap-2">
-                        <div
-                          className="w-44 h-28 rounded-xl overflow-hidden relative border border-white/10 shadow-xl"
-                          style={{ cursor: videoId ? "pointer" : "default" }}
-                          onClick={
-                            videoId
-                              ? () => setActiveFeatureVideo(i)
-                              : undefined
-                          }>
-                          {isPlaying && videoId ? (
-                            <iframe
-                              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-                              title={v.label}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="absolute inset-0 w-full h-full border-0"
-                            />
-                          ) : (
-                            <>
-                              {thumbSrc && (
-                                <Image
-                                  src={thumbSrc}
-                                  alt={v.label}
-                                  fill
-                                  className="object-cover"
-                                  sizes="176px"
-                                />
-                              )}
-                              {!thumbSrc && (
-                                <div className="absolute inset-0 bg-white/5" />
-                              )}
-                              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                                  <ArrowIcon className="w-4 h-4 ml-0.5" />
-                                </div>
-                              </div>
-                            </>
-                          )}
-                        </div>
-                        <p className="text-gray-400 text-xs">
-                          Featured in{" "}
-                          <span className="font-extrabold" style={{ color: P }}>
-                            {v.platform}
-                          </span>
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
             </div>
           </div>
         </section>
@@ -754,7 +725,7 @@ function DarkAccordionLesson({
   const [open, setOpen] = useState(false);
   return (
     <div
-      className="rounded-xl overflow-hidden border transition-all"
+      className=" overflow-hidden border transition-all"
       style={{
         backgroundColor: open ? "#131820" : "#0a0e16",
         borderColor: open ? `${primary}44` : "#1e2736",
@@ -764,7 +735,7 @@ function DarkAccordionLesson({
         className="w-full flex items-center justify-between px-5 py-4 text-left gap-4">
         <div className="flex items-center gap-4">
           <span
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-extrabold shrink-0"
+            className="w-8 h-8 flex items-center justify-center text-white text-xs font-extrabold shrink-0"
             style={{ backgroundColor: primary }}>
             {lesson.lesson_num}
           </span>
@@ -820,7 +791,7 @@ function DarkFaqSection({
           {workshop.faq.map((item, i) => (
             <div
               key={i}
-              className="rounded-2xl overflow-hidden border"
+              className=" overflow-hidden border"
               style={{
                 backgroundColor: open === i ? "#131820" : "#0a0e16",
                 borderColor: open === i ? `${primary}44` : "#1e2736",
@@ -831,7 +802,7 @@ function DarkFaqSection({
                 <span className="text-sm font-extrabold uppercase tracking-wide text-white">
                   {item.question}
                 </span>
-                <span className="shrink-0 w-7 h-7 rounded-full border border-[#1e2736] flex items-center justify-center text-gray-400">
+                <span className="shrink-0 w-7 h-7 border border-[#1e2736] flex items-center justify-center text-gray-400">
                   {open === i ? (
                     <Minus className="w-3.5 h-3.5" />
                   ) : (
@@ -882,10 +853,10 @@ function DarkStickyBar({
           </div>
           <button
             onClick={onCta}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-extrabold uppercase tracking-widest text-white text-sm shadow-lg hover:opacity-90 transition-opacity shrink-0"
+            className="flex items-center gap-2 px-6 py-3 font-extrabold uppercase tracking-widest text-white text-sm shadow-lg hover:opacity-90 transition-opacity shrink-0"
             style={{ backgroundColor: primary }}>
             {ctaText}
-            <span className="w-6 h-6 rounded-lg bg-white/20 flex items-center justify-center">
+            <span className="w-6 h-6 bg-white/20 flex items-center justify-center">
               <svg
                 className="w-3 h-3 text-white"
                 fill="currentColor"

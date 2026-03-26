@@ -20,12 +20,12 @@ type WorkshopMedia =
   (typeof mediaData.workshops)[keyof typeof mediaData.workshops];
 
 const REVEAL_CSS = `
-  [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
-  [data-reveal]{transform:translateY(20px)}[data-reveal-left]{transform:translateX(-24px)}[data-reveal-right]{transform:translateX(24px)}[data-reveal-up]{transform:translateY(-16px)}
-  [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
-  [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
-  @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
-  .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
+ [data-reveal],[data-reveal-left],[data-reveal-right],[data-reveal-up]{opacity:0;transition:opacity .35s ease,transform .35s ease}
+ [data-reveal]{transform:translateY(20px)}[data-reveal-left]{transform:translateX(-24px)}[data-reveal-right]{transform:translateX(24px)}[data-reveal-up]{transform:translateY(-16px)}
+ [data-reveal].revealed,[data-reveal-left].revealed,[data-reveal-right].revealed,[data-reveal-up].revealed{opacity:1;transform:none}
+ [data-d1]{transition-delay:.1s}[data-d2]{transition-delay:.2s}[data-d3]{transition-delay:.3s}[data-d4]{transition-delay:.4s}
+ @keyframes ctaGlow{0%,100%{box-shadow:0 4px 16px var(--cta-shadow)}50%{box-shadow:0 6px 32px var(--cta-glow),0 0 0 6px var(--cta-ring)}}
+ .cta-pulse{animation:ctaGlow 2s ease-in-out infinite}
 `;
 
 const P = "#4f46e5";
@@ -33,6 +33,7 @@ const P_LIGHT = "#eef2ff";
 
 export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
   const [showModal, setShowModal] = useState(false);
+  const [showHeroVideo, setShowHeroVideo] = useState(false);
   const [activeFeatureVideo, setActiveFeatureVideo] = useState<number | null>(
     null,
   );
@@ -59,7 +60,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
     return (
       <button
         onClick={openModal}
-        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 rounded-none font-black uppercase tracking-widest text-sm hover:opacity-90 transition-all ${!outline ? "cta-pulse" : ""}`}
+        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 font-black uppercase tracking-widest text-sm hover:opacity-90 transition-all ${!outline ? "cta-pulse" : ""}`}
         style={
           outline
             ? {
@@ -105,7 +106,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
     return (
       <button
         onClick={openModal}
-        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 rounded-none font-black uppercase tracking-widest text-sm hover:opacity-90 transition-all cta-pulse`}
+        className={`${full ? "w-full" : "inline-flex"} flex items-center justify-center gap-3 px-8 py-4 font-black uppercase tracking-widest text-sm hover:opacity-90 transition-all cta-pulse`}
         style={
           {
             backgroundColor: P,
@@ -147,7 +148,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
               </span>
               {workshop.badge_text && (
                 <span
-                  className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                  className="text-[10px] font-black uppercase tracking-widest px-3 py-1"
                   style={{ backgroundColor: P_LIGHT, color: P }}>
                   {workshop.badge_text}
                 </span>
@@ -183,13 +184,42 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
               className="relative w-full"
               style={{ aspectRatio: workshop.youtube_url ? "16/9" : "16/5" }}>
               {workshop.youtube_url ? (
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?rel=0&modestbranding=1`}
-                  title={workshop.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full border-0"
-                />
+                showHeroVideo ? (
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(workshop.youtube_url)}?autoplay=1&rel=0&modestbranding=1`}
+                    title={workshop.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full border-0"
+                  />
+                ) : (
+                  <>
+                    {(media?.hero_preview || media?.hero_bg) && (
+                      <Image
+                        src={media?.hero_preview ?? media?.hero_bg ?? ""}
+                        alt={workshop.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width:768px) 100vw, 660px"
+                        priority
+                      />
+                    )}
+                    <div
+                      className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
+                      onClick={() => setShowHeroVideo(true)}>
+                      <div
+                        className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-white shadow-2xl"
+                        style={{ backgroundColor: P }}>
+                        <svg
+                          className="w-7 h-7 sm:w-9 sm:h-9 ml-1"
+                          fill="currentColor"
+                          viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </>
+                )
               ) : (
                 <>
                   <Image
@@ -223,7 +253,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
               {workshop.instructor_name && (
                 <div className="flex items-center gap-3 shrink-0">
                   {media?.instructor && (
-                    <div className="w-10 h-10 rounded-full overflow-hidden relative shrink-0">
+                    <div className="w-10 h-10 overflow-hidden relative shrink-0">
                       <Image
                         src={media.instructor}
                         alt={workshop.instructor_name}
@@ -340,7 +370,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
                     backgroundColor: i % 2 === 1 ? "#f0efff" : "white",
                   }}>
                   <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-2xl shrink-0"
+                    className="w-14 h-14 flex items-center justify-center text-2xl shrink-0"
                     style={{ backgroundColor: P_LIGHT }}>
                     {item.emoji}
                   </div>
@@ -505,73 +535,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
                       </p>
                     ))}
                 </div>
-                {/* Feature videos */}
-                {workshop.instructor_feature_videos.length > 0 && (
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {workshop.instructor_feature_videos.map((v, i) => {
-                      const feature = media?.feature_videos?.[i];
-                      const thumbSrc = feature?.thumb ?? "";
-                      const videoUrl = feature?.youtube ?? null;
-                      const videoId = videoUrl ? getYouTubeId(videoUrl) : null;
-                      const isPlaying =
-                        activeFeatureVideo === i && !!videoId;
-                      return (
-                        <div
-                          key={i}
-                          className="flex flex-col items-center gap-1">
-                          <div
-                            className="w-32 h-18 rounded overflow-hidden relative"
-                            style={{ height: 72, cursor: videoId ? "pointer" : "default" }}
-                            onClick={
-                              videoId
-                                ? () => setActiveFeatureVideo(i)
-                                : undefined
-                            }>
-                            {isPlaying && videoId ? (
-                              <iframe
-                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-                                title={v.label}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="absolute inset-0 w-full h-full border-0"
-                              />
-                            ) : (
-                              <>
-                                {thumbSrc && (
-                                  <Image
-                                    src={thumbSrc}
-                                    alt={v.label}
-                                    fill
-                                    className="object-cover"
-                                    sizes="128px"
-                                  />
-                                )}
-                                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                  <div
-                                    className="w-8 h-8 rounded-full flex items-center justify-center"
-                                    style={{ backgroundColor: P }}>
-                                    <svg
-                                      className="w-4 h-4 text-white ml-0.5"
-                                      fill="currentColor"
-                                      viewBox="0 0 24 24">
-                                      <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </>
-                            )}
-                          </div>
-                          <p className="text-[10px] text-gray-500">
-                            in{" "}
-                            <span className="font-black" style={{ color: P }}>
-                              {v.platform}
-                            </span>
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+
                 <CtaBtn text={ctaText} outline />
               </div>
             </div>
@@ -615,7 +579,7 @@ export function TemplateNeoCard({ workshop }: { workshop: WorkshopJson }) {
                     <div key={i} className="flex gap-6 items-start" data-reveal>
                       {/* Circle node */}
                       <div
-                        className="relative z-10 w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white shrink-0"
+                        className="relative z-10 w-10 h-10 flex items-center justify-center font-black text-sm text-white shrink-0"
                         style={{ backgroundColor: P }}>
                         {lesson.lesson_num}
                       </div>
