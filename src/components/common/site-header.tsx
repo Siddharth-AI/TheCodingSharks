@@ -3,16 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { Menu } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
 import nav from "@/data/nav.json";
 import site from "@/data/site.json";
 import codingLogo from "@/assets/images/Coding.png";
 
-import { ButtonLink } from "@/components/common/button-link";
 import { Container } from "@/components/layout/container";
-import { Button } from "@/components/ui/button";
 import { openLeadModal } from "@/components/common/lead-modal";
 import {
   Sheet,
@@ -24,6 +22,11 @@ import {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  function closeMenu() {
+    setOpen(false);
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-3 md:py-4 w-full transition-all duration-300">
@@ -77,26 +80,29 @@ export function SiteHeader() {
             </button>
           </div>
 
-          {/* Mobile Hamburger Menu */}
-          <Sheet>
+          {/* Mobile Hamburger */}
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className="relative z-10 ml-auto md:hidden"
               render={
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="size-8 sm:size-9 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-                  <Menu className="size-4 sm:size-5" aria-hidden="true" />
-                  <span className="sr-only">Open menu</span>
-                </Button>
+                <button
+                  className="size-8 sm:size-9 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center justify-center">
+                  {open
+                    ? <X className="size-4 sm:size-5" />
+                    : <Menu className="size-4 sm:size-5" />
+                  }
+                  <span className="sr-only">Toggle menu</span>
+                </button>
               }
             />
 
             <SheetContent
               side="right"
-              className="border-white/10 bg-[#0a0a0a]/95 text-white backdrop-blur-xl supports-[backdrop-filter]:bg-[#0a0a0a]/80 w-[280px] sm:w-[320px]">
-              <SheetHeader className="border-b border-white/10 pb-4">
-                <SheetTitle className="text-left">
+              className="border-l border-white/10 bg-[#0a0a0a] text-white w-[300px] sm:w-[340px] p-0 flex flex-col">
+
+              {/* Header */}
+              <SheetHeader className="px-5 pt-5 pb-4 border-b border-white/8 flex-row items-center justify-between">
+                <SheetTitle>
                   <Image
                     src={codingLogo}
                     alt={site.brand.name}
@@ -105,44 +111,57 @@ export function SiteHeader() {
                     className="h-7 w-auto"
                   />
                 </SheetTitle>
+                <button
+                  onClick={closeMenu}
+                  className="size-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+                  <X className="size-4" />
+                </button>
               </SheetHeader>
 
-              <div className="flex flex-col gap-6 pt-6">
-                <div className="space-y-3">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-primary/80 px-4">
-                    Navigate
-                  </p>
-                  <div className="flex flex-col gap-1">
-                    {nav.header.links.map((item) => {
-                      const active =
-                        item.href === "/"
-                          ? pathname === "/"
-                          : pathname.startsWith(item.href);
+              {/* Nav links */}
+              <div className="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 px-3 mb-3">
+                  Menu
+                </p>
+                {nav.header.links.map((item) => {
+                  const active =
+                    item.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(item.href);
 
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className={`rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
-                            active
-                              ? "bg-primary/10 text-primary border border-primary/20"
-                              : "text-white/70 hover:bg-white/5 hover:text-white"
-                          }`}>
-                          {item.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="px-0">
-                  <button
-                    onClick={() => openLeadModal("navbar-mobile")}
-                    className="h-11 w-full rounded-full justify-center bg-primary px-6 text-sm font-bold text-white shadow-[0_0_20px_-5px_#ff6b2c] hover:bg-[#ff7b42] transition-colors flex items-center">
-                    Free Demo Session
-                  </button>
-                </div>
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMenu}
+                      className={`flex items-center justify-between px-4 py-3 text-sm font-medium transition-all ${
+                        active
+                          ? "bg-primary/10 text-primary border-l-2 border-primary"
+                          : "text-white/65 hover:bg-white/5 hover:text-white border-l-2 border-transparent"
+                      }`}>
+                      {item.label}
+                      <ChevronRight className={`size-3.5 transition-colors ${active ? "text-primary" : "text-white/20"}`} />
+                    </Link>
+                  );
+                })}
               </div>
+
+              {/* Bottom CTA */}
+              <div className="px-5 py-5 border-t border-white/8">
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    openLeadModal("navbar-mobile");
+                  }}
+                  className="h-12 w-full bg-primary text-white text-sm font-bold tracking-wide shadow-[0_0_24px_-4px_#ff6b2c] hover:bg-[#ff7b42] transition-colors flex items-center justify-center gap-2">
+                  Free Demo Session
+                  <ChevronRight className="size-4" />
+                </button>
+                <p className="text-[10px] text-white/25 text-center mt-3">
+                  100% free · No commitment required
+                </p>
+              </div>
+
             </SheetContent>
           </Sheet>
         </div>

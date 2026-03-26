@@ -71,7 +71,7 @@ export function RegistrationModal({ workshop, onClose }: Props) {
  const result = await submitLeadToCrm({ name, email, mobile, courseInterest: crmCourseId || undefined });
  setIsSubmitting(false);
  if (result.success) {
- const params = new URLSearchParams({ from: `/workshops/${workshop.slug}` });
+ const params = new URLSearchParams({ from: '/' });
  router.push(`/thank-you?${params.toString()}`);
  } else setSubmitError(result.error ??'Registration failed. Please try again.');
  }
