@@ -21,8 +21,8 @@ export function FinalCtaSection() {
   return (
     <section className="relative bg-[#0a0a0a] overflow-hidden border-t border-white/5" style={{ minHeight: "480px" }}>
 
-      {/* Scattered background images — only on sm+ screens */}
-      <div className="hidden sm:block">
+      {/* Scattered background images */}
+      <div>
         {finalCta.images.map((src, i) => {
           const pos = POSITIONS[i % POSITIONS.length];
           return (
@@ -32,15 +32,15 @@ export function FinalCtaSection() {
               src={src}
               alt=""
               draggable={false}
-              className="absolute select-none pointer-events-none rounded-xl object-cover"
+              className="absolute select-none pointer-events-none rounded-lg sm:rounded-xl object-cover"
               style={{
                 top: pos.top,
                 left: pos.left,
-                width: "160px",
-                height: "200px",
+                width: "clamp(80px, 18vw, 160px)",
+                height: "clamp(100px, 22vw, 200px)",
                 transform: `rotate(${pos.rotate}) scale(${pos.scale})`,
                 filter: `grayscale(30%) blur(${pos.blur}px)`,
-                opacity: 0.35,
+                opacity: 0.3,
               }}
             />
           );

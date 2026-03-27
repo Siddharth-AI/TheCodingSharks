@@ -110,15 +110,15 @@ export function CommunitySection() {
           – animationDuration overrides the global 32s default
           – animationPlayState pauses cleanly without breaking the translate position
         */}
-        {/* faster on mobile via injected media query */}
+        {/* speed overrides per breakpoint */}
         <style>{`
-          @media (max-width: 640px) { .community-strip { animation-duration: 9s !important; } }
-          @media (min-width: 641px) and (max-width: 1024px) { .community-strip { animation-duration: 14s !important; } }
+          @media (max-width: 640px) { .community-strip { animation-duration: 20s !important; } }
+          @media (min-width: 641px) and (max-width: 1024px) { .community-strip { animation-duration: 22s !important; } }
         `}</style>
         <div
-          className="community-strip flex h-full gap-3 animate-marquee-left"
+          className="community-strip flex h-full w-max animate-marquee-left"
           style={{
-            animationDuration: "22s",
+            animationDuration: "26s",
             animationPlayState: paused ? "paused" : "running",
           }}>
           {STRIP.map((img, i) => {
@@ -139,7 +139,7 @@ export function CommunitySection() {
                   setHoveredIdx(null);
                   setPaused(false);
                 }}
-                className="relative h-full w-64 sm:w-72 md:w-80 shrink-0 overflow-hidden rounded-2xl shadow-md cursor-pointer"
+                className="relative h-full w-44 sm:w-64 md:w-80 shrink-0 overflow-hidden rounded-2xl shadow-md cursor-pointer mr-3"
                 style={{
                   transform: isHovered
                     ? "scale(1.1)"

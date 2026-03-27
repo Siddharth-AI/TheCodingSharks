@@ -28,7 +28,7 @@ function StarRating({ rating }: { rating: number }) {
 function ReviewCard({ review }: { review: Review }) {
   return (
     <div
-      className="w-105 flex-none flex flex-col gap-4 rounded-3xl border border-white/8 p-6 select-none overflow-hidden relative"
+      className="w-72 sm:w-80 lg:w-105 flex-none flex flex-col gap-3 sm:gap-4 rounded-2xl sm:rounded-3xl border border-white/8 p-4 sm:p-6 select-none overflow-hidden relative"
       style={{
         background: `linear-gradient(135deg, ${review.color}18 0%, #111111 45%, #0d0d0d 100%)`,
         boxShadow: `0 0 0 1px ${review.color}18`,
@@ -78,14 +78,14 @@ export function ReviewsSection() {
   const row2 = reviews.slice(Math.ceil(reviews.length / 2));
 
   return (
-    <section className="bg-[#0a0a0a] py-16 sm:py-20 md:py-24 overflow-hidden border-t border-white/5">
+    <section className="bg-[#0a0a0a] py-10 sm:py-20 md:py-24 overflow-hidden border-t border-white/5">
       {/* Header */}
       <Container>
-        <div className="flex flex-col items-center text-center mb-12 sm:mb-14">
-          <p className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-primary uppercase mb-3">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-14">
+          <p className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-primary uppercase mb-2 sm:mb-3">
             Hear From Our Students
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white font-heading tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white font-heading tracking-tight">
             We Help Learners Become <br className="hidden sm:block" />
             Industry-Ready Developers.
           </h2>
